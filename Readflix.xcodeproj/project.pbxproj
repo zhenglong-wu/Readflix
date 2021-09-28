@@ -16,6 +16,16 @@
 		667042BE27039D49000F5E95 /* ReadflixTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667042BD27039D49000F5E95 /* ReadflixTests.swift */; };
 		667042C827039D49000F5E95 /* ReadflixUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667042C727039D49000F5E95 /* ReadflixUITests.swift */; };
 		667042CA27039D49000F5E95 /* ReadflixUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667042C927039D49000F5E95 /* ReadflixUITestsLaunchTests.swift */; };
+		667042D827039E20000F5E95 /* ScanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667042D727039E20000F5E95 /* ScanView.swift */; };
+		667042DA27039E3B000F5E95 /* ImportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667042D927039E3B000F5E95 /* ImportView.swift */; };
+		667042DC27039E4E000F5E95 /* ScanningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667042DB27039E4E000F5E95 /* ScanningView.swift */; };
+		667042DE27039EB1000F5E95 /* BookshelfView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667042DD27039EB1000F5E95 /* BookshelfView.swift */; };
+		667042E027039EC6000F5E95 /* RootTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667042DF27039EC6000F5E95 /* RootTabView.swift */; };
+		667042E227039EE3000F5E95 /* DiscoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667042E127039EE3000F5E95 /* DiscoverView.swift */; };
+		667042E427039F6A000F5E95 /* StatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667042E327039F6A000F5E95 /* StatisticsView.swift */; };
+		667042E627039F85000F5E95 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667042E527039F85000F5E95 /* ProfileView.swift */; };
+		667042E927039FBA000F5E95 /* ScanDoc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667042E827039FBA000F5E95 /* ScanDoc.swift */; };
+		667042EC27039FDF000F5E95 /* TextRecogniser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667042EB27039FDF000F5E95 /* TextRecogniser.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +58,16 @@
 		667042C327039D49000F5E95 /* ReadflixUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReadflixUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		667042C727039D49000F5E95 /* ReadflixUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadflixUITests.swift; sourceTree = "<group>"; };
 		667042C927039D49000F5E95 /* ReadflixUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadflixUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		667042D727039E20000F5E95 /* ScanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanView.swift; sourceTree = "<group>"; };
+		667042D927039E3B000F5E95 /* ImportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportView.swift; sourceTree = "<group>"; };
+		667042DB27039E4E000F5E95 /* ScanningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanningView.swift; sourceTree = "<group>"; };
+		667042DD27039EB1000F5E95 /* BookshelfView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookshelfView.swift; sourceTree = "<group>"; };
+		667042DF27039EC6000F5E95 /* RootTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabView.swift; sourceTree = "<group>"; };
+		667042E127039EE3000F5E95 /* DiscoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverView.swift; sourceTree = "<group>"; };
+		667042E327039F6A000F5E95 /* StatisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsView.swift; sourceTree = "<group>"; };
+		667042E527039F85000F5E95 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		667042E827039FBA000F5E95 /* ScanDoc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanDoc.swift; sourceTree = "<group>"; };
+		667042EB27039FDF000F5E95 /* TextRecogniser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextRecogniser.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +99,9 @@
 			isa = PBXGroup;
 			children = (
 				667042A627039D47000F5E95 /* Readflix */,
+				667042D627039DB1000F5E95 /* Views */,
+				667042E727039FA4000F5E95 /* Models */,
+				667042EA27039FC8000F5E95 /* Controllers */,
 				667042BC27039D49000F5E95 /* ReadflixTests */,
 				667042C627039D49000F5E95 /* ReadflixUITests */,
 				667042A527039D47000F5E95 /* Products */,
@@ -101,7 +124,6 @@
 				667042A727039D47000F5E95 /* ReadflixApp.swift */,
 				667042A927039D47000F5E95 /* ContentView.swift */,
 				667042AB27039D49000F5E95 /* Assets.xcassets */,
-				667042B027039D49000F5E95 /* Persistence.swift */,
 				667042B227039D49000F5E95 /* Readflix.xcdatamodeld */,
 				667042AD27039D49000F5E95 /* Preview Content */,
 			);
@@ -131,6 +153,38 @@
 				667042C927039D49000F5E95 /* ReadflixUITestsLaunchTests.swift */,
 			);
 			path = ReadflixUITests;
+			sourceTree = "<group>";
+		};
+		667042D627039DB1000F5E95 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				667042D727039E20000F5E95 /* ScanView.swift */,
+				667042D927039E3B000F5E95 /* ImportView.swift */,
+				667042DB27039E4E000F5E95 /* ScanningView.swift */,
+				667042DD27039EB1000F5E95 /* BookshelfView.swift */,
+				667042DF27039EC6000F5E95 /* RootTabView.swift */,
+				667042E127039EE3000F5E95 /* DiscoverView.swift */,
+				667042E327039F6A000F5E95 /* StatisticsView.swift */,
+				667042E527039F85000F5E95 /* ProfileView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		667042E727039FA4000F5E95 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				667042B027039D49000F5E95 /* Persistence.swift */,
+				667042E827039FBA000F5E95 /* ScanDoc.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		667042EA27039FC8000F5E95 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				667042EB27039FDF000F5E95 /* TextRecogniser.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -264,8 +318,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				667042B427039D49000F5E95 /* Readflix.xcdatamodeld in Sources */,
+				667042DA27039E3B000F5E95 /* ImportView.swift in Sources */,
+				667042DC27039E4E000F5E95 /* ScanningView.swift in Sources */,
 				667042B127039D49000F5E95 /* Persistence.swift in Sources */,
+				667042E627039F85000F5E95 /* ProfileView.swift in Sources */,
+				667042E927039FBA000F5E95 /* ScanDoc.swift in Sources */,
+				667042E027039EC6000F5E95 /* RootTabView.swift in Sources */,
+				667042EC27039FDF000F5E95 /* TextRecogniser.swift in Sources */,
+				667042D827039E20000F5E95 /* ScanView.swift in Sources */,
 				667042AA27039D47000F5E95 /* ContentView.swift in Sources */,
+				667042E227039EE3000F5E95 /* DiscoverView.swift in Sources */,
+				667042E427039F6A000F5E95 /* StatisticsView.swift in Sources */,
+				667042DE27039EB1000F5E95 /* BookshelfView.swift in Sources */,
 				667042A827039D47000F5E95 /* ReadflixApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
