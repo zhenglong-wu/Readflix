@@ -1,0 +1,633 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		667042A827039D47000F5E95 /* ReadflixApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667042A727039D47000F5E95 /* ReadflixApp.swift */; };
+		667042AA27039D47000F5E95 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667042A927039D47000F5E95 /* ContentView.swift */; };
+		667042AC27039D49000F5E95 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 667042AB27039D49000F5E95 /* Assets.xcassets */; };
+		667042AF27039D49000F5E95 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 667042AE27039D49000F5E95 /* Preview Assets.xcassets */; };
+		667042B127039D49000F5E95 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667042B027039D49000F5E95 /* Persistence.swift */; };
+		667042B427039D49000F5E95 /* Readflix.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 667042B227039D49000F5E95 /* Readflix.xcdatamodeld */; };
+		667042BE27039D49000F5E95 /* ReadflixTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667042BD27039D49000F5E95 /* ReadflixTests.swift */; };
+		667042C827039D49000F5E95 /* ReadflixUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667042C727039D49000F5E95 /* ReadflixUITests.swift */; };
+		667042CA27039D49000F5E95 /* ReadflixUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667042C927039D49000F5E95 /* ReadflixUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		667042BA27039D49000F5E95 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6670429C27039D47000F5E95 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 667042A327039D47000F5E95;
+			remoteInfo = Readflix;
+		};
+		667042C427039D49000F5E95 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6670429C27039D47000F5E95 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 667042A327039D47000F5E95;
+			remoteInfo = Readflix;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		667042A427039D47000F5E95 /* Readflix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Readflix.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		667042A727039D47000F5E95 /* ReadflixApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadflixApp.swift; sourceTree = "<group>"; };
+		667042A927039D47000F5E95 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		667042AB27039D49000F5E95 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		667042AE27039D49000F5E95 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		667042B027039D49000F5E95 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		667042B327039D49000F5E95 /* Readflix.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Readflix.xcdatamodel; sourceTree = "<group>"; };
+		667042B927039D49000F5E95 /* ReadflixTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReadflixTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		667042BD27039D49000F5E95 /* ReadflixTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadflixTests.swift; sourceTree = "<group>"; };
+		667042C327039D49000F5E95 /* ReadflixUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReadflixUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		667042C727039D49000F5E95 /* ReadflixUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadflixUITests.swift; sourceTree = "<group>"; };
+		667042C927039D49000F5E95 /* ReadflixUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadflixUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		667042A127039D47000F5E95 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		667042B627039D49000F5E95 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		667042C027039D49000F5E95 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6670429B27039D47000F5E95 = {
+			isa = PBXGroup;
+			children = (
+				667042A627039D47000F5E95 /* Readflix */,
+				667042BC27039D49000F5E95 /* ReadflixTests */,
+				667042C627039D49000F5E95 /* ReadflixUITests */,
+				667042A527039D47000F5E95 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		667042A527039D47000F5E95 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				667042A427039D47000F5E95 /* Readflix.app */,
+				667042B927039D49000F5E95 /* ReadflixTests.xctest */,
+				667042C327039D49000F5E95 /* ReadflixUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		667042A627039D47000F5E95 /* Readflix */ = {
+			isa = PBXGroup;
+			children = (
+				667042A727039D47000F5E95 /* ReadflixApp.swift */,
+				667042A927039D47000F5E95 /* ContentView.swift */,
+				667042AB27039D49000F5E95 /* Assets.xcassets */,
+				667042B027039D49000F5E95 /* Persistence.swift */,
+				667042B227039D49000F5E95 /* Readflix.xcdatamodeld */,
+				667042AD27039D49000F5E95 /* Preview Content */,
+			);
+			path = Readflix;
+			sourceTree = "<group>";
+		};
+		667042AD27039D49000F5E95 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				667042AE27039D49000F5E95 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		667042BC27039D49000F5E95 /* ReadflixTests */ = {
+			isa = PBXGroup;
+			children = (
+				667042BD27039D49000F5E95 /* ReadflixTests.swift */,
+			);
+			path = ReadflixTests;
+			sourceTree = "<group>";
+		};
+		667042C627039D49000F5E95 /* ReadflixUITests */ = {
+			isa = PBXGroup;
+			children = (
+				667042C727039D49000F5E95 /* ReadflixUITests.swift */,
+				667042C927039D49000F5E95 /* ReadflixUITestsLaunchTests.swift */,
+			);
+			path = ReadflixUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		667042A327039D47000F5E95 /* Readflix */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 667042CD27039D49000F5E95 /* Build configuration list for PBXNativeTarget "Readflix" */;
+			buildPhases = (
+				667042A027039D47000F5E95 /* Sources */,
+				667042A127039D47000F5E95 /* Frameworks */,
+				667042A227039D47000F5E95 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Readflix;
+			productName = Readflix;
+			productReference = 667042A427039D47000F5E95 /* Readflix.app */;
+			productType = "com.apple.product-type.application";
+		};
+		667042B827039D49000F5E95 /* ReadflixTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 667042D027039D49000F5E95 /* Build configuration list for PBXNativeTarget "ReadflixTests" */;
+			buildPhases = (
+				667042B527039D49000F5E95 /* Sources */,
+				667042B627039D49000F5E95 /* Frameworks */,
+				667042B727039D49000F5E95 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				667042BB27039D49000F5E95 /* PBXTargetDependency */,
+			);
+			name = ReadflixTests;
+			productName = ReadflixTests;
+			productReference = 667042B927039D49000F5E95 /* ReadflixTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		667042C227039D49000F5E95 /* ReadflixUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 667042D327039D49000F5E95 /* Build configuration list for PBXNativeTarget "ReadflixUITests" */;
+			buildPhases = (
+				667042BF27039D49000F5E95 /* Sources */,
+				667042C027039D49000F5E95 /* Frameworks */,
+				667042C127039D49000F5E95 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				667042C527039D49000F5E95 /* PBXTargetDependency */,
+			);
+			name = ReadflixUITests;
+			productName = ReadflixUITests;
+			productReference = 667042C327039D49000F5E95 /* ReadflixUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6670429C27039D47000F5E95 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1300;
+				LastUpgradeCheck = 1300;
+				TargetAttributes = {
+					667042A327039D47000F5E95 = {
+						CreatedOnToolsVersion = 13.0;
+					};
+					667042B827039D49000F5E95 = {
+						CreatedOnToolsVersion = 13.0;
+						TestTargetID = 667042A327039D47000F5E95;
+					};
+					667042C227039D49000F5E95 = {
+						CreatedOnToolsVersion = 13.0;
+						TestTargetID = 667042A327039D47000F5E95;
+					};
+				};
+			};
+			buildConfigurationList = 6670429F27039D47000F5E95 /* Build configuration list for PBXProject "Readflix" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 6670429B27039D47000F5E95;
+			productRefGroup = 667042A527039D47000F5E95 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				667042A327039D47000F5E95 /* Readflix */,
+				667042B827039D49000F5E95 /* ReadflixTests */,
+				667042C227039D49000F5E95 /* ReadflixUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		667042A227039D47000F5E95 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				667042AF27039D49000F5E95 /* Preview Assets.xcassets in Resources */,
+				667042AC27039D49000F5E95 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		667042B727039D49000F5E95 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		667042C127039D49000F5E95 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		667042A027039D47000F5E95 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				667042B427039D49000F5E95 /* Readflix.xcdatamodeld in Sources */,
+				667042B127039D49000F5E95 /* Persistence.swift in Sources */,
+				667042AA27039D47000F5E95 /* ContentView.swift in Sources */,
+				667042A827039D47000F5E95 /* ReadflixApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		667042B527039D49000F5E95 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				667042BE27039D49000F5E95 /* ReadflixTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		667042BF27039D49000F5E95 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				667042CA27039D49000F5E95 /* ReadflixUITestsLaunchTests.swift in Sources */,
+				667042C827039D49000F5E95 /* ReadflixUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		667042BB27039D49000F5E95 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 667042A327039D47000F5E95 /* Readflix */;
+			targetProxy = 667042BA27039D49000F5E95 /* PBXContainerItemProxy */;
+		};
+		667042C527039D49000F5E95 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 667042A327039D47000F5E95 /* Readflix */;
+			targetProxy = 667042C427039D49000F5E95 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		667042CB27039D49000F5E95 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		667042CC27039D49000F5E95 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		667042CE27039D49000F5E95 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Readflix/Preview Content\"";
+				DEVELOPMENT_TEAM = 2Y7Y72NLLY;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = zhenglongwu.Readflix;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		667042CF27039D49000F5E95 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Readflix/Preview Content\"";
+				DEVELOPMENT_TEAM = 2Y7Y72NLLY;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = zhenglongwu.Readflix;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		667042D127039D49000F5E95 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2Y7Y72NLLY;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = zhenglongwu.ReadflixTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Readflix.app/Readflix";
+			};
+			name = Debug;
+		};
+		667042D227039D49000F5E95 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2Y7Y72NLLY;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = zhenglongwu.ReadflixTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Readflix.app/Readflix";
+			};
+			name = Release;
+		};
+		667042D427039D49000F5E95 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2Y7Y72NLLY;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = zhenglongwu.ReadflixUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Readflix;
+			};
+			name = Debug;
+		};
+		667042D527039D49000F5E95 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2Y7Y72NLLY;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = zhenglongwu.ReadflixUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Readflix;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6670429F27039D47000F5E95 /* Build configuration list for PBXProject "Readflix" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				667042CB27039D49000F5E95 /* Debug */,
+				667042CC27039D49000F5E95 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		667042CD27039D49000F5E95 /* Build configuration list for PBXNativeTarget "Readflix" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				667042CE27039D49000F5E95 /* Debug */,
+				667042CF27039D49000F5E95 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		667042D027039D49000F5E95 /* Build configuration list for PBXNativeTarget "ReadflixTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				667042D127039D49000F5E95 /* Debug */,
+				667042D227039D49000F5E95 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		667042D327039D49000F5E95 /* Build configuration list for PBXNativeTarget "ReadflixUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				667042D427039D49000F5E95 /* Debug */,
+				667042D527039D49000F5E95 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		667042B227039D49000F5E95 /* Readflix.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				667042B327039D49000F5E95 /* Readflix.xcdatamodel */,
+			);
+			currentVersion = 667042B327039D49000F5E95 /* Readflix.xcdatamodel */;
+			path = Readflix.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 6670429C27039D47000F5E95 /* Project object */;
+}
