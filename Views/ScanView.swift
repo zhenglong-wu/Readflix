@@ -14,15 +14,15 @@ struct ScanView: View {
     @State private var isShowingAlert = false
     
     var body: some View {
-        NavigationView {
+      
             VStack {
                 if text.count > 0 {
                     List{
-                        ForEach(text){text in
+                        ForEach(text) {text in
                             NavigationLink(
                                 destination: ScrollView{Text(text.content)},
                                 label: {
-                                    Text(getScanName())
+                                    Text(displayDocumentAlert())
                                 }
                             )
                         }
@@ -40,14 +40,13 @@ struct ScanView: View {
                     .font(.title)
             })
             .sheet(isPresented: $showScanner, content: {
-                makeScanningView()
+                createScanningView()
             })
             )
-        }
     }
     
     // This function takes the scanned output from each line of text and appends them to an array
-    private func makeScanningView() -> ScanningView {
+    private func createScanningView() -> ScanningView {
         ScanningView(completion: {
             textPerPage in
             if let outputText = textPerPage?.joined(separator: "\n").trimmingCharacters(in: .whitespacesAndNewlines) {
@@ -59,19 +58,24 @@ struct ScanView: View {
     }
     
     // Creates alert so that the user can enter a name for the scan
-    private func getScanName() -> String {
+    func displayDocumentAlert() -> String {
         
-        var scanName: String = ""
+        var documentName: String = ""
         
-        let alert = UIAlertController(title: "Scan Name", message: "Enter Scan Name", preferredStyle: .alert)
-        alert.addTextField { (scanName) in
-            scanName.placeholder = "Name"
+        let alert = UIAlertController(title: "Document Name", message: "Please enter a name for the scan", preferredStyle: .alert)
+        alert.addTextField { (documentName) in
+            documentName.placeholder = "Name"
         }
         let okAction = UIAlertAction(title: "OK", style: .default) { (_) in
-            
+            documentName = alert.textFields![0].text!
         }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .destructive) { (_) in
+            documentName = "Document"
+        }
+        alert.addAction(cancelAction)
         alert.addAction(okAction)
-        return scanName
+        UIApplication.shared.windows.first?.rootViewController?.present(alert, animated: true)
+        return documentName
     }
 }
 

@@ -11,14 +11,9 @@ struct BookshelfView: View {
     var body: some View {
         
         NavigationView {
-            NavigationLink(
-                destination: ImportView(),
-                label: {
-                    Text("Import")
-                }
-            )
-                .navigationTitle("My Bookshelf")
+                
         }
+        .navigationTitle("Bookshelf")
     }
 }
 

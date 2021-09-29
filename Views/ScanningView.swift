@@ -10,12 +10,12 @@ import VisionKit
 
 struct ScanningView: UIViewControllerRepresentable {
     
-    func makeCoordinator() -> Coordinator {
-        return Coordinator(completion: completionHandler)
+    func makeCoordinator() -> CameraCoordinator {
+        return CameraCoordinator(completion: completionHandler)
     }
     
     // This delegate class returns the scanned results from the VNDocumentCamera
-    class Coordinator: NSObject, VNDocumentCameraViewControllerDelegate {
+    class CameraCoordinator: NSObject, VNDocumentCameraViewControllerDelegate {
         private let completionHandler: ([String]?) -> Void
         
         init(completion: @escaping ([String]?) -> Void) {
@@ -40,7 +40,6 @@ struct ScanningView: UIViewControllerRepresentable {
         return viewController
     }
     
-    //
     func updateUIViewController(_ uiViewController: VNDocumentCameraViewController, context: Context) {
         
     }

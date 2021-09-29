@@ -10,9 +10,13 @@ import SwiftUI
 struct DiscoverView: View {
     var body: some View {
         NavigationView {
-            Text("Coming soon...")
-                .navigationTitle("Discover")
-            
+            NavigationLink(
+                destination: ScanView(),
+                label: {
+                    Text("Import")
+                }
+            )
+                .navigationTitle("My Bookshelf")
         }
     }
 }
