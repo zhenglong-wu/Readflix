@@ -24,8 +24,10 @@
 		667042E227039EE3000F5E95 /* DiscoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667042E127039EE3000F5E95 /* DiscoverView.swift */; };
 		667042E427039F6A000F5E95 /* StatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667042E327039F6A000F5E95 /* StatisticsView.swift */; };
 		667042E627039F85000F5E95 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667042E527039F85000F5E95 /* ProfileView.swift */; };
-		667042E927039FBA000F5E95 /* ScanDoc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667042E827039FBA000F5E95 /* ScanDoc.swift */; };
+		667042E927039FBA000F5E95 /* Texts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667042E827039FBA000F5E95 /* Texts.swift */; };
 		667042EC27039FDF000F5E95 /* TextRecogniser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667042EB27039FDF000F5E95 /* TextRecogniser.swift */; };
+		66B390E627059E8B00FF7E66 /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B390E527059E8B00FF7E66 /* FileManager.swift */; };
+		66B390E827059FF100FF7E66 /* FileStateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B390E727059FF100FF7E66 /* FileStateController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,8 +68,10 @@
 		667042E127039EE3000F5E95 /* DiscoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverView.swift; sourceTree = "<group>"; };
 		667042E327039F6A000F5E95 /* StatisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsView.swift; sourceTree = "<group>"; };
 		667042E527039F85000F5E95 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
-		667042E827039FBA000F5E95 /* ScanDoc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanDoc.swift; sourceTree = "<group>"; };
+		667042E827039FBA000F5E95 /* Texts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Texts.swift; sourceTree = "<group>"; };
 		667042EB27039FDF000F5E95 /* TextRecogniser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextRecogniser.swift; sourceTree = "<group>"; };
+		66B390E527059E8B00FF7E66 /* FileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManager.swift; sourceTree = "<group>"; };
+		66B390E727059FF100FF7E66 /* FileStateController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileStateController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				667042A627039D47000F5E95 /* Readflix */,
+				66B390E427059E7300FF7E66 /* Extensions */,
 				667042D627039DB1000F5E95 /* Views */,
 				667042E727039FA4000F5E95 /* Models */,
 				667042EA27039FC8000F5E95 /* Controllers */,
@@ -173,7 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				667042B027039D49000F5E95 /* Persistence.swift */,
-				667042E827039FBA000F5E95 /* ScanDoc.swift */,
+				667042E827039FBA000F5E95 /* Texts.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -182,9 +187,18 @@
 			isa = PBXGroup;
 			children = (
 				667042EB27039FDF000F5E95 /* TextRecogniser.swift */,
+				66B390E727059FF100FF7E66 /* FileStateController.swift */,
 				667042BC27039D49000F5E95 /* ReadflixTests */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		66B390E427059E7300FF7E66 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				66B390E527059E8B00FF7E66 /* FileManager.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -317,14 +331,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				66B390E627059E8B00FF7E66 /* FileManager.swift in Sources */,
 				667042B427039D49000F5E95 /* Readflix.xcdatamodeld in Sources */,
 				667042DA27039E3B000F5E95 /* ImportView.swift in Sources */,
 				667042DC27039E4E000F5E95 /* ScanningView.swift in Sources */,
 				667042B127039D49000F5E95 /* Persistence.swift in Sources */,
 				667042E627039F85000F5E95 /* ProfileView.swift in Sources */,
-				667042E927039FBA000F5E95 /* ScanDoc.swift in Sources */,
+				667042E927039FBA000F5E95 /* Texts.swift in Sources */,
 				667042E027039EC6000F5E95 /* RootTabView.swift in Sources */,
 				667042EC27039FDF000F5E95 /* TextRecogniser.swift in Sources */,
+				66B390E827059FF100FF7E66 /* FileStateController.swift in Sources */,
 				667042D827039E20000F5E95 /* ScanView.swift in Sources */,
 				667042AA27039D47000F5E95 /* ContentView.swift in Sources */,
 				667042E227039EE3000F5E95 /* DiscoverView.swift in Sources */,

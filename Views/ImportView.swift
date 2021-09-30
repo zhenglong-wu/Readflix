@@ -9,15 +9,7 @@ import SwiftUI
 
 struct ImportView: View {
     var body: some View {
-        NavigationView {
-            NavigationLink(
-                destination: ScanView(),
-                label: {
-                    Text("Scan Documents")
-                }
-            )
-                .navigationTitle("My Bookshelf")
-        }
+        Text("Coming soon...")
     }
 }
 

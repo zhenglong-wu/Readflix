@@ -10,7 +10,7 @@ import SwiftUI
 struct ScanView: View {
     
     @State private var showScanner = false
-    @State private var text: [ScanDoc] = []
+    @State private var text: [Texts] = []
     @State private var isShowingAlert = false
     
     var body: some View {
@@ -50,7 +50,7 @@ struct ScanView: View {
         ScanningView(completion: {
             textPerPage in
             if let outputText = textPerPage?.joined(separator: "\n").trimmingCharacters(in: .whitespacesAndNewlines) {
-                let newScanData = ScanDoc(content: outputText)
+                let newScanData = Texts(content: outputText)
                 self.text.append(newScanData)
             }
             self.showScanner = false
@@ -68,13 +68,16 @@ struct ScanView: View {
         }
         let okAction = UIAlertAction(title: "OK", style: .default) { (_) in
             documentName = alert.textFields![0].text!
+            print(documentName)
         }
         let cancelAction = UIAlertAction(title: "Cancel", style: .destructive) { (_) in
             documentName = "Document"
         }
         alert.addAction(cancelAction)
         alert.addAction(okAction)
-        UIApplication.shared.windows.first?.rootViewController?.present(alert, animated: true)
+        UIApplication.shared.windows.first?.rootViewController?.present(alert, animated: true)  {
+            print("completion activated")
+        }
         return documentName
     }
 }

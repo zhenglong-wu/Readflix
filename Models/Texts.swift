@@ -1,5 +1,5 @@
 //
-//  ScanDoc.swift
+//  Texts.swift
 //  Readflix
 //
 //  Created by Zhenglong Wu on 28/09/2021.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ScanDoc: Identifiable {
+struct Texts: Identifiable, Codable {
     
     var id = UUID()
     let content: String

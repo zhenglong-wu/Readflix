@@ -11,9 +11,10 @@ struct BookshelfView: View {
     var body: some View {
         
         NavigationView {
-                
+            Text("Coming soon")
+                .navigationTitle("Bookshelf")
         }
-        .navigationTitle("Bookshelf")
+        
     }
 }
 
