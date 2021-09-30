@@ -12,6 +12,7 @@ struct ScanView: View {
     @State private var showScanner = false
     @State private var text: [Texts] = []
     @State private var isShowingAlert = false
+    @EnvironmentObject var documentState: FileStateController
     
     var body: some View {
       
@@ -27,6 +28,7 @@ struct ScanView: View {
                             )
                         }
                     }
+                    .onAppear(perform: { documentState.saveToFile()})
                 }
                 else {
                     Text("No scannable document identified")
@@ -41,8 +43,7 @@ struct ScanView: View {
             })
             .sheet(isPresented: $showScanner, content: {
                 createScanningView()
-            })
-            )
+            }))
     }
     
     // This function takes the scanned output from each line of text and appends them to an array
@@ -85,6 +86,7 @@ struct ScanView: View {
 struct ScanView_Previews: PreviewProvider {
     static var previews: some View {
         ScanView()
+            .environmentObject(FileStateController())
     }
 }
 

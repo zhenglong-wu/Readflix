@@ -126,7 +126,6 @@
 			isa = PBXGroup;
 			children = (
 				667042A727039D47000F5E95 /* ReadflixApp.swift */,
-				667042A927039D47000F5E95 /* ContentView.swift */,
 				667042AB27039D49000F5E95 /* Assets.xcassets */,
 				667042B227039D49000F5E95 /* Readflix.xcdatamodeld */,
 				667042AD27039D49000F5E95 /* Preview Content */,
@@ -162,6 +161,7 @@
 		667042D627039DB1000F5E95 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				667042A927039D47000F5E95 /* ContentView.swift */,
 				667042D727039E20000F5E95 /* ScanView.swift */,
 				667042D927039E3B000F5E95 /* ImportView.swift */,
 				667042DB27039E4E000F5E95 /* ScanningView.swift */,
@@ -516,7 +516,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -547,7 +547,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

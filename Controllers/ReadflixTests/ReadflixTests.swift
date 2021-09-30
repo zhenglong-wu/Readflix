@@ -6,7 +6,7 @@
 //
 
 import XCTest
-@testable import Readflix
+//@testable import Readflix
 
 class ReadflixTests: XCTestCase {
 

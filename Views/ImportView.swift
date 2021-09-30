@@ -8,8 +8,18 @@
 import SwiftUI
 
 struct ImportView: View {
+    
+    @Environment (\.dismiss) var dismiss
+    
     var body: some View {
-        Text("Coming soon...")
+        NavigationView {
+            NavigationLink(
+                destination: ScanView(),
+                label: {
+                    Text("Import")
+                }
+            )
+        }
     }
 }
 
