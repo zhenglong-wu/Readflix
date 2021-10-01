@@ -8,15 +8,19 @@
 import SwiftUI
 
 struct DiscoverView: View {
+    
+    @State private var showingSheet = false
+    
     var body: some View {
+
         NavigationView {
-            NavigationLink(
-                destination: ScanView(),
-                label: {
-                    Text("Import")
-                }
-            )
-                .navigationTitle("My Bookshelf")
+            Button("Show Sheet") {
+                showingSheet.toggle()
+            }
+            .sheet(isPresented: $showingSheet) {
+                ImportView()
+            }
+            .navigationTitle("Discover")
         }
     }
 }

@@ -13,12 +13,47 @@ struct ImportView: View {
     
     var body: some View {
         NavigationView {
-            NavigationLink(
-                destination: ScanView(),
-                label: {
-                    Text("Import")
+            VStack {
+                HStack {
+                    VStack {
+                        NavigationLink(destination: ScanView()) {
+                            Label("Scan Document", systemImage: "viewfinder.circle").font(.system(size: 15, weight: .bold, design: .default))
+                            
+                        }
+                        .padding()
+                        NavigationLink(destination: ScanView()) {
+                            Label("Scan Document", systemImage: "doc.text").font(.system(size: 15, weight: .bold, design: .default))
+                        }
+                        .padding()
+                    }
+                    VStack {
+                        NavigationLink(destination: ScanView()) {
+                            Label("Scan Document", systemImage: "viewfinder.circle").font(.system(size: 15, weight: .bold, design: .default))
+                            
+                        }
+                        .padding()
+                        NavigationLink(destination: ScanView()) {
+                            Label("Scan Document", systemImage: "doc.text").font(.system(size: 15, weight: .bold, design: .default))
+                        }
+                        .padding()
+                    }
+                    
                 }
-            )
+                HStack {
+                    VStack(alignment: .leading) {
+                        NavigationLink(destination: ScanView()) {
+                            Label("Scan Document", systemImage: "viewfinder.circle").font(.system(size: 15, weight: .bold, design: .default))
+                            
+                        }
+                        .padding()
+                        NavigationLink(destination: ScanView()) {
+                            Label("Scan Document", systemImage: "doc.text").font(.system(size: 15, weight: .bold, design: .default))
+                        }
+                        .padding()
+                    }
+                }
+            }
+            .navigationTitle("Import")
         }
     }
 }
@@ -28,3 +63,5 @@ struct ImportView_Previews: PreviewProvider {
         ImportView()
     }
 }
+
+
