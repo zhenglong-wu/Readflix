@@ -28,7 +28,7 @@ struct ScanView: View {
                             )
                         }
                     }
-                    .onAppear(perform: { documentState.saveToFile()})
+                    //.onAppear(perform: { documentState.saveToFile()})
                 }
                 else {
                     Text("No scannable document identified")
@@ -61,7 +61,7 @@ struct ScanView: View {
     // Creates alert so that the user can enter a name for the scan
     func displayDocumentAlert() -> String {
         
-        var documentName: String = ""
+        @State var documentName: String = ""
         
         let alert = UIAlertController(title: "Document Name", message: "Please enter a name for the scan", preferredStyle: .alert)
         alert.addTextField { (documentName) in
@@ -77,6 +77,7 @@ struct ScanView: View {
         alert.addAction(cancelAction)
         alert.addAction(okAction)
         UIApplication.shared.windows.first?.rootViewController?.present(alert, animated: true)  {
+            documentName = alert.textFields![0].text!
             print("completion activated")
         }
         return documentName

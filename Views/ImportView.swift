@@ -13,44 +13,16 @@ struct ImportView: View {
     
     var body: some View {
         NavigationView {
-            VStack {
-                HStack {
-                    VStack {
-                        NavigationLink(destination: ScanView()) {
-                            Label("Scan Document", systemImage: "viewfinder.circle").font(.system(size: 15, weight: .bold, design: .default))
-                            
-                        }
-                        .padding()
-                        NavigationLink(destination: ScanView()) {
-                            Label("Scan Document", systemImage: "doc.text").font(.system(size: 15, weight: .bold, design: .default))
-                        }
-                        .padding()
-                    }
-                    VStack {
-                        NavigationLink(destination: ScanView()) {
-                            Label("Scan Document", systemImage: "viewfinder.circle").font(.system(size: 15, weight: .bold, design: .default))
-                            
-                        }
-                        .padding()
-                        NavigationLink(destination: ScanView()) {
-                            Label("Scan Document", systemImage: "doc.text").font(.system(size: 15, weight: .bold, design: .default))
-                        }
-                        .padding()
-                    }
-                    
+            VStack(spacing: 75) {
+                HStack(spacing: 50) {
+                    NavigationLink(destination: ScanView(), label: {ImportButtonItemView(iconSymbolName: "doc.text.viewfinder", iconDescription: "Scan")})
+                    NavigationLink(destination: PasteTextView(), label: {ImportButtonItemView(iconSymbolName: "doc.text", iconDescription: "Text")})
+                    NavigationLink(destination: ScanView(), label: {ImportButtonItemView(iconSymbolName: "doc.plaintext", iconDescription: "Docs")})
                 }
-                HStack {
-                    VStack(alignment: .leading) {
-                        NavigationLink(destination: ScanView()) {
-                            Label("Scan Document", systemImage: "viewfinder.circle").font(.system(size: 15, weight: .bold, design: .default))
-                            
-                        }
-                        .padding()
-                        NavigationLink(destination: ScanView()) {
-                            Label("Scan Document", systemImage: "doc.text").font(.system(size: 15, weight: .bold, design: .default))
-                        }
-                        .padding()
-                    }
+                HStack(spacing: 50) {
+                    NavigationLink(destination: ScanView(), label: {ImportButtonItemView(iconSymbolName: "network", iconDescription: "Web")})
+                    NavigationLink(destination: ScanView(), label: {ImportButtonItemView(iconSymbolName: "newspaper", iconDescription: "URL")})
+                    NavigationLink(destination: ScanView(), label: {ImportButtonItemView(iconSymbolName: "book", iconDescription: "Books")})
                 }
             }
             .navigationTitle("Import")
