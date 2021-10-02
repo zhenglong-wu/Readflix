@@ -15,14 +15,14 @@ struct ImportView: View {
         NavigationView {
             VStack(spacing: 75) {
                 HStack(spacing: 50) {
-                    NavigationLink(destination: ScanView(), label: {ImportButtonItemView(iconSymbolName: "doc.text.viewfinder", iconDescription: "Scan")})
+                    NavigationLink(destination: ImportScanView(), label: {ImportButtonItemView(iconSymbolName: "doc.text.viewfinder", iconDescription: "Scan")})
                     NavigationLink(destination: PasteTextView(), label: {ImportButtonItemView(iconSymbolName: "doc.text", iconDescription: "Text")})
-                    NavigationLink(destination: ScanView(), label: {ImportButtonItemView(iconSymbolName: "doc.plaintext", iconDescription: "Docs")})
+                    NavigationLink(destination: ImportScanView(), label: {ImportButtonItemView(iconSymbolName: "doc.plaintext", iconDescription: "Docs")})
                 }
                 HStack(spacing: 50) {
-                    NavigationLink(destination: ScanView(), label: {ImportButtonItemView(iconSymbolName: "network", iconDescription: "Web")})
-                    NavigationLink(destination: ScanView(), label: {ImportButtonItemView(iconSymbolName: "newspaper", iconDescription: "URL")})
-                    NavigationLink(destination: ScanView(), label: {ImportButtonItemView(iconSymbolName: "book", iconDescription: "Books")})
+                    NavigationLink(destination: ImportUrlView(), label: {ImportButtonItemView(iconSymbolName: "network", iconDescription: "Web")})
+                    NavigationLink(destination: ImportNewsView(), label: {ImportButtonItemView(iconSymbolName: "newspaper", iconDescription: "URL")})
+                    NavigationLink(destination: ImportBooksView(), label: {ImportButtonItemView(iconSymbolName: "book", iconDescription: "Books")})
                 }
             }
             .navigationTitle("Import")

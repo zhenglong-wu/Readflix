@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ScanView: View {
+struct ImportScanView: View {
     
     @State private var showScanner = false
     @State private var text: [Texts] = []
@@ -61,7 +61,7 @@ struct ScanView: View {
     // Creates alert so that the user can enter a name for the scan
     func displayDocumentAlert() -> String {
         
-        @State var documentName: String = ""
+        var documentName: String = ""
         
         let alert = UIAlertController(title: "Document Name", message: "Please enter a name for the scan", preferredStyle: .alert)
         alert.addTextField { (documentName) in
@@ -86,7 +86,7 @@ struct ScanView: View {
 
 struct ScanView_Previews: PreviewProvider {
     static var previews: some View {
-        ScanView()
+        ImportScanView()
             .environmentObject(FileStateController())
     }
 }
