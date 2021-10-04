@@ -8,9 +8,14 @@
 import SwiftUI
 
 struct PasteTextView: View {
+    
     var body: some View {
-        Text("Coming soon...")
+        VStack {
+            Text("Coming soon...")
+        }
+        .navigationTitle("Paste Text")
     }
+    
 }
 
 struct PasteTextView_Previews: PreviewProvider {

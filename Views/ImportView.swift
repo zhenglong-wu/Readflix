@@ -17,11 +17,11 @@ struct ImportView: View {
                 HStack(spacing: 50) {
                     NavigationLink(destination: ImportScanView(), label: {ImportButtonItemView(iconSymbolName: "doc.text.viewfinder", iconDescription: "Scan")})
                     NavigationLink(destination: PasteTextView(), label: {ImportButtonItemView(iconSymbolName: "doc.text", iconDescription: "Text")})
-                    NavigationLink(destination: ImportScanView(), label: {ImportButtonItemView(iconSymbolName: "doc.plaintext", iconDescription: "Docs")})
+                    NavigationLink(destination: ImportDocsView(), label: {ImportButtonItemView(iconSymbolName: "doc.plaintext", iconDescription: "Docs")})
                 }
                 HStack(spacing: 50) {
                     NavigationLink(destination: ImportUrlView(), label: {ImportButtonItemView(iconSymbolName: "network", iconDescription: "Web")})
-                    NavigationLink(destination: ImportNewsView(), label: {ImportButtonItemView(iconSymbolName: "newspaper", iconDescription: "URL")})
+                    NavigationLink(destination: ImportNewsView(), label: {ImportButtonItemView(iconSymbolName: "newspaper", iconDescription: "News")})
                     NavigationLink(destination: ImportBooksView(), label: {ImportButtonItemView(iconSymbolName: "book", iconDescription: "Books")})
                 }
             }

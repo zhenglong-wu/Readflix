@@ -9,7 +9,10 @@ import SwiftUI
 
 struct ImportUrlView: View {
     var body: some View {
-        Text("Coming soon...")
+        VStack {
+            Text("Coming soon...")
+        }
+        .navigationTitle("Import URLs")
     }
 }
 

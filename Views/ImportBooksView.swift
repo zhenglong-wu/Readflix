@@ -9,7 +9,10 @@ import SwiftUI
 
 struct ImportBooksView: View {
     var body: some View {
-        Text("Coming soon...")
+        VStack {
+            Text("Coming soon...")
+        }
+        .navigationTitle("Import Books")
     }
 }
 

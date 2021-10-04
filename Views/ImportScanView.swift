@@ -34,7 +34,7 @@ struct ImportScanView: View {
                     Text("No scannable document identified")
                 }
             }
-            .navigationTitle("Document Scanner")
+            .navigationTitle("Scan Documents")
             .navigationBarItems(trailing: Button(action: {
                 self.showScanner = true
             }, label: {
