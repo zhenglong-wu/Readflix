@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		660CDE502708E6B600643B54 /* PasteTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660CDE4F2708E6B600643B54 /* PasteTextView.swift */; };
+		660CDE502708E6B600643B54 /* ImportTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660CDE4F2708E6B600643B54 /* ImportTextView.swift */; };
+		663C1EA2270E1DF90039A8A0 /* AlertTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 663C1EA1270E1DF90039A8A0 /* AlertTestView.swift */; };
 		6658A604270B09B7006F85DB /* ImportedText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6658A603270B09B7006F85DB /* ImportedText.swift */; };
 		667042A827039D47000F5E95 /* ReadflixApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667042A727039D47000F5E95 /* ReadflixApp.swift */; };
 		667042AA27039D47000F5E95 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667042A927039D47000F5E95 /* ContentView.swift */; };
@@ -26,8 +27,8 @@
 		667042E227039EE3000F5E95 /* DiscoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667042E127039EE3000F5E95 /* DiscoverView.swift */; };
 		667042E427039F6A000F5E95 /* StatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667042E327039F6A000F5E95 /* StatisticsView.swift */; };
 		667042E627039F85000F5E95 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667042E527039F85000F5E95 /* ProfileView.swift */; };
-		667042E927039FBA000F5E95 /* Texts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667042E827039FBA000F5E95 /* Texts.swift */; };
 		667042EC27039FDF000F5E95 /* TextRecogniser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667042EB27039FDF000F5E95 /* TextRecogniser.swift */; };
+		6670B09D27108A6300CFEEA2 /* PasteTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6670B09C27108A6300CFEEA2 /* PasteTextView.swift */; };
 		6678D27B27078BD400D712EE /* ImportButtonItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6678D27A27078BD400D712EE /* ImportButtonItemView.swift */; };
 		66B390E627059E8B00FF7E66 /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B390E527059E8B00FF7E66 /* FileManager.swift */; };
 		66B390E827059FF100FF7E66 /* FileStateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B390E727059FF100FF7E66 /* FileStateController.swift */; };
@@ -55,7 +56,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		660CDE4F2708E6B600643B54 /* PasteTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasteTextView.swift; sourceTree = "<group>"; };
+		660CDE4F2708E6B600643B54 /* ImportTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportTextView.swift; sourceTree = "<group>"; };
+		663C1EA1270E1DF90039A8A0 /* AlertTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertTestView.swift; sourceTree = "<group>"; };
 		6658A603270B09B7006F85DB /* ImportedText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportedText.swift; sourceTree = "<group>"; };
 		667042A427039D47000F5E95 /* Readflix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Readflix.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		667042A727039D47000F5E95 /* ReadflixApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadflixApp.swift; sourceTree = "<group>"; };
@@ -77,8 +79,8 @@
 		667042E127039EE3000F5E95 /* DiscoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverView.swift; sourceTree = "<group>"; };
 		667042E327039F6A000F5E95 /* StatisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsView.swift; sourceTree = "<group>"; };
 		667042E527039F85000F5E95 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
-		667042E827039FBA000F5E95 /* Texts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Texts.swift; sourceTree = "<group>"; };
 		667042EB27039FDF000F5E95 /* TextRecogniser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextRecogniser.swift; sourceTree = "<group>"; };
+		6670B09C27108A6300CFEEA2 /* PasteTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasteTextView.swift; sourceTree = "<group>"; };
 		6678D27A27078BD400D712EE /* ImportButtonItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportButtonItemView.swift; sourceTree = "<group>"; };
 		66B390E527059E8B00FF7E66 /* FileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManager.swift; sourceTree = "<group>"; };
 		66B390E727059FF100FF7E66 /* FileStateController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileStateController.swift; sourceTree = "<group>"; };
@@ -177,11 +179,12 @@
 			children = (
 				667042A927039D47000F5E95 /* ContentView.swift */,
 				667042D727039E20000F5E95 /* ImportScanView.swift */,
+				660CDE4F2708E6B600643B54 /* ImportTextView.swift */,
 				66C9B4EF2708F3BF006E70FB /* ImportDocsView.swift */,
+				6670B09C27108A6300CFEEA2 /* PasteTextView.swift */,
 				66C9B4F12708F3E3006E70FB /* ImportUrlView.swift */,
 				66C9B4F32708F41F006E70FB /* ImportNewsView.swift */,
 				66C9B4F52708F42C006E70FB /* ImportBooksView.swift */,
-				660CDE4F2708E6B600643B54 /* PasteTextView.swift */,
 				667042D927039E3B000F5E95 /* ImportView.swift */,
 				667042DB27039E4E000F5E95 /* ScanningView.swift */,
 				667042DD27039EB1000F5E95 /* BookshelfView.swift */,
@@ -190,6 +193,7 @@
 				667042E327039F6A000F5E95 /* StatisticsView.swift */,
 				667042E527039F85000F5E95 /* ProfileView.swift */,
 				6678D27A27078BD400D712EE /* ImportButtonItemView.swift */,
+				663C1EA1270E1DF90039A8A0 /* AlertTestView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -198,7 +202,6 @@
 			isa = PBXGroup;
 			children = (
 				667042B027039D49000F5E95 /* Persistence.swift */,
-				667042E827039FBA000F5E95 /* Texts.swift */,
 				6658A603270B09B7006F85DB /* ImportedText.swift */,
 			);
 			path = Models;
@@ -358,11 +361,12 @@
 				667042DA27039E3B000F5E95 /* ImportView.swift in Sources */,
 				667042DC27039E4E000F5E95 /* ScanningView.swift in Sources */,
 				667042B127039D49000F5E95 /* Persistence.swift in Sources */,
-				660CDE502708E6B600643B54 /* PasteTextView.swift in Sources */,
+				660CDE502708E6B600643B54 /* ImportTextView.swift in Sources */,
 				66C9B4F22708F3E3006E70FB /* ImportUrlView.swift in Sources */,
 				667042E627039F85000F5E95 /* ProfileView.swift in Sources */,
-				667042E927039FBA000F5E95 /* Texts.swift in Sources */,
+				663C1EA2270E1DF90039A8A0 /* AlertTestView.swift in Sources */,
 				667042E027039EC6000F5E95 /* RootTabView.swift in Sources */,
+				6670B09D27108A6300CFEEA2 /* PasteTextView.swift in Sources */,
 				667042EC27039FDF000F5E95 /* TextRecogniser.swift in Sources */,
 				66B390E827059FF100FF7E66 /* FileStateController.swift in Sources */,
 				667042D827039E20000F5E95 /* ImportScanView.swift in Sources */,

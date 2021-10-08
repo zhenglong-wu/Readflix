@@ -2,20 +2,22 @@
 //  PasteTextView.swift
 //  Readflix
 //
-//  Created by Zhenglong Wu on 02/10/2021.
+//  Created by Zhenglong Wu on 08/10/2021.
 //
 
 import SwiftUI
 
 struct PasteTextView: View {
     
+    @State var textFieldText: String = ""
+    
     var body: some View {
         VStack {
             Text("Coming soon...")
+            TextField("Paste text here", text: $textFieldText)
         }
-        .navigationTitle("Paste Text")
+        .navigationTitle("Paste text")
     }
-    
 }
 
 struct PasteTextView_Previews: PreviewProvider {

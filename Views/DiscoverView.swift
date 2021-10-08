@@ -9,16 +9,10 @@ import SwiftUI
 
 struct DiscoverView: View {
     
-    @State private var showingSheet = false
-    
     var body: some View {
-
         NavigationView {
-            Button("Show Sheet") {
-                showingSheet.toggle()
-            }
-            .sheet(isPresented: $showingSheet) {
-                ImportView()
+            VStack {
+                Text("Coming soon...")
             }
             .navigationTitle("Discover")
         }

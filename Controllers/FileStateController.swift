@@ -9,7 +9,7 @@ import Foundation
 
 class FileStateController: ObservableObject {
     
-    @Published var texts: [Texts] = []
+    @Published var texts: [ImportedText] = []
     
     init(){
         loadFromFile()
@@ -26,7 +26,7 @@ class FileStateController: ObservableObject {
         
         if let data = try? Data(contentsOf: getFilePath(fileName: "texts")) {
             let decoder = JSONDecoder()
-            if let loaded = try? decoder.decode([Texts].self, from: data) {
+            if let loaded = try? decoder.decode([ImportedText].self, from: data) {
                 texts = loaded
             }
         }

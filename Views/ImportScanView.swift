@@ -1,5 +1,5 @@
 //
-//  ScanView.swift
+//  ImportScanView.swift
 //  Readflix
 //
 //  Created by Zhenglong Wu on 28/09/2021.
@@ -10,7 +10,7 @@ import SwiftUI
 struct ImportScanView: View {
     
     @State private var showScanner = false
-    @State private var text: [Texts] = []
+    @State private var text: [ImportedText] = []
     @State private var isShowingAlert = false
     @EnvironmentObject var documentState: FileStateController
     
@@ -19,13 +19,14 @@ struct ImportScanView: View {
             VStack {
                 if text.count > 0 {
                     List{
-                        ForEach(text) {text in
+                        ForEach(text) { text in
                             NavigationLink(
-                                destination: ScrollView{Text(text.content)},
+                                destination: ScrollView{Text(text.texts)},
                                 label: {
-                                    Text(displayDocumentAlert())
+                                    Text(text.textName)
                                 }
                             )
+                                .onAppear(perform: displayDocumentAlert())
                         }
                     }
                     //.onAppear(perform: { documentState.saveToFile()})
@@ -36,7 +37,7 @@ struct ImportScanView: View {
             }
             .navigationTitle("Scan Documents")
             .navigationBarItems(trailing: Button(action: {
-                self.showScanner = true
+               self.showScanner = true
             }, label: {
                 Image(systemName: "doc.text.viewfinder")
                     .font(.title)
@@ -46,12 +47,12 @@ struct ImportScanView: View {
             }))
     }
     
-    // This function takes the scanned output from each line of text and appends them to an array
+    // This function takes the scanned output from each line of text and appends them to the property texts in class ImportedText
     private func createScanningView() -> ScanningView {
         ScanningView(completion: {
             textPerPage in
             if let outputText = textPerPage?.joined(separator: "\n").trimmingCharacters(in: .whitespacesAndNewlines) {
-                let newScanData = Texts(content: outputText)
+                let newScanData = ImportedText(texts: outputText, dateCreated: Date())
                 self.text.append(newScanData)
             }
             self.showScanner = false
@@ -59,35 +60,45 @@ struct ImportScanView: View {
     }
     
     // Creates alert so that the user can enter a name for the scan
-    func displayDocumentAlert() -> String {
+//    func displayDocumentAlert(text: ImportedText) {
+//
+//        let alert = UIAlertController(title: "Document Name", message: "Please enter a name for the scan", preferredStyle: .alert)
+//
+//        let okAction = UIAlertAction(title: "OK", style: .default) { (_) in
+//            text.textName = alert.textFields![0].text!
+//            print(text.textName)
+//        }
+//        let cancelAction = UIAlertAction(title: "Cancel", style: .destructive) { (_) in
+//            text.textName = "Document Scan"
+//        }
+//        alert.addAction(cancelAction)
+//        alert.addAction(okAction)
+//
+//        // Need to change this code!!
+//        UIApplication.shared.windows.first?.rootViewController?.present(alert, animated: true)  {
+//            text.textName = alert.textFields![0].text!
+//            print("completion activated")
+//        }
+//    }
+    
+    func displayDocumentAlert() {
         
-        var documentName: String = ""
+        let alert = UIAlertController(title: "Scan Name", message: "Please enter a name for your scan", preferredStyle: .alert)
         
-        let alert = UIAlertController(title: "Document Name", message: "Please enter a name for the scan", preferredStyle: .alert)
-        alert.addTextField { (documentName) in
-            documentName.placeholder = "Name"
-        }
         let okAction = UIAlertAction(title: "OK", style: .default) { (_) in
-            documentName = alert.textFields![0].text!
-            print(documentName)
+ 
         }
+        
         let cancelAction = UIAlertAction(title: "Cancel", style: .destructive) { (_) in
-            documentName = "Document"
+            
         }
+        
         alert.addAction(cancelAction)
         alert.addAction(okAction)
-        UIApplication.shared.windows.first?.rootViewController?.present(alert, animated: true)  {
-            documentName = alert.textFields![0].text!
-            print("completion activated")
+        
+        UIApplication.shared.windows.first?.rootViewController?.present(alert, animated: true) {
+            
         }
-        return documentName
-    }
-}
-
-struct ScanView_Previews: PreviewProvider {
-    static var previews: some View {
-        ImportScanView()
-            .environmentObject(FileStateController())
     }
 }
 

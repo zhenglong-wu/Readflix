@@ -16,7 +16,7 @@ struct ImportView: View {
             VStack(spacing: 75) {
                 HStack(spacing: 50) {
                     NavigationLink(destination: ImportScanView(), label: {ImportButtonItemView(iconSymbolName: "doc.text.viewfinder", iconDescription: "Scan")})
-                    NavigationLink(destination: PasteTextView(), label: {ImportButtonItemView(iconSymbolName: "doc.text", iconDescription: "Text")})
+                    NavigationLink(destination: ImportTextView(), label: {ImportButtonItemView(iconSymbolName: "doc.text", iconDescription: "Text")})
                     NavigationLink(destination: ImportDocsView(), label: {ImportButtonItemView(iconSymbolName: "doc.plaintext", iconDescription: "Docs")})
                 }
                 HStack(spacing: 50) {
