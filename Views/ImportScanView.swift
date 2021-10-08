@@ -26,7 +26,7 @@ struct ImportScanView: View {
                                     Text(text.textName)
                                 }
                             )
-                                .onAppear(perform: displayDocumentAlert())
+                                //.onAppear(perform: displayDocumentAlert())
                         }
                     }
                     //.onAppear(perform: { documentState.saveToFile()})

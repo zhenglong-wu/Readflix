@@ -14,6 +14,10 @@ struct ImportTextView: View {
             Text("Coming soon...")
         }
         .navigationTitle("Import Text")
+        .navigationBarItems(trailing: NavigationLink(destination: PasteTextView(), label: {
+            Image(systemName: "doc.text")
+                .font(.title)
+        }))
     }
     
 }

@@ -10,11 +10,15 @@ import SwiftUI
 struct PasteTextView: View {
     
     @State var textFieldText: String = ""
+    @State private var text: [ImportedText] = []
     
     var body: some View {
         VStack {
-            Text("Coming soon...")
             TextField("Paste text here", text: $textFieldText)
+                .textFieldStyle(.roundedBorder)
+            Button("Save") {
+                text.append(ImportedText(texts: textFieldText, dateCreated: Date()))
+            }
         }
         .navigationTitle("Paste text")
     }

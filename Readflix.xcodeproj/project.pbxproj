@@ -179,8 +179,8 @@
 			children = (
 				667042A927039D47000F5E95 /* ContentView.swift */,
 				667042D727039E20000F5E95 /* ImportScanView.swift */,
-				660CDE4F2708E6B600643B54 /* ImportTextView.swift */,
 				66C9B4EF2708F3BF006E70FB /* ImportDocsView.swift */,
+				660CDE4F2708E6B600643B54 /* ImportTextView.swift */,
 				6670B09C27108A6300CFEEA2 /* PasteTextView.swift */,
 				66C9B4F12708F3E3006E70FB /* ImportUrlView.swift */,
 				66C9B4F32708F41F006E70FB /* ImportNewsView.swift */,
