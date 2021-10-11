@@ -9,6 +9,7 @@ import SwiftUI
 
 struct PasteTextView: View {
     
+    @Environment(\.presentationMode) var presentationMode
     @State var textFieldText: String = ""
     @State private var text: [ImportedText] = []
     
@@ -18,9 +19,11 @@ struct PasteTextView: View {
                 .textFieldStyle(.roundedBorder)
             Button("Save") {
                 text.append(ImportedText(texts: textFieldText, dateCreated: Date()))
+                presentationMode.wrappedValue.dismiss()
             }
         }
         .navigationTitle("Paste text")
+        .padding()
     }
 }
 

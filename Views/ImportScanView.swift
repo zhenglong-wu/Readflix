@@ -32,7 +32,11 @@ struct ImportScanView: View {
                     //.onAppear(perform: { documentState.saveToFile()})
                 }
                 else {
-                    Text("No scannable document identified")
+                    Text("No scanned documents...")
+                    Text("\n")
+                    Text("You can import your own text by tapping the top right button!")
+                        .font(.subheadline)
+                        .foregroundColor(.gray)
                 }
             }
             .navigationTitle("Scan Documents")
@@ -59,9 +63,9 @@ struct ImportScanView: View {
         })
     }
     
-    // Creates alert so that the user can enter a name for the scan
-//    func displayDocumentAlert(text: ImportedText) {
-//
+    //Creates alert so that the user can enter a name for the scan
+    func displayDocumentAlert(text: ImportedText) {
+
 //        let alert = UIAlertController(title: "Document Name", message: "Please enter a name for the scan", preferredStyle: .alert)
 //
 //        let okAction = UIAlertAction(title: "OK", style: .default) { (_) in
@@ -79,7 +83,7 @@ struct ImportScanView: View {
 //            text.textName = alert.textFields![0].text!
 //            print("completion activated")
 //        }
-//    }
+    }
     
     func displayDocumentAlert() {
         
