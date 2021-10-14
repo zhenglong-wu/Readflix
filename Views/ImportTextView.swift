@@ -45,13 +45,28 @@ struct ImportTextView: View {
                 .font(.title)
         })
         .sheet(isPresented: $showPasteTextView, content: {
-            createPastingView()
+            createPasteView()
         }))
     }
 
-    func createPastingView() -> PasteTextView {
-        PasteTextView()
-        
+//    func createPasteView() -> PasteTextView {
+//
+//        var newText: ImportedText = ImportedText(texts: "", dateCreated: Date())
+//        var newView = PasteTextView(passedData: newText)
+//        self.text.append(newText)
+//        print(newText.texts)
+//        print(newText.textName)
+//        print(newText.dateCreated)
+//        self.showPasteTextView = false
+//        return newView
+//    }
+    
+    func createPasteView() -> PasteTextView {
+        var newText: NewText = NewText(newText: "Test Text")
+        var newPasteview = PasteTextView(passedData: newText)
+        self.text.append(ImportedText(texts: newText.newText, dateCreated: Date()))
+        self.showPasteTextView = false
+        return newPasteview
     }
     
 }

@@ -10,25 +10,27 @@ import SwiftUI
 struct PasteTextView: View {
     
     @Environment(\.presentationMode) var presentationMode
+    @State var passedData: NewText
     @State var textFieldText: String = ""
-    @State private var text: [ImportedText] = []
     
     var body: some View {
         VStack {
             TextField("Paste text here", text: $textFieldText)
                 .textFieldStyle(.roundedBorder)
             Button("Save") {
-                text.append(ImportedText(texts: textFieldText, dateCreated: Date()))
+                passedData.newText = textFieldText
                 presentationMode.wrappedValue.dismiss()
+                
             }
         }
         .navigationTitle("Paste text")
         .padding()
     }
+    
 }
 
 struct PasteTextView_Previews: PreviewProvider {
     static var previews: some View {
-        PasteTextView()
+        /*@START_MENU_TOKEN@*/Text("Hello, World!")/*@END_MENU_TOKEN@*/
     }
 }
