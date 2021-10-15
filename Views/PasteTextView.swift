@@ -10,7 +10,7 @@ import SwiftUI
 struct PasteTextView: View {
     
     @Environment(\.presentationMode) var presentationMode
-    @State var passedData: NewText
+    @ObservedObject var passedData: NewText
     @State var textFieldText: String = ""
     
     var body: some View {
@@ -18,7 +18,7 @@ struct PasteTextView: View {
             TextField("Paste text here", text: $textFieldText)
                 .textFieldStyle(.roundedBorder)
             Button("Save") {
-                passedData.newText = textFieldText
+                passedData.newTexts = textFieldText
                 presentationMode.wrappedValue.dismiss()
                 
             }

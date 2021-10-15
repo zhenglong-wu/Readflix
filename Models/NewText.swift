@@ -7,10 +7,11 @@
 
 import Foundation
 
-class NewText {
-    var newText: String
+class NewText: ObservableObject {
     
-    init(newText: String) {
-        self.newText = newText
+    @Published var newTexts: String
+    
+    init(newTexts: String) {
+        self.newTexts = newTexts
     }
 }
