@@ -12,7 +12,6 @@ struct ImportTextView: View {
     @State private var text: [ImportedText] = []
     @State private var showPasteTextView = false
     @EnvironmentObject var documentStateController: FileStateController
-    @StateObject var newText: NewText = NewText(newTexts: "")
     
     var body: some View {
         VStack {
@@ -50,17 +49,21 @@ struct ImportTextView: View {
         }))
     }
     
-    private func createPasteView() -> PasteTextView {
-        var newPasteView = PasteTextView(passedData: newText)
-        self.text.append(ImportedText(texts: newText.newTexts, dateCreated: Date()))
+    func createPasteView() -> PasteTextView {
+        var newText: String = ""
+        let newPasteView = PasteTextView(save: { (pastedText: String) in
+            newText = pastedText
+            createNewTextAndAppendToViewTexArray(textFromPastedView: newText)
+            
+        })
         self.showPasteTextView = false
         return newPasteView
-        
-//        var newPasteview = PasteTextView(passedData: newText)
-//        self.text.append(ImportedText(texts: newText.newText, dateCreated: Date()))can you
-//        self.showPasteTextView = false
-//        self.newText.newText = ""
-//        return newPasteview
+    
+    }
+    
+    func createNewTextAndAppendToViewTexArray(textFromPastedView: String) {
+        let newImportedText: ImportedText = ImportedText(texts: textFromPastedView, dateCreated: Date())
+        self.text.append(newImportedText)
     }
     
 }

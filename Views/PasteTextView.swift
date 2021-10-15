@@ -10,15 +10,15 @@ import SwiftUI
 struct PasteTextView: View {
     
     @Environment(\.presentationMode) var presentationMode
-    @ObservedObject var passedData: NewText
     @State var textFieldText: String = ""
+    var save: (String) -> Void
     
     var body: some View {
         VStack {
             TextField("Paste text here", text: $textFieldText)
                 .textFieldStyle(.roundedBorder)
             Button("Save") {
-                passedData.newTexts = textFieldText
+                save(textFieldText)
                 presentationMode.wrappedValue.dismiss()
                 
             }
