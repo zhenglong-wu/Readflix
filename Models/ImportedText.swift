@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ImportedText: Codable, Identifiable {
+class ImportedText: Codable, ObservableObject, Identifiable {
     
     var id = UUID()
     var texts: String

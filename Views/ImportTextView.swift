@@ -27,7 +27,7 @@ struct ImportTextView: View {
                             //.onAppear(perform: displayDocumentAlert())
                     }
                 }
-                //.onAppear(perform: { documentState.saveToFile()})
+                .onAppear(perform: { documentStateController.saveToFile()})
             }
             else {
                 Text("No imported texts...")
