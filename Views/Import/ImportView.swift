@@ -13,13 +13,13 @@ struct ImportView: View {
     
     var body: some View {
         NavigationView {
-            VStack(spacing: 75) {
-                HStack(spacing: 50) {
+            VStack(alignment: .trailing, spacing: 65) {
+                HStack(spacing: 40) {
                     NavigationLink(destination: ImportScanView(), label: {ImportButtonItemView(iconSymbolName: "doc.text.viewfinder", iconDescription: "Scan")})
                     NavigationLink(destination: ImportTextView(), label: {ImportButtonItemView(iconSymbolName: "doc.text", iconDescription: "Text")})
                     NavigationLink(destination: ImportDocsView(), label: {ImportButtonItemView(iconSymbolName: "doc.plaintext", iconDescription: "Docs")})
                 }
-                HStack(spacing: 50) {
+                HStack(spacing: 40) {
                     NavigationLink(destination: ImportUrlView(), label: {ImportButtonItemView(iconSymbolName: "network", iconDescription: "Web")})
                     NavigationLink(destination: ImportNewsView(), label: {ImportButtonItemView(iconSymbolName: "newspaper", iconDescription: "News")})
                     NavigationLink(destination: ImportBooksView(), label: {ImportButtonItemView(iconSymbolName: "book", iconDescription: "Books")})

@@ -12,7 +12,7 @@ struct ImportScanView: View {
     @State private var showScanner = false
     @State private var text: [ImportedText] = []
     @State private var isShowingAlert = false
-    @EnvironmentObject var documentState: FileStateController
+    @EnvironmentObject var documentScanStateController: ImportedTextFileStateController
     
     var body: some View {
       
@@ -29,7 +29,7 @@ struct ImportScanView: View {
                                 //.onAppear(perform: displayDocumentAlert())
                         }
                     }
-                    //.onAppear(perform: { documentState.saveToFile()})
+                    .onAppear(perform: { documentScanStateController.saveToFile()})
                 }
                 else {
                     Text("No scanned documents...")

@@ -11,13 +11,13 @@ struct ImportTextView: View {
     
     @State private var text: [ImportedText] = []
     @State private var showPasteTextView = false
-    @EnvironmentObject var documentStateController: FileStateController
+    @EnvironmentObject private var documentPasteStateController: ImportedTextFileStateController
     
     var body: some View {
         VStack {
-            if text.count > 0 {
+            if documentPasteStateController.texts.count > 0 {
                 List{
-                    ForEach(text) { text in
+                    ForEach(documentPasteStateController.texts) { text in
                         NavigationLink(
                             destination: ScrollView{Text(text.texts)},
                             label: {
@@ -27,7 +27,7 @@ struct ImportTextView: View {
                             //.onAppear(perform: displayDocumentAlert())
                     }
                 }
-                .onAppear(perform: { documentStateController.saveToFile()})
+                .onAppear(perform: { documentPasteStateController.saveToFile()})
             }
             else {
                 Text("No imported texts...")
@@ -53,18 +53,19 @@ struct ImportTextView: View {
         var newText: String = ""
         let newPasteView = PasteTextView(save: { (pastedText: String) in
             newText = pastedText
-            createNewTextAndAppendToViewTexArray(textFromPastedView: newText)
-            
+            createNewTextAndAppendToViewTextArray(textFromPastedView: newText)
         })
         self.showPasteTextView = false
         return newPasteView
     
     }
     
-    func createNewTextAndAppendToViewTexArray(textFromPastedView: String) {
+    func createNewTextAndAppendToViewTextArray(textFromPastedView: String) {
         let newImportedText: ImportedText = ImportedText(texts: textFromPastedView, dateCreated: Date())
-        self.text.append(newImportedText)
+        self.documentPasteStateController.texts.append(newImportedText)
     }
+    
+    
     
 }
 

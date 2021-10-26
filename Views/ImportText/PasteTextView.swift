@@ -20,13 +20,11 @@ struct PasteTextView: View {
             Button("Save") {
                 save(textFieldText)
                 presentationMode.wrappedValue.dismiss()
-                
             }
         }
         .navigationTitle("Paste text")
         .padding()
     }
-    
 }
 
 struct PasteTextView_Previews: PreviewProvider {

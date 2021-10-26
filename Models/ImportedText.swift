@@ -7,7 +7,7 @@
 
 import Foundation
 
-class ImportedText: Codable, ObservableObject, Identifiable {
+class ImportedText: Identifiable, Codable {
     
     var id = UUID()
     var texts: String
