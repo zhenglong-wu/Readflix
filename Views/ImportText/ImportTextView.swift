@@ -9,25 +9,24 @@ import SwiftUI
 
 struct ImportTextView: View {
     
-    @State private var text: [ImportedText] = []
     @State private var showPasteTextView = false
-    @EnvironmentObject private var documentPasteStateController: ImportedTextFileStateController
+    @EnvironmentObject private var state: ImportedTextFileStateController
     
     var body: some View {
         VStack {
-            if documentPasteStateController.texts.count > 0 {
+            if state.texts[1].count > 0 {
                 List{
-                    ForEach(documentPasteStateController.texts) { text in
+                    ForEach(state.texts[1]) { text in
                         NavigationLink(
                             destination: ScrollView{Text(text.texts)},
                             label: {
                                 Text(text.textName)
                             }
                         )
-                            //.onAppear(perform: displayDocumentAlert())
                     }
+                    .onDelete(perform: deleteText)
                 }
-                .onAppear(perform: { documentPasteStateController.saveToFile()})
+                .onAppear(perform: { state.saveToFile()})
             }
             else {
                 Text("No imported texts...")
@@ -42,7 +41,7 @@ struct ImportTextView: View {
            self.showPasteTextView = true
         }, label: {
             Image(systemName: "doc.text")
-                .font(.title)
+                .font(.title2)
         })
         .sheet(isPresented: $showPasteTextView, content: {
             createPasteView()
@@ -50,27 +49,37 @@ struct ImportTextView: View {
     }
     
     func createPasteView() -> PasteTextView {
-        var newText: String = ""
-        let newPasteView = PasteTextView(save: { (pastedText: String) in
+        var newText: (String, String) = ("", "")
+        let newPasteView = PasteTextView(save: { (pastedText: (String, String)) in
             newText = pastedText
             createNewTextAndAppendToViewTextArray(textFromPastedView: newText)
         })
-        self.showPasteTextView = false
+        self.showPasteTextView = false   
         return newPasteView
-    
     }
     
-    func createNewTextAndAppendToViewTextArray(textFromPastedView: String) {
-        let newImportedText: ImportedText = ImportedText(texts: textFromPastedView, dateCreated: Date())
-        self.documentPasteStateController.texts.append(newImportedText)
+    func createNewTextAndAppendToViewTextArray(textFromPastedView: (String, String)) {
+        let textName: String
+        if textFromPastedView.0 == "" {
+            textName = "Some Text"
+        }
+        else {
+            textName = textFromPastedView.0
+        }
+        let text = textFromPastedView.1
+        let newImportedText: ImportedText = ImportedText(texts: text, textName: textName, dateCreated: Date())
+        self.state.addNewText(newText: newImportedText, appendToPosition: 1)
     }
     
-    
+    func deleteText(at offsets: IndexSet) {
+        self.state.texts[1].remove(atOffsets: offsets)
+    }
     
 }
 
 struct ImportTextView_Previews: PreviewProvider {
     static var previews: some View {
         ImportTextView()
+            .environmentObject(ImportedTextFileStateController())
     }
 }

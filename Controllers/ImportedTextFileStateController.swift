@@ -9,7 +9,8 @@ import Foundation
 
 class ImportedTextFileStateController: ObservableObject {
     
-    @Published var texts: [ImportedText] = []
+    @Published var texts: [[ImportedText]] = [[], []]
+    // Index 0 - Imported Scans | Index 1 - Imported Texts | 
     
     init(){
         loadFromFile()
@@ -17,7 +18,7 @@ class ImportedTextFileStateController: ObservableObject {
     
     func loadFromFile() {
         
-        if let loaded: [ImportedText] = FileManager.default.load(from: "importedTexts.json") {
+        if let loaded: [[ImportedText]] = FileManager.default.load(from: "importedTexts.json") {
             texts = loaded
         }
     }
@@ -25,4 +26,10 @@ class ImportedTextFileStateController: ObservableObject {
     func saveToFile() {
         FileManager.default.save(to: "importedTexts.json", object: texts)
     }
+    
+    func addNewText(newText: ImportedText, appendToPosition: Int) {
+        self.texts[appendToPosition].append(newText)
+    }
 }
+
+

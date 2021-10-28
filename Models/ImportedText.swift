@@ -11,12 +11,14 @@ class ImportedText: Identifiable, Codable {
     
     var id = UUID()
     var texts: String
-    var textName: String = "Document Scan"
+    var textName: String
     var dateCreated: Date
 
-    init(texts: String, dateCreated: Date) {
+    init(texts: String, textName: String, dateCreated: Date) {
         self.texts = texts
+        self.textName = textName
         self.dateCreated = dateCreated
     }
     
 }
+

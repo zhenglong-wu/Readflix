@@ -10,16 +10,16 @@ import SwiftUI
 struct ImportScanView: View {
     
     @State private var showScanner = false
-    @State private var text: [ImportedText] = []
+
     @State private var isShowingAlert = false
-    @EnvironmentObject var documentScanStateController: ImportedTextFileStateController
+    @EnvironmentObject var state: ImportedTextFileStateController
     
     var body: some View {
       
             VStack {
-                if text.count > 0 {
+                if state.texts[0].count > 0 {
                     List{
-                        ForEach(text) { text in
+                        ForEach(state.texts[0], id: \.id) { text in
                             NavigationLink(
                                 destination: ScrollView{Text(text.texts)},
                                 label: {
@@ -28,8 +28,9 @@ struct ImportScanView: View {
                             )
                                 //.onAppear(perform: displayDocumentAlert())
                         }
+                        .onDelete(perform: deleteText)
                     }
-                    .onAppear(perform: { documentScanStateController.saveToFile()})
+                    .onAppear(perform: { state.saveToFile()})
                 }
                 else {
                     Text("No scanned documents...")
@@ -44,7 +45,7 @@ struct ImportScanView: View {
                self.showScanner = true
             }, label: {
                 Image(systemName: "doc.text.viewfinder")
-                    .font(.title)
+                    .font(.title2)
             })
             .sheet(isPresented: $showScanner, content: {
                 createScanningView()
@@ -56,11 +57,15 @@ struct ImportScanView: View {
         ScanningView(completion: {
             textPerPage in
             if let outputText = textPerPage?.joined(separator: "\n").trimmingCharacters(in: .whitespacesAndNewlines) {
-                let newScanData = ImportedText(texts: outputText, dateCreated: Date())
-                self.text.append(newScanData)
+                let newScanData = ImportedText(texts: outputText, textName: "Some Text", dateCreated: Date())
+                self.state.addNewText(newText: newScanData, appendToPosition: 0)
             }
             self.showScanner = false
         })
+    }
+    
+    func deleteText(at offsets: IndexSet) {
+        self.state.texts[0].remove(atOffsets: offsets)
     }
     
     //Creates alert so that the user can enter a name for the scan

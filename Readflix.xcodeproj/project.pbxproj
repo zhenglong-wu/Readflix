@@ -182,8 +182,8 @@
 				6694332A272817A00060EF48 /* ImportNews */,
 				66943329272817860060EF48 /* ImportUrl */,
 				66943328272817680060EF48 /* ImportText */,
-				66943327272817290060EF48 /* OtherMethods */,
 				669433262728171F0060EF48 /* ImportScan */,
+				66943327272817290060EF48 /* OtherMethods */,
 			);
 			path = Views;
 			sourceTree = "<group>";

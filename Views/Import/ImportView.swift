@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ImportView: View {
     
+    @EnvironmentObject private var state: ImportedTextFileStateController
     @Environment (\.dismiss) var dismiss
     
     var body: some View {
