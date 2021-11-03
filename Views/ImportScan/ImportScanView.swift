@@ -10,8 +10,9 @@ import SwiftUI
 struct ImportScanView: View {
     
     @State private var showScanner = false
-
     @State private var isShowingAlert = false
+    @State var isShowingScanningErrorAlert = false
+    
     @EnvironmentObject var state: ImportedTextFileStateController
     
     var body: some View {
@@ -39,6 +40,16 @@ struct ImportScanView: View {
                         .font(.subheadline)
                         .foregroundColor(.gray)
                 }
+                
+            }
+            .alert(isPresented: $isShowingScanningErrorAlert) {
+                Alert(
+                    title: Text("Error!"),
+                    message: Text("The camera could not find any text, please try again."),
+                    dismissButton: .default(Text("OK"), action: {
+                        self.showScanner = false
+                    })
+                )
             }
             .navigationTitle("Scan Documents")
             .navigationBarItems(trailing: Button(action: {
@@ -50,6 +61,7 @@ struct ImportScanView: View {
             .sheet(isPresented: $showScanner, content: {
                 createScanningView()
             }))
+            
     }
     
     // This function takes the scanned output from each line of text and appends them to the property texts in class ImportedText
@@ -57,8 +69,14 @@ struct ImportScanView: View {
         ScanningView(completion: {
             textPerPage in
             if let outputText = textPerPage?.joined(separator: "\n").trimmingCharacters(in: .whitespacesAndNewlines) {
-                let newScanData = ImportedText(texts: outputText, textName: "Some Text", dateCreated: Date())
-                self.state.addNewText(newText: newScanData, appendToPosition: 0)
+                if outputText.count == 0 {
+                    print("true")
+                    self.presentViewController(alert, animated: true, completion:nil)
+                }
+                else {
+                    let newScanData = ImportedText(texts: outputText, textName: "Some Text", dateCreated: Date())
+                    self.state.addNewText(newText: newScanData, appendToPosition: 0)
+                }
             }
             self.showScanner = false
         })

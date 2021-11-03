@@ -13,39 +13,41 @@ struct ImportTextView: View {
     @EnvironmentObject private var state: ImportedTextFileStateController
     
     var body: some View {
-        VStack {
-            if state.texts[1].count > 0 {
-                List{
-                    ForEach(state.texts[1]) { text in
-                        NavigationLink(
-                            destination: ScrollView{Text(text.texts)},
-                            label: {
-                                Text(text.textName)
-                            }
-                        )
+        ZStack(alignment: .top) {
+            VStack {
+                if state.texts[1].count > 0 {
+                    List{
+                        ForEach(state.texts[1]) { text in
+                            NavigationLink(
+                                destination: ScrollView{Text(text.texts)},
+                                label: {
+                                    Text(text.textName)
+                                }
+                            )
+                        }
+                        .onDelete(perform: deleteText)
                     }
-                    .onDelete(perform: deleteText)
+                    .onAppear(perform: { state.saveToFile()})
                 }
-                .onAppear(perform: { state.saveToFile()})
+                else {
+                    Text("No imported texts...")
+                    Text("\n")
+                    Text("You can paste your own text by tapping the top right button!")
+                        .font(.subheadline)
+                        .foregroundColor(.gray)
+                }
             }
-            else {
-                Text("No imported texts...")
-                Text("\n")
-                Text("You can paste your own text by tapping the top right button!")
-                    .font(.subheadline)
-                    .foregroundColor(.gray)
-            }
+            .navigationTitle("Import Text")
+            .navigationBarItems(trailing: Button(action: {
+               self.showPasteTextView = true
+            }, label: {
+                Image(systemName: "doc.text")
+                    .font(.title2)
+            })
+            .sheet(isPresented: $showPasteTextView, content: {
+                createPasteView()
+            }))
         }
-        .navigationTitle("Import Text")
-        .navigationBarItems(trailing: Button(action: {
-           self.showPasteTextView = true
-        }, label: {
-            Image(systemName: "doc.text")
-                .font(.title2)
-        })
-        .sheet(isPresented: $showPasteTextView, content: {
-            createPasteView()
-        }))
     }
     
     func createPasteView() -> PasteTextView {
