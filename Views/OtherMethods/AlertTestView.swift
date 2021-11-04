@@ -10,10 +10,21 @@ import SwiftUI
 struct AlertTestView: View {
     
     @State var scanName: String = ""
+    @State var isShowingEmptyTextFieldErrorAlert = true
+    
     
     var body: some View {
-        Text(displayDocumentAlert())
+        Text("")
+            .alert(isPresented: $isShowingEmptyTextFieldErrorAlert) {
+                Alert(
+                    title: Text("Error!"),
+                    message: Text("The text you have entered is not valid, please try again."),
+                    dismissButton: .default(Text("OK"), action: {
+                    })
+                )
+            }
     }
+        
     
     func displayDocumentAlert() -> String {
         

@@ -70,8 +70,7 @@ struct ImportScanView: View {
             textPerPage in
             if let outputText = textPerPage?.joined(separator: "\n").trimmingCharacters(in: .whitespacesAndNewlines) {
                 if outputText.count == 0 {
-                    print("true")
-                    self.presentViewController(alert, animated: true, completion:nil)
+                    self.isShowingScanningErrorAlert = true
                 }
                 else {
                     let newScanData = ImportedText(texts: outputText, textName: "Some Text", dateCreated: Date())

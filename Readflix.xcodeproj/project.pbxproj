@@ -36,6 +36,8 @@
 		66C9B4F22708F3E3006E70FB /* ImportUrlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C9B4F12708F3E3006E70FB /* ImportUrlView.swift */; };
 		66C9B4F42708F41F006E70FB /* ImportNewsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C9B4F32708F41F006E70FB /* ImportNewsView.swift */; };
 		66C9B4F62708F42C006E70FB /* ImportBooksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C9B4F52708F42C006E70FB /* ImportBooksView.swift */; };
+		66FC69EC273446C300671A2E /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B390E527059E8B00FF7E66 /* FileManager.swift */; };
+		66FC69EE27344CBE00671A2E /* FileManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66FC69ED27344CBE00671A2E /* FileManagerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +90,7 @@
 		66C9B4F12708F3E3006E70FB /* ImportUrlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportUrlView.swift; sourceTree = "<group>"; };
 		66C9B4F32708F41F006E70FB /* ImportNewsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportNewsView.swift; sourceTree = "<group>"; };
 		66C9B4F52708F42C006E70FB /* ImportBooksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportBooksView.swift; sourceTree = "<group>"; };
+		66FC69ED27344CBE00671A2E /* FileManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				667042BD27039D49000F5E95 /* ReadflixTests.swift */,
+				66FC69ED27344CBE00671A2E /* FileManagerTests.swift */,
 			);
 			path = ReadflixTests;
 			sourceTree = "<group>";
@@ -443,6 +447,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				667042BE27039D49000F5E95 /* ReadflixTests.swift in Sources */,
+				66FC69EC273446C300671A2E /* FileManager.swift in Sources */,
+				66FC69EE27344CBE00671A2E /* FileManagerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -658,7 +664,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2Y7Y72NLLY;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -683,7 +689,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2Y7Y72NLLY;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

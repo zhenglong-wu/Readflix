@@ -9,11 +9,6 @@ import SwiftUI
 import VisionKit
 
 struct ScanningView: UIViewControllerRepresentable {
-    
-    var alert = UIAlertController(title: "Error!",
-            message: "Could not find any text, please try again.",
-            preferredStyle: .alert)
-        
         
     func makeCoordinator() -> CameraCoordinator {
         return CameraCoordinator(completion: completionHandler)
