@@ -24,6 +24,7 @@ class FileManagerTests: XCTestCase {
         
         let result = fileManager.encodeToJson(object: testData)
         
+        
         XCTAssertEqual(result, expected)
         
     }

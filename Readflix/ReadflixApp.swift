@@ -12,8 +12,9 @@ struct ReadflixApp: App {
     
     var body: some Scene {
         WindowGroup {
-            RootTabView()
-                .environmentObject(ImportedTextFileStateController())
+//            RootTabView()
+//                .environmentObject(ImportedTextFileStateController())
+            PasteUrlView()
         }
     }
 }

@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		660CDE502708E6B600643B54 /* ImportTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660CDE4F2708E6B600643B54 /* ImportTextView.swift */; };
 		663C1EA2270E1DF90039A8A0 /* AlertTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 663C1EA1270E1DF90039A8A0 /* AlertTestView.swift */; };
+		664DA73027348C4D00FF9A1E /* WebScraper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664DA72F27348C4D00FF9A1E /* WebScraper.swift */; };
+		664DA736273496C100FF9A1E /* PasteUrlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664DA735273496C100FF9A1E /* PasteUrlView.swift */; };
 		6658A604270B09B7006F85DB /* ImportedText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6658A603270B09B7006F85DB /* ImportedText.swift */; };
 		667042A827039D47000F5E95 /* ReadflixApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667042A727039D47000F5E95 /* ReadflixApp.swift */; };
 		667042AA27039D47000F5E95 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667042A927039D47000F5E95 /* ContentView.swift */; };
@@ -32,12 +34,18 @@
 		6678D27B27078BD400D712EE /* ImportButtonItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6678D27A27078BD400D712EE /* ImportButtonItemView.swift */; };
 		66B390E627059E8B00FF7E66 /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B390E527059E8B00FF7E66 /* FileManager.swift */; };
 		66B390E827059FF100FF7E66 /* ImportedTextFileStateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B390E727059FF100FF7E66 /* ImportedTextFileStateController.swift */; };
+		66C56C3527358A3B00A02355 /* Test.html in Resources */ = {isa = PBXBuildFile; fileRef = 66C56C3427358A3B00A02355 /* Test.html */; };
+		66C56C3627358A3B00A02355 /* Test.html in Resources */ = {isa = PBXBuildFile; fileRef = 66C56C3427358A3B00A02355 /* Test.html */; };
+		66C56C382735915400A02355 /* WebScraperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C56C372735915400A02355 /* WebScraperTests.swift */; };
 		66C9B4F02708F3BF006E70FB /* ImportDocsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C9B4EF2708F3BF006E70FB /* ImportDocsView.swift */; };
 		66C9B4F22708F3E3006E70FB /* ImportUrlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C9B4F12708F3E3006E70FB /* ImportUrlView.swift */; };
 		66C9B4F42708F41F006E70FB /* ImportNewsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C9B4F32708F41F006E70FB /* ImportNewsView.swift */; };
 		66C9B4F62708F42C006E70FB /* ImportBooksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C9B4F52708F42C006E70FB /* ImportBooksView.swift */; };
 		66FC69EC273446C300671A2E /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B390E527059E8B00FF7E66 /* FileManager.swift */; };
 		66FC69EE27344CBE00671A2E /* FileManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66FC69ED27344CBE00671A2E /* FileManagerTests.swift */; };
+		75C06EF21C5C04EC1AE6BF75 /* Pods_ReadflixTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 908C7DB386BCFDE0393F0E39 /* Pods_ReadflixTests.framework */; };
+		7D23FE2EFE2746C6B033B792 /* Pods_Readflix_ReadflixUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 768DB555A2AA2334E4D35A09 /* Pods_Readflix_ReadflixUITests.framework */; };
+		8040ECC222E545B3F5B6D265 /* Pods_Readflix.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58CFCC021537A37A8573E45E /* Pods_Readflix.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,8 +66,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		042231B2062DC922AFCF7502 /* Pods-Readflix-ReadflixUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Readflix-ReadflixUITests.release.xcconfig"; path = "Target Support Files/Pods-Readflix-ReadflixUITests/Pods-Readflix-ReadflixUITests.release.xcconfig"; sourceTree = "<group>"; };
+		26F97DE8545DFC3E435ECC4E /* Pods-ReadflixTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReadflixTests.release.xcconfig"; path = "Target Support Files/Pods-ReadflixTests/Pods-ReadflixTests.release.xcconfig"; sourceTree = "<group>"; };
+		58CFCC021537A37A8573E45E /* Pods_Readflix.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Readflix.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		660CDE4F2708E6B600643B54 /* ImportTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportTextView.swift; sourceTree = "<group>"; };
 		663C1EA1270E1DF90039A8A0 /* AlertTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertTestView.swift; sourceTree = "<group>"; };
+		664DA72F27348C4D00FF9A1E /* WebScraper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebScraper.swift; sourceTree = "<group>"; };
+		664DA735273496C100FF9A1E /* PasteUrlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasteUrlView.swift; sourceTree = "<group>"; };
 		6658A603270B09B7006F85DB /* ImportedText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportedText.swift; sourceTree = "<group>"; };
 		667042A427039D47000F5E95 /* Readflix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Readflix.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		667042A727039D47000F5E95 /* ReadflixApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadflixApp.swift; sourceTree = "<group>"; };
@@ -86,11 +99,19 @@
 		6678D27A27078BD400D712EE /* ImportButtonItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportButtonItemView.swift; sourceTree = "<group>"; };
 		66B390E527059E8B00FF7E66 /* FileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManager.swift; sourceTree = "<group>"; };
 		66B390E727059FF100FF7E66 /* ImportedTextFileStateController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportedTextFileStateController.swift; sourceTree = "<group>"; };
+		66C56C3427358A3B00A02355 /* Test.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Test.html; sourceTree = "<group>"; };
+		66C56C372735915400A02355 /* WebScraperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebScraperTests.swift; sourceTree = "<group>"; };
 		66C9B4EF2708F3BF006E70FB /* ImportDocsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportDocsView.swift; sourceTree = "<group>"; };
 		66C9B4F12708F3E3006E70FB /* ImportUrlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportUrlView.swift; sourceTree = "<group>"; };
 		66C9B4F32708F41F006E70FB /* ImportNewsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportNewsView.swift; sourceTree = "<group>"; };
 		66C9B4F52708F42C006E70FB /* ImportBooksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportBooksView.swift; sourceTree = "<group>"; };
 		66FC69ED27344CBE00671A2E /* FileManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerTests.swift; sourceTree = "<group>"; };
+		768DB555A2AA2334E4D35A09 /* Pods_Readflix_ReadflixUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Readflix_ReadflixUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		908C7DB386BCFDE0393F0E39 /* Pods_ReadflixTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReadflixTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		98ADED8302A53FBA3A764C9C /* Pods-Readflix.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Readflix.release.xcconfig"; path = "Target Support Files/Pods-Readflix/Pods-Readflix.release.xcconfig"; sourceTree = "<group>"; };
+		C9C7557FC772D14A36873C35 /* Pods-Readflix-ReadflixUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Readflix-ReadflixUITests.debug.xcconfig"; path = "Target Support Files/Pods-Readflix-ReadflixUITests/Pods-Readflix-ReadflixUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		F76E5671708F1303944DC0ED /* Pods-ReadflixTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReadflixTests.debug.xcconfig"; path = "Target Support Files/Pods-ReadflixTests/Pods-ReadflixTests.debug.xcconfig"; sourceTree = "<group>"; };
+		F7B9168043D8618C7EFA5066 /* Pods-Readflix.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Readflix.debug.xcconfig"; path = "Target Support Files/Pods-Readflix/Pods-Readflix.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +119,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8040ECC222E545B3F5B6D265 /* Pods_Readflix.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -105,6 +127,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75C06EF21C5C04EC1AE6BF75 /* Pods_ReadflixTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,12 +135,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D23FE2EFE2746C6B033B792 /* Pods_Readflix_ReadflixUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0B536A2D21BF0670F1370008 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				58CFCC021537A37A8573E45E /* Pods_Readflix.framework */,
+				768DB555A2AA2334E4D35A09 /* Pods_Readflix_ReadflixUITests.framework */,
+				908C7DB386BCFDE0393F0E39 /* Pods_ReadflixTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		6670429B27039D47000F5E95 = {
 			isa = PBXGroup;
 			children = (
@@ -126,8 +160,11 @@
 				667042D627039DB1000F5E95 /* Views */,
 				667042E727039FA4000F5E95 /* Models */,
 				667042EA27039FC8000F5E95 /* Controllers */,
+				667042BC27039D49000F5E95 /* ReadflixTests */,
 				667042C627039D49000F5E95 /* ReadflixUITests */,
 				667042A527039D47000F5E95 /* Products */,
+				84F6A28F16D1868B8E7DBD8F /* Pods */,
+				0B536A2D21BF0670F1370008 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -148,6 +185,7 @@
 				667042AB27039D49000F5E95 /* Assets.xcassets */,
 				667042B227039D49000F5E95 /* Readflix.xcdatamodeld */,
 				667042AD27039D49000F5E95 /* Preview Content */,
+				66C56C33273589C700A02355 /* Assets */,
 			);
 			path = Readflix;
 			sourceTree = "<group>";
@@ -165,6 +203,7 @@
 			children = (
 				667042BD27039D49000F5E95 /* ReadflixTests.swift */,
 				66FC69ED27344CBE00671A2E /* FileManagerTests.swift */,
+				66C56C372735915400A02355 /* WebScraperTests.swift */,
 			);
 			path = ReadflixTests;
 			sourceTree = "<group>";
@@ -198,6 +237,7 @@
 				667042B027039D49000F5E95 /* Persistence.swift */,
 				6658A603270B09B7006F85DB /* ImportedText.swift */,
 				667042EB27039FDF000F5E95 /* TextRecogniser.swift */,
+				664DA72F27348C4D00FF9A1E /* WebScraper.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -206,7 +246,6 @@
 			isa = PBXGroup;
 			children = (
 				66B390E727059FF100FF7E66 /* ImportedTextFileStateController.swift */,
-				667042BC27039D49000F5E95 /* ReadflixTests */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -243,6 +282,7 @@
 			isa = PBXGroup;
 			children = (
 				66C9B4F12708F3E3006E70FB /* ImportUrlView.swift */,
+				664DA735273496C100FF9A1E /* PasteUrlView.swift */,
 			);
 			path = ImportUrl;
 			sourceTree = "<group>";
@@ -285,6 +325,27 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		66C56C33273589C700A02355 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				66C56C3427358A3B00A02355 /* Test.html */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		84F6A28F16D1868B8E7DBD8F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F7B9168043D8618C7EFA5066 /* Pods-Readflix.debug.xcconfig */,
+				98ADED8302A53FBA3A764C9C /* Pods-Readflix.release.xcconfig */,
+				C9C7557FC772D14A36873C35 /* Pods-Readflix-ReadflixUITests.debug.xcconfig */,
+				042231B2062DC922AFCF7502 /* Pods-Readflix-ReadflixUITests.release.xcconfig */,
+				F76E5671708F1303944DC0ED /* Pods-ReadflixTests.debug.xcconfig */,
+				26F97DE8545DFC3E435ECC4E /* Pods-ReadflixTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -292,9 +353,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 667042CD27039D49000F5E95 /* Build configuration list for PBXNativeTarget "Readflix" */;
 			buildPhases = (
+				A9F60290C56B75A81F9A0A95 /* [CP] Check Pods Manifest.lock */,
 				667042A027039D47000F5E95 /* Sources */,
 				667042A127039D47000F5E95 /* Frameworks */,
 				667042A227039D47000F5E95 /* Resources */,
+				46680A0206A74E298AE5F0D4 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -309,6 +372,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 667042D027039D49000F5E95 /* Build configuration list for PBXNativeTarget "ReadflixTests" */;
 			buildPhases = (
+				F664D63DCF05C512E7114082 /* [CP] Check Pods Manifest.lock */,
 				667042B527039D49000F5E95 /* Sources */,
 				667042B627039D49000F5E95 /* Frameworks */,
 				667042B727039D49000F5E95 /* Resources */,
@@ -327,9 +391,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 667042D327039D49000F5E95 /* Build configuration list for PBXNativeTarget "ReadflixUITests" */;
 			buildPhases = (
+				AA45429DB93C557AEBCB1D6B /* [CP] Check Pods Manifest.lock */,
 				667042BF27039D49000F5E95 /* Sources */,
 				667042C027039D49000F5E95 /* Frameworks */,
 				667042C127039D49000F5E95 /* Resources */,
+				B6517AFF1BA8365F0631A8AD /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -389,6 +455,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				66C56C3527358A3B00A02355 /* Test.html in Resources */,
 				667042AF27039D49000F5E95 /* Preview Assets.xcassets in Resources */,
 				667042AC27039D49000F5E95 /* Assets.xcassets in Resources */,
 			);
@@ -398,6 +465,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				66C56C3627358A3B00A02355 /* Test.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -409,6 +477,109 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		46680A0206A74E298AE5F0D4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Readflix/Pods-Readflix-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Readflix/Pods-Readflix-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Readflix/Pods-Readflix-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A9F60290C56B75A81F9A0A95 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Readflix-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AA45429DB93C557AEBCB1D6B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Readflix-ReadflixUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B6517AFF1BA8365F0631A8AD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Readflix-ReadflixUITests/Pods-Readflix-ReadflixUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Readflix-ReadflixUITests/Pods-Readflix-ReadflixUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Readflix-ReadflixUITests/Pods-Readflix-ReadflixUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F664D63DCF05C512E7114082 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ReadflixTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		667042A027039D47000F5E95 /* Sources */ = {
@@ -426,6 +597,7 @@
 				667042E627039F85000F5E95 /* ProfileView.swift in Sources */,
 				663C1EA2270E1DF90039A8A0 /* AlertTestView.swift in Sources */,
 				667042E027039EC6000F5E95 /* RootTabView.swift in Sources */,
+				664DA73027348C4D00FF9A1E /* WebScraper.swift in Sources */,
 				6670B09D27108A6300CFEEA2 /* PasteTextView.swift in Sources */,
 				667042EC27039FDF000F5E95 /* TextRecogniser.swift in Sources */,
 				66B390E827059FF100FF7E66 /* ImportedTextFileStateController.swift in Sources */,
@@ -438,6 +610,7 @@
 				6678D27B27078BD400D712EE /* ImportButtonItemView.swift in Sources */,
 				66C9B4F42708F41F006E70FB /* ImportNewsView.swift in Sources */,
 				667042DE27039EB1000F5E95 /* BookshelfView.swift in Sources */,
+				664DA736273496C100FF9A1E /* PasteUrlView.swift in Sources */,
 				667042A827039D47000F5E95 /* ReadflixApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -447,6 +620,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				667042BE27039D49000F5E95 /* ReadflixTests.swift in Sources */,
+				66C56C382735915400A02355 /* WebScraperTests.swift in Sources */,
 				66FC69EC273446C300671A2E /* FileManager.swift in Sources */,
 				66FC69EE27344CBE00671A2E /* FileManagerTests.swift in Sources */,
 			);
@@ -595,6 +769,7 @@
 		};
 		667042CE27039D49000F5E95 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F7B9168043D8618C7EFA5066 /* Pods-Readflix.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -626,6 +801,7 @@
 		};
 		667042CF27039D49000F5E95 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 98ADED8302A53FBA3A764C9C /* Pods-Readflix.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -657,6 +833,7 @@
 		};
 		667042D127039D49000F5E95 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F76E5671708F1303944DC0ED /* Pods-ReadflixTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -682,6 +859,7 @@
 		};
 		667042D227039D49000F5E95 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 26F97DE8545DFC3E435ECC4E /* Pods-ReadflixTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -707,6 +885,7 @@
 		};
 		667042D427039D49000F5E95 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C9C7557FC772D14A36873C35 /* Pods-Readflix-ReadflixUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -730,6 +909,7 @@
 		};
 		667042D527039D49000F5E95 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 042231B2062DC922AFCF7502 /* Pods-Readflix-ReadflixUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
