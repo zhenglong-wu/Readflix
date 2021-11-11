@@ -9,8 +9,8 @@ import Foundation
 
 class ImportedTextFileStateController: ObservableObject {
     
-    @Published var texts: [[ImportedText]] = [[], []]
-    // Index 0 - Imported Scans | Index 1 - Imported Texts | 
+    @Published var texts: [[ImportedText]] = [[], [], [], []]
+    // Index 0 - Imported Scans | Index 1 - Imported Texts | Index 2 - Imported Webscraped Texts | Index 3 - Imported PDF Texts
     
     init(){
         loadFromFile()

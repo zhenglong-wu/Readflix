@@ -44,7 +44,7 @@ struct PasteTextView: View {
                 })
                 ToolbarItemGroup(placement: ToolbarItemPlacement.navigationBarTrailing, content: {
                     Button {
-                        if self.textFieldText == "" {
+                        if self.textFieldText == "" || self.textName ==  "" {
                             isShowingEmptyTextFieldErrorAlert = true
                         }
                         else {
@@ -57,7 +57,7 @@ struct PasteTextView: View {
                     .alert(isPresented: $isShowingEmptyTextFieldErrorAlert) {
                         Alert(
                             title: Text("Continue?"),
-                            message: Text("The textfield is empty, would you like to continue?"),
+                            message: Text("The textfield and/or the text name is empty, would you like to continue?"),
                             primaryButton: .cancel(Text("Cancel"), action: {
                                 
                             }),

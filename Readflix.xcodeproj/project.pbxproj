@@ -12,6 +12,7 @@
 		664DA73027348C4D00FF9A1E /* WebScraper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664DA72F27348C4D00FF9A1E /* WebScraper.swift */; };
 		664DA736273496C100FF9A1E /* PasteUrlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664DA735273496C100FF9A1E /* PasteUrlView.swift */; };
 		6658A604270B09B7006F85DB /* ImportedText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6658A603270B09B7006F85DB /* ImportedText.swift */; };
+		665F4CE3273826E700A14039 /* PdfScraper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665F4CE2273826E700A14039 /* PdfScraper.swift */; };
 		667042A827039D47000F5E95 /* ReadflixApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667042A727039D47000F5E95 /* ReadflixApp.swift */; };
 		667042AA27039D47000F5E95 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667042A927039D47000F5E95 /* ContentView.swift */; };
 		667042AC27039D49000F5E95 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 667042AB27039D49000F5E95 /* Assets.xcassets */; };
@@ -31,6 +32,7 @@
 		667042E627039F85000F5E95 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667042E527039F85000F5E95 /* ProfileView.swift */; };
 		667042EC27039FDF000F5E95 /* TextRecogniser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667042EB27039FDF000F5E95 /* TextRecogniser.swift */; };
 		6670B09D27108A6300CFEEA2 /* PasteTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6670B09C27108A6300CFEEA2 /* PasteTextView.swift */; };
+		6676A502273D189B00A324F2 /* PasteDocsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6676A501273D189B00A324F2 /* PasteDocsView.swift */; };
 		6678D27B27078BD400D712EE /* ImportButtonItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6678D27A27078BD400D712EE /* ImportButtonItemView.swift */; };
 		66B390E627059E8B00FF7E66 /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B390E527059E8B00FF7E66 /* FileManager.swift */; };
 		66B390E827059FF100FF7E66 /* ImportedTextFileStateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B390E727059FF100FF7E66 /* ImportedTextFileStateController.swift */; };
@@ -41,6 +43,7 @@
 		66C9B4F22708F3E3006E70FB /* ImportUrlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C9B4F12708F3E3006E70FB /* ImportUrlView.swift */; };
 		66C9B4F42708F41F006E70FB /* ImportNewsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C9B4F32708F41F006E70FB /* ImportNewsView.swift */; };
 		66C9B4F62708F42C006E70FB /* ImportBooksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C9B4F52708F42C006E70FB /* ImportBooksView.swift */; };
+		66D73028273B2E5E009960BE /* InputPdf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D73027273B2E5E009960BE /* InputPdf.swift */; };
 		66FC69EC273446C300671A2E /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B390E527059E8B00FF7E66 /* FileManager.swift */; };
 		66FC69EE27344CBE00671A2E /* FileManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66FC69ED27344CBE00671A2E /* FileManagerTests.swift */; };
 		75C06EF21C5C04EC1AE6BF75 /* Pods_ReadflixTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 908C7DB386BCFDE0393F0E39 /* Pods_ReadflixTests.framework */; };
@@ -74,6 +77,7 @@
 		664DA72F27348C4D00FF9A1E /* WebScraper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebScraper.swift; sourceTree = "<group>"; };
 		664DA735273496C100FF9A1E /* PasteUrlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasteUrlView.swift; sourceTree = "<group>"; };
 		6658A603270B09B7006F85DB /* ImportedText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportedText.swift; sourceTree = "<group>"; };
+		665F4CE2273826E700A14039 /* PdfScraper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PdfScraper.swift; sourceTree = "<group>"; };
 		667042A427039D47000F5E95 /* Readflix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Readflix.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		667042A727039D47000F5E95 /* ReadflixApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadflixApp.swift; sourceTree = "<group>"; };
 		667042A927039D47000F5E95 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -96,6 +100,7 @@
 		667042E527039F85000F5E95 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		667042EB27039FDF000F5E95 /* TextRecogniser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextRecogniser.swift; sourceTree = "<group>"; };
 		6670B09C27108A6300CFEEA2 /* PasteTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasteTextView.swift; sourceTree = "<group>"; };
+		6676A501273D189B00A324F2 /* PasteDocsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasteDocsView.swift; sourceTree = "<group>"; };
 		6678D27A27078BD400D712EE /* ImportButtonItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportButtonItemView.swift; sourceTree = "<group>"; };
 		66B390E527059E8B00FF7E66 /* FileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManager.swift; sourceTree = "<group>"; };
 		66B390E727059FF100FF7E66 /* ImportedTextFileStateController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportedTextFileStateController.swift; sourceTree = "<group>"; };
@@ -105,6 +110,7 @@
 		66C9B4F12708F3E3006E70FB /* ImportUrlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportUrlView.swift; sourceTree = "<group>"; };
 		66C9B4F32708F41F006E70FB /* ImportNewsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportNewsView.swift; sourceTree = "<group>"; };
 		66C9B4F52708F42C006E70FB /* ImportBooksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportBooksView.swift; sourceTree = "<group>"; };
+		66D73027273B2E5E009960BE /* InputPdf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputPdf.swift; sourceTree = "<group>"; };
 		66FC69ED27344CBE00671A2E /* FileManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerTests.swift; sourceTree = "<group>"; };
 		768DB555A2AA2334E4D35A09 /* Pods_Readflix_ReadflixUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Readflix_ReadflixUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		908C7DB386BCFDE0393F0E39 /* Pods_ReadflixTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReadflixTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -225,6 +231,7 @@
 				6694332A272817A00060EF48 /* ImportNews */,
 				66943329272817860060EF48 /* ImportUrl */,
 				66943328272817680060EF48 /* ImportText */,
+				66B640D32739385A00A93AF1 /* ImportDocs */,
 				669433262728171F0060EF48 /* ImportScan */,
 				66943327272817290060EF48 /* OtherMethods */,
 			);
@@ -234,10 +241,12 @@
 		667042E727039FA4000F5E95 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				66D73027273B2E5E009960BE /* InputPdf.swift */,
 				667042B027039D49000F5E95 /* Persistence.swift */,
 				6658A603270B09B7006F85DB /* ImportedText.swift */,
 				667042EB27039FDF000F5E95 /* TextRecogniser.swift */,
 				664DA72F27348C4D00FF9A1E /* WebScraper.swift */,
+				665F4CE2273826E700A14039 /* PdfScraper.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -262,7 +271,6 @@
 		66943327272817290060EF48 /* OtherMethods */ = {
 			isa = PBXGroup;
 			children = (
-				66C9B4EF2708F3BF006E70FB /* ImportDocsView.swift */,
 				66C9B4F52708F42C006E70FB /* ImportBooksView.swift */,
 				663C1EA1270E1DF90039A8A0 /* AlertTestView.swift */,
 			);
@@ -323,6 +331,15 @@
 				66B390E527059E8B00FF7E66 /* FileManager.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		66B640D32739385A00A93AF1 /* ImportDocs */ = {
+			isa = PBXGroup;
+			children = (
+				66C9B4EF2708F3BF006E70FB /* ImportDocsView.swift */,
+				6676A501273D189B00A324F2 /* PasteDocsView.swift */,
+			);
+			path = ImportDocs;
 			sourceTree = "<group>";
 		};
 		66C56C33273589C700A02355 /* Assets */ = {
@@ -593,6 +610,7 @@
 				667042DC27039E4E000F5E95 /* ScanningView.swift in Sources */,
 				667042B127039D49000F5E95 /* Persistence.swift in Sources */,
 				660CDE502708E6B600643B54 /* ImportTextView.swift in Sources */,
+				66D73028273B2E5E009960BE /* InputPdf.swift in Sources */,
 				66C9B4F22708F3E3006E70FB /* ImportUrlView.swift in Sources */,
 				667042E627039F85000F5E95 /* ProfileView.swift in Sources */,
 				663C1EA2270E1DF90039A8A0 /* AlertTestView.swift in Sources */,
@@ -605,6 +623,7 @@
 				66C9B4F62708F42C006E70FB /* ImportBooksView.swift in Sources */,
 				6658A604270B09B7006F85DB /* ImportedText.swift in Sources */,
 				667042AA27039D47000F5E95 /* ContentView.swift in Sources */,
+				665F4CE3273826E700A14039 /* PdfScraper.swift in Sources */,
 				667042E227039EE3000F5E95 /* DiscoverView.swift in Sources */,
 				667042E427039F6A000F5E95 /* StatisticsView.swift in Sources */,
 				6678D27B27078BD400D712EE /* ImportButtonItemView.swift in Sources */,
@@ -612,6 +631,7 @@
 				667042DE27039EB1000F5E95 /* BookshelfView.swift in Sources */,
 				664DA736273496C100FF9A1E /* PasteUrlView.swift in Sources */,
 				667042A827039D47000F5E95 /* ReadflixApp.swift in Sources */,
+				6676A502273D189B00A324F2 /* PasteDocsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -795,7 +815,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -827,7 +847,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

@@ -22,7 +22,7 @@ struct ImportTextView: View {
                                 destination: ScrollView{Text(text.texts)},
                                 label: {
                                     Text(text.textName)
-                                }
+                                }   
                             )
                         }
                         .onDelete(perform: deleteText)
@@ -41,23 +41,23 @@ struct ImportTextView: View {
             .navigationBarItems(trailing: Button(action: {
                self.showPasteTextView = true
             }, label: {
-                Image(systemName: "doc.text")
+                Image(systemName: "abc")
                     .font(.title2)
             })
             .sheet(isPresented: $showPasteTextView, content: {
-                createPasteView()
+                createPasteTextView()
             }))
         }
     }
     
-    func createPasteView() -> PasteTextView {
+    func createPasteTextView() -> PasteTextView {
         var newText: (String, String) = ("", "")
-        let newPasteView = PasteTextView(save: { (pastedText: (String, String)) in
+        let newPasteTextView = PasteTextView(save: { (pastedText: (String, String)) in
             newText = pastedText
             createNewTextAndAppendToViewTextArray(textFromPastedView: newText)
         })
         self.showPasteTextView = false   
-        return newPasteView
+        return newPasteTextView
     }
     
     func createNewTextAndAppendToViewTextArray(textFromPastedView: (String, String)) {
