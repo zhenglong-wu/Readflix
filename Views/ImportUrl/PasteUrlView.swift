@@ -14,7 +14,9 @@ struct PasteUrlView: View {
     @State var textName: String = ""
     @State var output: (title: String, text: String) = ("", "")
     @State var isShowingEmptyUrlTextFieldErrorAlert = false
+    @State var isShowingInvalidUrlErrorAlert = false
     var save: ((String, String)) -> Void
+    let webParser: WebParser = WebParser()
     
     var body: some View {
         
@@ -38,6 +40,9 @@ struct PasteUrlView: View {
                         if self.textFieldText == "" || self.textName == "" {
                             isShowingEmptyUrlTextFieldErrorAlert = true
                         }
+                        else if webParser.verifyUrl(url: self.textFieldText) == false {
+                            isShowingInvalidUrlErrorAlert = true
+                        }
                         else {
                             saveText()
                         }
@@ -49,6 +54,15 @@ struct PasteUrlView: View {
                         Alert(
                             title: Text("Error!"),
                             message: Text("The textfield and/or the text name is empty, please enter values."),
+                            dismissButton: .default(Text("OK"), action: {
+
+                            })
+                        )
+                    }
+                    .alert(isPresented: $isShowingInvalidUrlErrorAlert) {
+                        Alert(
+                            title: Text("Error!"),
+                            message: Text("The URL you have entered is not valid, please try again."),
                             dismissButton: .default(Text("OK"), action: {
                                 
                             })

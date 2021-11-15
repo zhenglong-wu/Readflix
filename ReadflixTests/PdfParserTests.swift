@@ -1,14 +1,13 @@
 //
-//  ReadflixTests.swift
+//  PdfParserTests.swift
 //  ReadflixTests
 //
-//  Created by Zhenglong Wu on 28/09/2021.
+//  Created by Zhenglong Wu on 13/11/2021.
 //
 
 //import XCTest
-////@testable import Readflix
 //
-//class ReadflixTests: XCTestCase {
+//class PdfParserTests: XCTestCase {
 //
 //    override func setUpWithError() throws {
 //        // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -29,9 +28,5 @@
 //            // Put the code you want to measure the time of here.
 //        }
 //    }
-//    
-//   
-//    
+//
 //}
-
- 

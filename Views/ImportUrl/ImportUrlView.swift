@@ -13,7 +13,7 @@ struct ImportUrlView: View {
     @State private var showPasteUrlView = false
     @EnvironmentObject private var state: ImportedTextFileStateController
     
-    let webScraper = WebScraper()
+    let webScraper = WebParser()
     
     var body: some View {
         ZStack(alignment: .top) {
@@ -66,6 +66,7 @@ struct ImportUrlView: View {
         return newPasteUrlView
     }
     
+    // Creates new object of type ImportedText, and converts HTML from PasteUrlView to string values
     func createNewTextFromUrlAndAppendToViewTextArray(urlFromPasteView: (String, String)) {
         let textName: String
         if urlFromPasteView.0 == "" {
@@ -74,7 +75,7 @@ struct ImportUrlView: View {
         else {
             textName = urlFromPasteView.0
         }
-        let text = webScraper.getParsedText(inputUrl: urlFromPasteView.1)
+        let text = webScraper.getParsedTextFromUrl(inputUrl: urlFromPasteView.1)
         let newImportedText: ImportedText = ImportedText(texts: text, textName: textName, dateCreated: Date())
         self.state.addNewText(newText: newImportedText, appendToPosition: 2)
         

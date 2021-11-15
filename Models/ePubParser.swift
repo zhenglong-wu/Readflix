@@ -1,16 +1,44 @@
 //
-//  PdfScraper.swift
+//  ePubParser.swift
 //  Readflix
 //
-//  Created by Zhenglong Wu on 09/11/2021.
+//  Created by Zhenglong Wu on 12/11/2021.
 //
 
 import Foundation
 import SwiftUI
+import ZIPFoundation
+import Bookbinder
 import UniformTypeIdentifiers
 
-struct PdfScraper: FileDocument {
-    
+//struct ePubScraper: FileDocument {
+//
+//    static var readableContentTypes: [UTType] {
+//        [.epub]
+//    }
+//
+//    let bookBinder = Bookbinder()
+//
+//    var parsedText: String
+//
+//    init(parsedText: String) {
+//        self.parsedText = parsedText
+//    }
+//
+//    init(configuration: FileDocumentConfiguration) throws {
+//
+//        guard let data = configuration.file.regularFileContents,
+//                let eBook = bookBinder.bindBook(at: data)
+//        else {
+//            print("TODO")
+//        }
+//    }
+//
+//}
+
+
+struct PdfScraper1: FileDocument {
+
     static var readableContentTypes: [UTType] {
         [.pdf]
     }
@@ -35,5 +63,3 @@ struct PdfScraper: FileDocument {
     }
 
 }
-
-

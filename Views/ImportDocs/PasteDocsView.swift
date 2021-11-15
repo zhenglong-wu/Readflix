@@ -13,7 +13,7 @@ struct PasteDocsView: View {
     
     
     @Environment(\.presentationMode) var presentationMode
-    @State private var inputPdf: InputPdf = InputPdf(input: "")
+    @State private var pdfScraper: PdfScraper = PdfScraper(input: "")
     @State var titleTextFieldText: String = ""
     @State var showInputPdfView: Bool = true
     @State var isShowingEmptyPdfErrorAlert: Bool = false
@@ -24,7 +24,7 @@ struct PasteDocsView: View {
         NavigationView {
             VStack {
                 ScrollView {
-                    Text(inputPdf.input)
+                    Text(pdfScraper.input)
                         .padding()
                 }
             }
@@ -42,7 +42,7 @@ struct PasteDocsView: View {
                                 guard let pageContent = page.attributedString else { continue }
                                 content.append(pageContent)
                             }
-                            inputPdf.input = content.string
+                            pdfScraper.input = content.string
                         }
                     }
                     else {
@@ -68,7 +68,7 @@ struct PasteDocsView: View {
                 })
                 ToolbarItemGroup(placement: ToolbarItemPlacement.navigationBarTrailing, content: {
                     Button {
-                        if self.titleTextFieldText == "" || self.inputPdf.input == "" {
+                        if self.titleTextFieldText == "" || self.pdfScraper.input == "" {
                             isShowingEmptyPdfErrorAlert = true
                         }
                         else {
@@ -96,7 +96,7 @@ struct PasteDocsView: View {
     }
     
     func saveText() {
-        output = (titleTextFieldText, inputPdf.input)
+        output = (titleTextFieldText, pdfScraper.input)
         save(output)
         presentationMode.wrappedValue.dismiss()
     }
