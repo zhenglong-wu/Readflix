@@ -32,11 +32,11 @@ struct RootTabView: View {
                     Image(systemName: "person.crop.circle.fill")
                     Text("Profile")
                 }
-//            AlertTestView()
-//                .tabItem {
-//                    Image(systemName: "hammer.fill")
-//                    Text("Testing")
-//                }
+            FlashingReadView()
+                .tabItem {
+                    Image(systemName: "hammer.fill")
+                    Text("Read")
+                }
         }
     }
 }

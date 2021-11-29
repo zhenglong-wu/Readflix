@@ -7,54 +7,51 @@
 
 import Foundation
 
-class FlashingMethod {
+class FlashingMethod: ObservableObject {
     
-    var readingTextArray: [String] = []
-    
+    // ID to identify specific instance of class for actions such as list deletion
     var id = UUID()
-    var importedText: ImportedText {
-        didSet {
-            tokenisedTextArray = tokeniseTextByLength()
-        }
-    }
     
-    // How many words read per minute
-    var readingWordsPerMinute: Int = 200 {
-        didSet {
-            readingWordsPerSecond = Double(String(format: "%.2f", 1/(Double(readingWordsPerMinute)/Double(60))))!
-        }
-    }
-    // How many words read per second, used for timer
-    var readingWordsPerSecond: Double = 1/(Double(200)/Double(60)) {
-        didSet {
-            timer = Timer.publish(every: readingWordsPerSecond, on: .main, in: .common).autoconnect()
-        }
-    }
-    // How lengthy a displayed chunk of text is
-    var chunkLength: Int = 1
+    var importedText: ImportedText
     
-    var tokenisedTextArray: [String] = [String]()
-    
-    var currentText: String = ""
-        
     init(importedText: ImportedText) {
         self.importedText = importedText
     }
     
-    var timer = Timer.publish(every: 0.3, on: .main, in: .common).autoconnect()
+    var tokenisedTextArray: [String] = []
     
-    func stopTimer() {
-        self.timer.upstream.connect().cancel()
+    var readingSpeedPerMinute: Int = 200  {
+        didSet {
+            readingSpeedPerSecond = Double(String(format: "%.2f", 1/(Double(readingSpeedPerMinute)/Double(60))))!
+        }
     }
+    
+    var readingSpeedPerSecond: Double = 1/(Double(200 )/Double(60))
+    
+    var chunkLength: Int = 1
+    
+    var currentIndex: Int = 0
+    
+    var timer = Timer.publish(every: 0.3, on: .main, in: .common).connect()
     
     func startTimer() {
-        self.timer = Timer.publish(every: readingWordsPerSecond, on: .main, in: .common).autoconnect()
+        timer = Timer.publish(every: readingSpeedPerSecond, on: .main, in: .common).connect()
     }
     
-    // DEPRECATED FUNCTION!
-    // Takes in string and returns an array of indiviual words within the string separated by spaces
+    func stopTimer() {
+        timer.cancel()
+    }
+    
+    func incrementIndex() {
+        currentIndex += 1
+    }
+    
+    func updateTokenisedTextArray() {
+        tokenisedTextArray = tokeniseTextByLength(input: importedText.texts, chunkLength: self.chunkLength)
+    }
+    
     func tokeniseText() {
-        
+            
         var outputArray: [String] = []
         var tempArray: [String] = [String]()
         var tempString: String = ""
@@ -75,8 +72,9 @@ class FlashingMethod {
         }
     }
     
+    
     // Takes in string and returns an array of indiviual words within the string separated by spaces to desired length
-    func tokeniseTextByLength() -> [String] {
+    func tokeniseTextByLengthFunction() -> [String] {
         
         var tempArray: [String] = [String]()
         var outputArray: [String] = [String]()
@@ -119,7 +117,7 @@ class FlashingMethod {
     }
     
     // Takes in string and returns an array of indiviual words within the string separated by spaces to desired length
-    func tokeniseTextByLengthReturnsStringArray(input: String, chunkLength: Int) -> [String] {
+    func tokeniseTextByLength(input: String, chunkLength: Int) -> [String] {
         
         var tempArray: [String] = [String]()
         var outputArray: [String] = [String]()
