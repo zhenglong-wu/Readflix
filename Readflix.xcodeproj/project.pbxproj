@@ -37,6 +37,7 @@
 		6670B09D27108A6300CFEEA2 /* PasteTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6670B09C27108A6300CFEEA2 /* PasteTextView.swift */; };
 		6676A502273D189B00A324F2 /* PasteDocsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6676A501273D189B00A324F2 /* PasteDocsView.swift */; };
 		6678D27B27078BD400D712EE /* ImportButtonItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6678D27A27078BD400D712EE /* ImportButtonItemView.swift */; };
+		667C29CF27597F0500AFA031 /* FlashingSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667C29CE27597F0500AFA031 /* FlashingSettingsView.swift */; };
 		6695917927404189008B9947 /* PdfParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6695917827404189008B9947 /* PdfParserTests.swift */; };
 		66A43F60274279A2000F6C75 /* FlashingMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A43F5F274279A2000F6C75 /* FlashingMethod.swift */; };
 		66B390E627059E8B00FF7E66 /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B390E527059E8B00FF7E66 /* FileManager.swift */; };
@@ -110,6 +111,7 @@
 		6670B09C27108A6300CFEEA2 /* PasteTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasteTextView.swift; sourceTree = "<group>"; };
 		6676A501273D189B00A324F2 /* PasteDocsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasteDocsView.swift; sourceTree = "<group>"; };
 		6678D27A27078BD400D712EE /* ImportButtonItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportButtonItemView.swift; sourceTree = "<group>"; };
+		667C29CE27597F0500AFA031 /* FlashingSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashingSettingsView.swift; sourceTree = "<group>"; };
 		6695917827404189008B9947 /* PdfParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PdfParserTests.swift; sourceTree = "<group>"; };
 		66A43F5F274279A2000F6C75 /* FlashingMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashingMethod.swift; sourceTree = "<group>"; };
 		66B390E527059E8B00FF7E66 /* FileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManager.swift; sourceTree = "<group>"; };
@@ -289,6 +291,7 @@
 			isa = PBXGroup;
 			children = (
 				66C48ECC2754E6930029C8B3 /* FlashingReadView.swift */,
+				667C29CE27597F0500AFA031 /* FlashingSettingsView.swift */,
 			);
 			path = ReadingViews;
 			sourceTree = "<group>";
@@ -645,6 +648,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				66B390E627059E8B00FF7E66 /* FileManager.swift in Sources */,
+				667C29CF27597F0500AFA031 /* FlashingSettingsView.swift in Sources */,
 				66C9B4F02708F3BF006E70FB /* ImportDocsView.swift in Sources */,
 				667042B427039D49000F5E95 /* Readflix.xcdatamodeld in Sources */,
 				667042DA27039E3B000F5E95 /* ImportView.swift in Sources */,

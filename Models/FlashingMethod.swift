@@ -36,7 +36,7 @@ class FlashingMethod: ObservableObject {
         }
     }
     
-    var readingSpeedPerMinute: Int = 200  {
+    @Published var readingSpeedPerMinute: Double = 200  {
         didSet {
             readingSpeedPerSecond = Double(String(format: "%.2f", 1/(Double(readingSpeedPerMinute)/Double(60))))!
         }
@@ -45,6 +45,8 @@ class FlashingMethod: ObservableObject {
     var readingSpeedPerSecond: Double = 1/(Double(200)/Double(60))
     
     var chunkLength: Int = 1
+    
+    var isPausingAtPunctuation: Bool = true
     
     @Published var currentIndex: Int = 0 {
         didSet {
