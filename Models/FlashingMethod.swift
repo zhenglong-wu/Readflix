@@ -18,7 +18,23 @@ class FlashingMethod: ObservableObject {
         self.importedText = importedText
     }
     
-    var tokenisedTextArray: [String] = []
+    var tokenisedTextArrayCache: [String]?
+    
+    var tokenisedTextArray: [String] {
+        get {
+            return tokeniseTextByLength(input: importedText.texts, chunkLength: chunkLength)
+        }
+    }
+    
+    func getComputedTokenisedTextArray() -> [String] {
+        if let unwrappedTokenisedTextArray = tokenisedTextArrayCache {
+            return unwrappedTokenisedTextArray
+        }
+        else{
+            tokenisedTextArrayCache = tokeniseTextByLength(input: importedText.texts, chunkLength: chunkLength)
+            return tokenisedTextArrayCache!
+        }
+    }
     
     var readingSpeedPerMinute: Int = 200  {
         didSet {
@@ -26,28 +42,20 @@ class FlashingMethod: ObservableObject {
         }
     }
     
-    var readingSpeedPerSecond: Double = 1/(Double(200 )/Double(60))
+    var readingSpeedPerSecond: Double = 1/(Double(200)/Double(60))
     
     var chunkLength: Int = 1
     
-    var currentIndex: Int = 0
-    
-    var timer = Timer.publish(every: 0.3, on: .main, in: .common).connect()
-    
-    func startTimer() {
-        timer = Timer.publish(every: readingSpeedPerSecond, on: .main, in: .common).connect()
-    }
-    
-    func stopTimer() {
-        timer.cancel()
+    @Published var currentIndex: Int = 0 {
+        didSet {
+            if currentIndex > tokenisedTextArray.count {
+                currentIndex = tokenisedTextArray.count-1
+            }
+        }
     }
     
     func incrementIndex() {
-        currentIndex += 1
-    }
-    
-    func updateTokenisedTextArray() {
-        tokenisedTextArray = tokeniseTextByLength(input: importedText.texts, chunkLength: self.chunkLength)
+        self.currentIndex += 1
     }
     
     func tokeniseText() {

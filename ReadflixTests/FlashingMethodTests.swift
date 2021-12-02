@@ -19,7 +19,7 @@ class FlashingMethodTests: XCTestCase {
         let flashingMethod = FlashingMethod(importedText: importedText)
         
         let testData = [(data: importedText.texts, expected: ["Lorem ipsum", "dolor sit", "amet, consectetur", "adipiscing elit,", "sed do", "eiusmod tempor", "incididunt ut", "labore et", "dolore magna", "aliqua. Ut", "enim ad", "minim veniam,", "quis nostrud", "exercitation ullamco", "laboris nisi", "ut aliquip", "ex ea", "commodo consequat."], chunkLength: 2),
-                        (data: importedText.texts, expected: ["Lorem ipsum dolor sit amet,", "consectetur adipiscing elit, sed do", "eiusmod tempor incididunt ut labore", "et dolore magna aliqua. Ut", "enim ad minim veniam, quis", "nostrud exercitation ullamco laboris nisi", "ut aliquip ex ea commodo", "consequat."], chunkLength: 5),
+                        (data: importedText.texts, expected: ["Lorem ipsum dolor sit amet,", "consectetur adipiscing elit, sed do", "eiusmod tempor incididunt ut labore", "et dolore magna aliqua. Ut", "enim ad minim veniam, quis", "nostrud exercitation ullamco laboris nisi", "ut aliquip ex ea commodo", "consequat."], chunkLength: 5), 
                         (data: importedText.texts, expected: ["Lorem ipsum dolor sit amet, consectetur adipiscing elit,", "sed do eiusmod tempor incididunt ut labore et", "dolore magna aliqua. Ut enim ad minim veniam,", "quis nostrud exercitation ullamco laboris nisi ut aliquip", "ex ea commodo consequat."], chunkLength: 8)]
         
         for test in testData {
@@ -30,7 +30,6 @@ class FlashingMethodTests: XCTestCase {
     }
 
 }
-
 
 
 
