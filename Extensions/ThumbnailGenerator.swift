@@ -7,14 +7,11 @@
 
 import Foundation
 
-extension ThumbnailGenerator {
-    
-    func generateThumbnail(size: CGSize, scale: CGFloat, completion: @escaping (UIImage) -> Void) {
-        if let thumbnail = UIImage(systemName: "doc") {
-          completion(thumbnail)
-        }
-    }
-    
-    
-
-}
+//extension ThumbnailGenerator {
+//
+//    func generateThumbnail(size: CGSize, scale: CGFloat, completion: @escaping (UIImage) -> Void) {
+//        if let thumbnail = UIImage(systemName: "doc") {
+//          completion(thumbnail)
+//        }
+//    }
+//}

@@ -64,7 +64,6 @@ struct FlashingSettingsView: View {
             
             Button(action: {
                 self.settingsCompletion = true
-                print(settingsCompletion)
                 presentationMode.wrappedValue.dismiss()
             }, label: {
                 VStack {

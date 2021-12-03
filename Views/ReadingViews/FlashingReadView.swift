@@ -15,12 +15,7 @@ struct FlashingReadView: View {
     @State var hasReachedEnd = false
     @State var currentText: String = ""
     @State var isShowingSettingsSheet = false
-    @State var hasCompletedSettings: Bool = false {
-        didSet {
-            changeTimer()
-            self.hasCompletedSettings = false
-        }
-    }
+    @State var hasCompletedSettings: Bool = false
     
     @State var timer = Timer.publish(every: 1/(Double(200)/Double(60)), on: .main, in: .common).autoconnect()
     
@@ -38,10 +33,12 @@ struct FlashingReadView: View {
             
             Text(currentText)
                 .onReceive(self.timer, perform: { time in
+                    
                     if flashingMethod.currentIndex == flashingMethod.tokenisedTextArray.count-1 {
                         self.timerHasStarted = false
                         self.hasReachedEnd = true
                     }
+                    
                     else {
                         if self.timerHasStarted == true {
                             flashingMethod.incrementIndex()
@@ -95,6 +92,10 @@ struct FlashingReadView: View {
                     })
                     
                     Button(action: {
+                        if hasCompletedSettings == true {
+                            changeTimer()
+                            hasCompletedSettings = false
+                        }
                         self.timerHasStarted.toggle()
                     }, label: {
                         Image(systemName: self.timerHasStarted ? "pause.circle" : "play.circle")
@@ -132,8 +133,6 @@ struct FlashingReadView: View {
         .sheet(isPresented: $isShowingSettingsSheet, content: {
             FlashingSettingsView(settingsCompletion: $hasCompletedSettings)
         })
-        
-
     }
     
     func changeTimer() {
