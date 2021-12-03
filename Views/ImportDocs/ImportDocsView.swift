@@ -23,9 +23,13 @@ struct ImportDocsView: View {
                 List{
                     ForEach(state.texts[3]) { text in
                         NavigationLink(
-                            destination: ScrollView{Text(text.texts)},
+                            destination: ScrollView{
+                                Text(text.texts)
+                                    .padding()
+                            },
                             label: {
                                 Text(text.textName)
+                                    .padding()
                             }
                         )
                     }

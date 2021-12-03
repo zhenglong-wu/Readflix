@@ -11,16 +11,25 @@ struct FlashingReadView: View {
     
     @EnvironmentObject var flashingMethod: FlashingMethod
     
+    @State var timerHasStarted = false
+    @State var hasReachedEnd = false
+    @State var currentText: String = ""
+    @State var isShowingSettingsSheet = false
+    @State var hasCompletedSettings: Bool = false {
+        didSet {
+            changeTimer()
+            self.hasCompletedSettings = false
+        }
+    }
+    
     @State var timer = Timer.publish(every: 1/(Double(200)/Double(60)), on: .main, in: .common).autoconnect()
     
-    @State var timerHasStarted = false
+    var timerValue: Double {
+        get{
+            return flashingMethod.readingSpeedPerSecond
+        }
+    }
     
-    @State var hasReachedEnd = false
-
-    @State var currentText: String = ""
-    
-    @State var isShowingSettingsSheet = false
-    §
     var body: some View {
 
         VStack {
@@ -69,7 +78,7 @@ struct FlashingReadView: View {
                     
                     Button(action: {
                         self.timerHasStarted = false
-                        self.isShowingSettingsSheet = true
+                        self.isShowingSettingsSheet.toggle()
                     }, label: {
                         Image(systemName: "slider.horizontal.3")
                             .font(.largeTitle)
@@ -114,19 +123,29 @@ struct FlashingReadView: View {
                 
             }
             .padding()
+            
+//            FlashingSettingsView(showSheet: $isShowingSettingsSheet)
+//                .padding(.top, 300)
+//                .offset(y: isShowingSettingsSheet ? 0 : UIScreen.main.bounds.height)
+//                .animation(.spring())
         }
         .sheet(isPresented: $isShowingSettingsSheet, content: {
-            FlashingSettingsView()
-                .offset(y: 15)
+            FlashingSettingsView(settingsCompletion: $hasCompletedSettings)
         })
+        
+
     }
     
- 
+    func changeTimer() {
+        timer = Timer.publish(every: flashingMethod.readingSpeedPerSecond, on: .main, in: .common).autoconnect()
+    }
+    
 }
 
-struct FlashingReadView_Previews: PreviewProvider {
-    static var previews: some View {
-        FlashingReadView()
-            .environmentObject(FlashingMethod(importedText: ImportedText(texts: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", textName: "Lorem Ipsum", dateCreated: Date())))
-    }
-}
+//struct FlashingReadView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        FlashingReadView(hasCompletedSettings: <#Binding<Bool>#>)
+//            .environmentObject(FlashingMethod(importedText: ImportedText(texts: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", textName: "Lorem Ipsum", dateCreated: Date())))
+//    }
+//}
+

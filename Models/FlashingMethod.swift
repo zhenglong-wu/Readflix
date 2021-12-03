@@ -22,7 +22,7 @@ class FlashingMethod: ObservableObject {
     
     var tokenisedTextArray: [String] {
         get {
-            return tokeniseTextByLength(input: importedText.texts, chunkLength: chunkLength)
+            return tokeniseTextByLength(input: importedText.texts, chunkLength: Int(chunkLength))
         }
     }
     
@@ -31,7 +31,7 @@ class FlashingMethod: ObservableObject {
             return unwrappedTokenisedTextArray
         }
         else{
-            tokenisedTextArrayCache = tokeniseTextByLength(input: importedText.texts, chunkLength: chunkLength)
+            tokenisedTextArrayCache = tokeniseTextByLength(input: importedText.texts, chunkLength: Int(chunkLength))
             return tokenisedTextArrayCache!
         }
     }
@@ -44,7 +44,7 @@ class FlashingMethod: ObservableObject {
     
     var readingSpeedPerSecond: Double = 1/(Double(200)/Double(60))
     
-    var chunkLength: Int = 1
+    @Published var chunkLength: Double = 1
     
     var isPausingAtPunctuation: Bool = true
     
@@ -68,9 +68,9 @@ class FlashingMethod: ObservableObject {
         
         tempArray.append(contentsOf: importedText.texts.components(separatedBy: " "))
         
-        for i in stride(from: 0, through: ((tempArray.count-chunkLength)-1), by: chunkLength) {
-            for j in i...(i+chunkLength-1) {
-                if j < (i+chunkLength-1) {
+        for i in stride(from: 0, through: ((tempArray.count-Int(chunkLength))-1), by: Int(chunkLength)) {
+            for j in i...(i+Int(chunkLength)-1) {
+                if j < (i+Int(chunkLength)-1) {
                     tempString += String(tempArray[j] + " ")
                 }
                 else {
@@ -108,8 +108,8 @@ class FlashingMethod: ObservableObject {
         
         tempString = ""
         
-        if tempArray.count % chunkLength != 0 {
-            for j in (tempArray.count-(tempArray.count % chunkLength))...tempArray.count-1 {
+        if tempArray.count % Int(chunkLength) != 0 {
+            for j in (tempArray.count-(tempArray.count % Int(chunkLength)))...tempArray.count-1 {
                 if j == tempArray.count-1 {
                     tempString.append(tempArray[j])
                     print("tempString \(tempString)")

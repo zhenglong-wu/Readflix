@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+import QuickLook
+import Foundation
 
 struct BookshelfView: View {
     
@@ -26,6 +28,9 @@ struct BookshelfView: View {
             .sheet(isPresented: $showingSheet, content: {
                 ImportView()
             }))
+            .onAppear(perform: {
+
+            })
         }
         
     }

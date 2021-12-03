@@ -19,7 +19,10 @@ struct ImportTextView: View {
                     List{
                         ForEach(state.texts[1]) { text in
                             NavigationLink(
-                                destination: ScrollView{Text(text.texts)},
+                                destination: ScrollView{
+                                    Text(text.texts)
+                                        .padding()
+                                },
                                 label: {
                                     Text(text.textName)
                                 }   
