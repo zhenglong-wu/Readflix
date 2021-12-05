@@ -19,7 +19,7 @@ struct BookshelfView: View {
         
         NavigationView {
             VStack {
-                if state.texts.count == 0 {
+                if state.texts[4].count == 0 {
                     Text("No texts to show here...")
                 }
                 else {
@@ -56,7 +56,7 @@ struct BookshelfView: View {
     }
     
     func deleteText(at offsets: IndexSet) {
-        self.state.texts[2].remove(atOffsets: offsets)
+        self.state.texts[4].remove(atOffsets: offsets)
     }
 }
 

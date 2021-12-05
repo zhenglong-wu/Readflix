@@ -16,98 +16,103 @@ struct FlashingSettingsView: View {
     @Binding var fontSize: CGFloat
         
     var body: some View {
-        VStack {
-            
-            Toggle("Pause at punctuation", isOn: $flashingMethod.isPausingAtPunctuation)
+        
+        NavigationView {
+            VStack {
+                
+                Toggle("Pause at punctuation", isOn: $flashingMethod.isPausingAtPunctuation)
+                    .padding()
+                    .onTapGesture {
+                        let hapticFeedback = UIImpactFeedbackGenerator(style: .medium)
+                        hapticFeedback.impactOccurred()
+                    }
+                
+                VStack {
+                    HStack {
+                        Text("Speed")
+                            .bold()
+                        Spacer()
+                        Text("\(String(format: "%.0f", flashingMethod.readingSpeedPerMinute)) words per minute")
+                    }
+                    Slider(
+                        value: $flashingMethod.readingSpeedPerMinute,
+                        in: 50...400,
+                        step: 5
+                    ) {
+                        Text("WPM")
+                    } minimumValueLabel: {
+                        Text("50")
+                    }   maximumValueLabel: {
+                        Text("400")
+                    }
+                }
                 .padding()
-                .onTapGesture {
+                
+                VStack {
+                    HStack {
+                        Text("Chunk length")
+                            .bold()
+                        Spacer()
+                        Text("\(String(format: "%.0f", flashingMethod.chunkLength)) word(s)")
+                    }
+                    Slider(
+                        value: $flashingMethod.chunkLength,
+                        in: 1...5,
+                        step: 1
+                    ) {
+                        Text("Chunk Length")
+                    } minimumValueLabel: {
+                        Text("1")
+                    }   maximumValueLabel: {
+                        Text("5")
+                    }
+                }
+                .padding()
+                
+                VStack {
+                    HStack {
+                        Text("Font Size")
+                            .bold()
+                        Spacer()
+                    }
+                    Slider(
+                        value: $fontSize,
+                        in: 15...25,
+                        step: 1
+                    ) {
+                        Text("Chunk Length")
+                    } minimumValueLabel: {
+                        Text("Aa")
+                            .font(.subheadline)
+                    }   maximumValueLabel: {
+                        Text("Aa")
+                            .font(.headline)
+                    }
+                }
+                .padding()
+                
+                Button(action: {
                     let hapticFeedback = UIImpactFeedbackGenerator(style: .medium)
                     hapticFeedback.impactOccurred()
-                }
-            
-            VStack {
-                HStack {
-                    Text("Speed")
-                        .bold()
-                    Spacer()
-                    Text("\(String(format: "%.0f", flashingMethod.readingSpeedPerMinute)) words per minute")
-                }
-                Slider(
-                    value: $flashingMethod.readingSpeedPerMinute,
-                    in: 50...400,
-                    step: 5
-                ) {
-                    Text("WPM")
-                } minimumValueLabel: {
-                    Text("50")
-                }   maximumValueLabel: {
-                    Text("400")
-                }
+                    self.settingsCompletion = true
+                    presentationMode.wrappedValue.dismiss()
+                }, label: {
+                    VStack {
+                        Text("Save")
+                            .foregroundColor(.white)
+                            .bold()
+                            .padding(10)
+                            .padding(.horizontal, 15)
+                    }
+                    .background(Color.blue)
+                    .cornerRadius(18)
+                })
+                
             }
+            .cornerRadius(20)
             .padding()
-            
-            VStack {
-                HStack {
-                    Text("Chunk length")
-                        .bold()
-                    Spacer()
-                    Text("\(String(format: "%.0f", flashingMethod.chunkLength)) word(s)")
-                }
-                Slider(
-                    value: $flashingMethod.chunkLength,
-                    in: 1...5,
-                    step: 1
-                ) {
-                    Text("Chunk Length")
-                } minimumValueLabel: {
-                    Text("1")
-                }   maximumValueLabel: {
-                    Text("5")
-                }
-            }
-            .padding()
-            
-            VStack {
-                HStack {
-                    Text("Font Size")
-                        .bold()
-                    Spacer()
-                }
-                Slider(
-                    value: $fontSize,
-                    in: 15...25,
-                    step: 1
-                ) {
-                    Text("Chunk Length")
-                } minimumValueLabel: {
-                    Text("Aa")
-                        .font(.subheadline)
-                }   maximumValueLabel: {
-                    Text("Aa")
-                        .font(.headline)
-                }
-            }
-            .padding()
-            
-            Button(action: {
-                self.settingsCompletion = true
-                presentationMode.wrappedValue.dismiss()
-            }, label: {
-                VStack {
-                    Text("Save")
-                        .foregroundColor(.white)
-                        .bold()
-                        .padding(10)
-                        .padding(.horizontal)
-                }
-                .background(Color.blue)
-                .cornerRadius(20)
-            })
-                .edgesIgnoringSafeArea(.bottom)
-            
+            .navigationTitle(Text("Reading Settings"))
         }
-        .cornerRadius(20)
-        .padding()
     
     }
 }

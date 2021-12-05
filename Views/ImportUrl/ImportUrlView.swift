@@ -22,10 +22,7 @@ struct ImportUrlView: View {
                     List{
                         ForEach(state.texts[2]) { text in
                             NavigationLink(
-                                destination: ScrollView{
-                                    Text(text.texts)
-                                        .padding(20)
-                                },
+                                destination: BrowseImportedTextView(importedText: text),
                                 label: {
                                     Text(text.textName)
                                 }
@@ -83,12 +80,19 @@ struct ImportUrlView: View {
     }
     
     func deleteText(at offsets: IndexSet) {
+        let hapticFeedback = UIImpactFeedbackGenerator(style: .medium)
+        hapticFeedback.impactOccurred()
         self.state.texts[2].remove(atOffsets: offsets)
+    }
+    
+    func createNewUrlAndAddToUniversalArray(newImportedText: ImportedText) {
+        let newImportedUrl = ImportedText(texts: newImportedText.texts, textName: newImportedText.textName, dateCreated: Date(), textType: newImportedText.textType)
+        self.state.addNewTextToUniversalIndex(newText: newImportedUrl)
     }
 }
 
-struct ImportUrlView_Previews: PreviewProvider {
-    static var previews: some View {
-        ImportUrlView()
-    }
-}
+//struct ImportUrlView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ImportUrlView()
+//    }
+//}

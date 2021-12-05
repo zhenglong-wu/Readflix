@@ -23,10 +23,7 @@ struct ImportDocsView: View {
                 List{
                     ForEach(state.texts[3]) { text in
                         NavigationLink(
-                            destination: ScrollView{
-                                Text(text.texts)
-                                    .padding()
-                            },
+                            destination: BrowseImportedTextView(importedText: text),
                             label: {
                                 Text(text.textName)
                                     .padding()
@@ -126,6 +123,8 @@ struct ImportDocsView: View {
     }
     
     func deleteText(at offsets: IndexSet) {
+        let hapticFeedback = UIImpactFeedbackGenerator(style: .medium)
+        hapticFeedback.impactOccurred()
         self.state.texts[3].remove(atOffsets: offsets)
     }
 }
