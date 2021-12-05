@@ -120,8 +120,9 @@ struct ImportDocsView: View {
             textName = textFromPDF.0
         }
          
-        let newImportedText: ImportedText = ImportedText(texts: textFromPDF.1, textName: textName, dateCreated: Date())
-        self.state.addNewText(newText: newImportedText, appendToPosition: 3)
+        let newImportedPdf: ImportedText = ImportedText(texts: textFromPDF.1, textName: textName, dateCreated: Date(), textType: "PDF")
+        self.state.addNewText(newText: newImportedPdf, appendToPosition: 3)
+        self.state.addNewTextToUniversalIndex(newText: newImportedPdf)
     }
     
     func deleteText(at offsets: IndexSet) {

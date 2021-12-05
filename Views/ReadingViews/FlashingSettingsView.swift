@@ -9,16 +9,21 @@ import SwiftUI
 
 struct FlashingSettingsView: View {
     
-    @EnvironmentObject var flashingMethod: FlashingMethod
+    @Binding var flashingMethod: FlashingMethod
     @Environment(\.presentationMode) var presentationMode
     
     @Binding var settingsCompletion: Bool
+    @Binding var fontSize: CGFloat
         
     var body: some View {
         VStack {
             
             Toggle("Pause at punctuation", isOn: $flashingMethod.isPausingAtPunctuation)
                 .padding()
+                .onTapGesture {
+                    let hapticFeedback = UIImpactFeedbackGenerator(style: .medium)
+                    hapticFeedback.impactOccurred()
+                }
             
             VStack {
                 HStack {
@@ -62,6 +67,28 @@ struct FlashingSettingsView: View {
             }
             .padding()
             
+            VStack {
+                HStack {
+                    Text("Font Size")
+                        .bold()
+                    Spacer()
+                }
+                Slider(
+                    value: $fontSize,
+                    in: 15...25,
+                    step: 1
+                ) {
+                    Text("Chunk Length")
+                } minimumValueLabel: {
+                    Text("Aa")
+                        .font(.subheadline)
+                }   maximumValueLabel: {
+                    Text("Aa")
+                        .font(.headline)
+                }
+            }
+            .padding()
+            
             Button(action: {
                 self.settingsCompletion = true
                 presentationMode.wrappedValue.dismiss()
@@ -71,6 +98,7 @@ struct FlashingSettingsView: View {
                         .foregroundColor(.white)
                         .bold()
                         .padding(10)
+                        .padding(.horizontal)
                 }
                 .background(Color.blue)
                 .cornerRadius(20)

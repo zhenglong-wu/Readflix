@@ -9,8 +9,8 @@ import Foundation
 
 class ImportedTextFileStateController: ObservableObject {
     
-    @Published var texts: [[ImportedText]] = [[], [], [], []]
-    // Index 0 - Imported Scans | Index 1 - Imported Texts | Index 2 - Imported Webscraped Texts | Index 3 - Imported PDF Texts
+    @Published var texts: [[ImportedText]] = [[], [], [], [], []]
+    // Index 0 - Imported Scans | Index 1 - Imported Texts | Index 2 - Imported Webscraped Texts | Index 3 - Imported PDF Texts | Index 4 - All Imported Texts
     
     init(){
         loadFromFile()
@@ -30,7 +30,12 @@ class ImportedTextFileStateController: ObservableObject {
     func addNewText(newText: ImportedText, appendToPosition: Int) {
         self.texts[appendToPosition].append(newText)
     }
+    
+    func addNewTextToUniversalIndex(newText: ImportedText) {
+        self.texts[4].append(newText)
+    }
 }
+    
 
 
  

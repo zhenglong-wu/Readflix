@@ -9,15 +9,19 @@ import SwiftUI
 
 struct FlashingReadView: View {
     
-    @EnvironmentObject var flashingMethod: FlashingMethod
+    @State var flashingMethod: FlashingMethod
     
     @State var timerHasStarted = false
     @State var hasReachedEnd = false
     @State var currentText: String = ""
     @State var isShowingSettingsSheet = false
+    
+    
     @State var hasCompletedSettings: Bool = false
     
     @State var timer = Timer.publish(every: 1/(Double(200)/Double(60)), on: .main, in: .common).autoconnect()
+    
+    @State var fontSize: CGFloat = 15.0
     
     var timerValue: Double {
         get{
@@ -32,6 +36,7 @@ struct FlashingReadView: View {
             Spacer()
             
             Text(currentText)
+                .font(.system(size: CGFloat(fontSize)))
                 .onReceive(self.timer, perform: { time in
                     
                     if flashingMethod.currentIndex == flashingMethod.tokenisedTextArray.count-1 {
@@ -69,11 +74,16 @@ struct FlashingReadView: View {
             
             Spacer()
             
+            ProgressView("", value: Float(flashingMethod.currentIndex), total: Float(flashingMethod.tokenisedTextArray.count-1))
+                .padding(.horizontal)
+            
             HStack(alignment: .bottom) {
   
                 HStack() {
                     
                     Button(action: {
+                        let hapticFeedback = UIImpactFeedbackGenerator(style: .medium)
+                        hapticFeedback.impactOccurred()
                         self.timerHasStarted = false
                         self.isShowingSettingsSheet.toggle()
                     }, label: {
@@ -84,16 +94,24 @@ struct FlashingReadView: View {
                     Spacer()
                     
                     Button(action: {
+                        let hapticFeedback = UIImpactFeedbackGenerator(style: .medium)
+                        hapticFeedback.impactOccurred()
                         flashingMethod.currentIndex -= 1
                         currentText = flashingMethod.tokenisedTextArray[flashingMethod.currentIndex]
                     }, label: {
                         Image(systemName: "backward.circle")
                             .font(.largeTitle)
                     })
+                        .onTapGesture {
+                            let hapticFeedback = UIImpactFeedbackGenerator(style: .medium)
+                            hapticFeedback.impactOccurred()
+                        }
                     
                     Button(action: {
+                        let hapticFeedback = UIImpactFeedbackGenerator(style: .medium)
+                        hapticFeedback.impactOccurred()
                         if hasCompletedSettings == true {
-                            changeTimer()
+                            updateTimer()
                             hasCompletedSettings = false
                         }
                         self.timerHasStarted.toggle()
@@ -101,7 +119,10 @@ struct FlashingReadView: View {
                         Image(systemName: self.timerHasStarted ? "pause.circle" : "play.circle")
                             .font(.largeTitle)
                     })
+                    
                     Button(action: {
+                        let hapticFeedback = UIImpactFeedbackGenerator(style: .medium)
+                        hapticFeedback.impactOccurred()
                         flashingMethod.currentIndex += 1
                         currentText = flashingMethod.tokenisedTextArray[flashingMethod.currentIndex]
                     }, label: {
@@ -112,6 +133,8 @@ struct FlashingReadView: View {
                     Spacer()
                     
                     Button(action: {
+                        let hapticFeedback = UIImpactFeedbackGenerator(style: .medium)
+                        hapticFeedback.impactOccurred()
                         flashingMethod.currentIndex = 0
                         currentText = flashingMethod.tokenisedTextArray[flashingMethod.currentIndex]
                         self.hasReachedEnd = false
@@ -125,17 +148,13 @@ struct FlashingReadView: View {
             }
             .padding()
             
-//            FlashingSettingsView(showSheet: $isShowingSettingsSheet)
-//                .padding(.top, 300)
-//                .offset(y: isShowingSettingsSheet ? 0 : UIScreen.main.bounds.height)
-//                .animation(.spring())
         }
         .sheet(isPresented: $isShowingSettingsSheet, content: {
-            FlashingSettingsView(settingsCompletion: $hasCompletedSettings)
+            FlashingSettingsView(flashingMethod: $flashingMethod, settingsCompletion: $hasCompletedSettings, fontSize: $fontSize)
         })
     }
     
-    func changeTimer() {
+    func updateTimer() {
         timer = Timer.publish(every: flashingMethod.readingSpeedPerSecond, on: .main, in: .common).autoconnect()
     }
     

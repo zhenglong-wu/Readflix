@@ -112,13 +112,13 @@ class FlashingMethod: ObservableObject {
             for j in (tempArray.count-(tempArray.count % Int(chunkLength)))...tempArray.count-1 {
                 if j == tempArray.count-1 {
                     tempString.append(tempArray[j])
-                    print("tempString \(tempString)")
+                    //print("tempString \(tempString)")
                     outputArray.append(tempString)
-                    print("tempArray \(outputArray)")
+                    //print("tempArray \(outputArray)")
                 }
                 else {
                     tempString.append(tempArray[j] + " ")
-                    print("\(tempString)")
+                    //print("\(tempString)")
                 }
             }
         }
@@ -155,13 +155,13 @@ class FlashingMethod: ObservableObject {
             for j in (tempArray.count-(tempArray.count % chunkLength))...tempArray.count-1 {
                 if j == tempArray.count-1 {
                     tempString.append(tempArray[j])
-                    print("tempString \(tempString)")
+                    //print("tempString \(tempString)")
                     outputArray.append(tempString)
-                    print("tempArray \(outputArray)")
+                    //print("tempArray \(outputArray)")
                 }
                 else {
                     tempString.append(tempArray[j] + " ")
-                    print("\(tempString)")
+                    //print("\(tempString)")
                 }
             }
         }

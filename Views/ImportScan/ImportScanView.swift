@@ -76,8 +76,9 @@ struct ImportScanView: View {
                     self.isShowingScanningErrorAlert = true
                 }
                 else {
-                    let newScanData = ImportedText(texts: outputText, textName: "Some Text", dateCreated: Date())
+                    let newScanData = ImportedText(texts: outputText, textName: "Some Text", dateCreated: Date(), textType: "Scan")
                     self.state.addNewText(newText: newScanData, appendToPosition: 0)
+                    self.state.addNewTextToUniversalIndex(newText: newScanData)
                 }
             }
             self.showScanner = false

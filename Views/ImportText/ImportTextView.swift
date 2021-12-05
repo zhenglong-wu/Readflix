@@ -72,8 +72,9 @@ struct ImportTextView: View {
             textName = textFromPastedView.0
         }
         let text = textFromPastedView.1
-        let newImportedText: ImportedText = ImportedText(texts: text, textName: textName, dateCreated: Date())
+        let newImportedText: ImportedText = ImportedText(texts: text, textName: textName, dateCreated: Date(), textType: "Raw text")
         self.state.addNewText(newText: newImportedText, appendToPosition: 1)
+        self.state.addNewTextToUniversalIndex(newText: newImportedText)
     }
     
     func deleteText(at offsets: IndexSet) {

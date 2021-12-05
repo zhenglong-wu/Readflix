@@ -13,20 +13,28 @@ struct ImportButtonItemView: View {
     let iconDescription: String
     
     var body: some View {
+        
         VStack {
-            Image(systemName: "\(iconSymbolName)")
-                .font(Font.title.weight(.bold))
-                .foregroundColor(.blue)
-                .padding(3)
+            VStack {
+                Image(systemName: "\(iconSymbolName)")
+                    .font(Font.title.weight(.bold))
+                    .foregroundColor(.blue)
+                    .padding(3)
+            }
+            .frame(maxWidth: 40)
+            .foregroundColor(.blue)
+            .padding(15)
+            .background(.ultraThickMaterial)
+            .cornerRadius(10)
+            .shadow(radius: 5)
+            
             Text("\(iconDescription)")
                 .bold()
+                .foregroundColor(.blue)
+                .padding(.top, 10)
         }
-        .frame(minWidth: 55)
-        .foregroundColor(.blue)
-        .padding(15)
-        .background(.ultraThickMaterial)
-        .cornerRadius(10)
-        .shadow(radius: 5)
+        
+        
     }
 }
 

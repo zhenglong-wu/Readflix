@@ -14,7 +14,7 @@ class FlashingMethodTests: XCTestCase {
         
         let text: String = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
         
-        let importedText = ImportedText(texts: text, textName: "Lorem Ipsum", dateCreated: Date())
+        let importedText = ImportedText(texts: text, textName: "Lorem Ipsum", dateCreated: Date(), textType: "Raw text")
         
         let flashingMethod = FlashingMethod(importedText: importedText)
         

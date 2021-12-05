@@ -76,8 +76,9 @@ struct ImportUrlView: View {
             textName = urlFromPasteView.0
         }
         let text = webScraper.getParsedTextFromUrl(inputUrl: urlFromPasteView.1)
-        let newImportedText: ImportedText = ImportedText(texts: text, textName: textName, dateCreated: Date())
-        self.state.addNewText(newText: newImportedText, appendToPosition: 2)
+        let newImportedUrl: ImportedText = ImportedText(texts: text, textName: textName, dateCreated: Date(), textType: "Webpage")
+        self.state.addNewText(newText: newImportedUrl, appendToPosition: 2)
+        self.state.addNewTextToUniversalIndex(newText: newImportedUrl)
         
     }
     

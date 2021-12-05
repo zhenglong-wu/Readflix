@@ -18,7 +18,7 @@ class FileManagerTests: XCTestCase {
         dateFormatter.dateFormat = "yyyy/MM/dd HH:mm:SS"
         let dateCreated = dateFormatter.date(from: "2021/11/04 19:31:32")
 
-        let testData = ImportedText(texts: "Lorem ipsum", textName: "Lorem Ipsum", dateCreated: dateCreated!)
+        let testData = ImportedText(texts: "Lorem ipsum", textName: "Lorem Ipsum", dateCreated: dateCreated!, textType: "Raw text")
         
         let expected: String = "{\"id\":\"\(testData.id)\",\"texts\":\"Lorem ipsum\",\"dateCreated\":657747060.31999993,\"textName\":\"Lorem Ipsum\"}"
         
