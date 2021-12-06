@@ -15,6 +15,8 @@ struct ImportUrlView: View {
     
     let webScraper = WebParser()
     
+    let hapticsManager = HapticsManager()
+    
     var body: some View {
         ZStack(alignment: .top) {
             VStack {
@@ -75,19 +77,16 @@ struct ImportUrlView: View {
         let text = webScraper.getParsedTextFromUrl(inputUrl: urlFromPasteView.1)
         let newImportedUrl: ImportedText = ImportedText(texts: text, textName: textName, dateCreated: Date(), textType: "Webpage")
         self.state.addNewText(newText: newImportedUrl, appendToPosition: 2)
-        self.state.addNewTextToUniversalIndex(newText: newImportedUrl)
-        
+  
     }
     
     func deleteText(at offsets: IndexSet) {
-        let hapticFeedback = UIImpactFeedbackGenerator(style: .medium)
-        hapticFeedback.impactOccurred()
+        hapticsManager.createHeavyHaptic()
         self.state.texts[2].remove(atOffsets: offsets)
     }
     
     func createNewUrlAndAddToUniversalArray(newImportedText: ImportedText) {
         let newImportedUrl = ImportedText(texts: newImportedText.texts, textName: newImportedText.textName, dateCreated: Date(), textType: newImportedText.textType)
-        self.state.addNewTextToUniversalIndex(newText: newImportedUrl)
     }
 }
 

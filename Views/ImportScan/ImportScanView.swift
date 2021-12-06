@@ -15,6 +15,8 @@ struct ImportScanView: View {
     
     @EnvironmentObject var state: ImportedTextFileStateController
     
+    let hapticsManager = HapticsManager()
+    
     var body: some View {
       
             VStack {
@@ -75,16 +77,15 @@ struct ImportScanView: View {
                 else {
                     let newScanData = ImportedText(texts: outputText, textName: "Some Text", dateCreated: Date(), textType: "Scan")
                     self.state.addNewText(newText: newScanData, appendToPosition: 0)
-                    self.state.addNewTextToUniversalIndex(newText: newScanData)
                 }
             }
+            hapticsManager.createSuccessHaptic()
             self.showScanner = false
         })
     }
     
     func deleteText(at offsets: IndexSet) {
-        let hapticFeedback = UIImpactFeedbackGenerator(style: .medium)
-        hapticFeedback.impactOccurred()
+        hapticsManager.createHeavyHaptic()
         self.state.texts[0].remove(atOffsets: offsets)
     }
     
@@ -110,24 +111,5 @@ struct ImportScanView: View {
 //        }
     }
     
-    func displayDocumentAlert() {
-        
-        let alert = UIAlertController(title: "Scan Name", message: "Please enter a name for your scan", preferredStyle: .alert)
-        
-        let okAction = UIAlertAction(title: "OK", style: .default) { (_) in
- 
-        }
-        
-        let cancelAction = UIAlertAction(title: "Cancel", style: .destructive) { (_) in
-            
-        }
-        
-        alert.addAction(cancelAction)
-        alert.addAction(okAction)
-        
-        UIApplication.shared.windows.first?.rootViewController?.present(alert, animated: true) {
-            
-        }
-    }
 }
 

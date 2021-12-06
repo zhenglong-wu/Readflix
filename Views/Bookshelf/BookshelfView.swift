@@ -14,6 +14,8 @@ struct BookshelfView: View {
     @EnvironmentObject private var state: ImportedTextFileStateController
     
     @State private var showingSheet = false
+    
+    let hapticsManager = HapticsManager()
 
     var body: some View {
         
@@ -27,7 +29,8 @@ struct BookshelfView: View {
                         ForEach(state.texts[4]) { (text) in
                             let flashingMethod = FlashingMethod(importedText: text)
                             NavigationLink(destination: {
-                                FlashingReadView(flashingMethod: flashingMethod)
+                                FlashingReadView()
+                                    .environmentObject(flashingMethod)
                             }, label: {
                                 BookshelfItem(importedText: text)
                             })
@@ -51,11 +54,13 @@ struct BookshelfView: View {
     }
     
     func createFlashingReadView(flashingMethod: FlashingMethod) -> FlashingReadView {
-        let flashingReadView = FlashingReadView(flashingMethod: flashingMethod)
-        return flashingReadView
+        let flashingReadView = FlashingReadView()
+            .environmentObject(flashingMethod)
+        return flashingReadView as! FlashingReadView
     }
     
     func deleteText(at offsets: IndexSet) {
+        hapticsManager.createHeavyHaptic()
         self.state.texts[4].remove(atOffsets: offsets)
     }
 }

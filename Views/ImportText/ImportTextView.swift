@@ -12,6 +12,8 @@ struct ImportTextView: View {
     @State private var showPasteTextView = false
     @EnvironmentObject private var state: ImportedTextFileStateController
     
+    let hapticsManager = HapticsManager()
+    
     var body: some View {
         ZStack(alignment: .top) {
             VStack {
@@ -71,12 +73,10 @@ struct ImportTextView: View {
         let text = textFromPastedView.1
         let newImportedText: ImportedText = ImportedText(texts: text, textName: textName, dateCreated: Date(), textType: "Raw text")
         self.state.addNewText(newText: newImportedText, appendToPosition: 1)
-        self.state.addNewTextToUniversalIndex(newText: newImportedText)
     }
     
     func deleteText(at offsets: IndexSet) {
-        let hapticFeedback = UIImpactFeedbackGenerator(style: .medium)
-        hapticFeedback.impactOccurred()
+        hapticsManager.createHeavyHaptic()
         self.state.texts[1].remove(atOffsets: offsets)
     }
     

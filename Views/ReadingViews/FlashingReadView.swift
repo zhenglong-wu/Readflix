@@ -9,19 +9,18 @@ import SwiftUI
 
 struct FlashingReadView: View {
     
-    @State var flashingMethod: FlashingMethod
+    @EnvironmentObject var flashingMethod: FlashingMethod
     
     @State var timerHasStarted = false
     @State var hasReachedEnd = false
     @State var currentText: String = ""
     @State var isShowingSettingsSheet = false
     
-    
     @State var hasCompletedSettings: Bool = false
     
     @State var timer = Timer.publish(every: 1/(Double(200)/Double(60)), on: .main, in: .common).autoconnect()
     
-    @State var fontSize: CGFloat = 15.0
+    let hapticsManager = HapticsManager()
     
     var timerValue: Double {
         get{
@@ -36,7 +35,8 @@ struct FlashingReadView: View {
             Spacer()
             
             Text(currentText)
-                .font(.system(size: CGFloat(fontSize)))
+                .foregroundColor(flashingMethod.textColour)
+                .font(.system(size: CGFloat(flashingMethod.fontSize)))
                 .onReceive(self.timer, perform: { time in
                     
                     if flashingMethod.currentIndex == flashingMethod.tokenisedTextArray.count-1 {
@@ -82,8 +82,6 @@ struct FlashingReadView: View {
                 HStack() {
                     
                     Button(action: {
-                        let hapticFeedback = UIImpactFeedbackGenerator(style: .medium)
-                        hapticFeedback.impactOccurred()
                         self.timerHasStarted = false
                         self.isShowingSettingsSheet.toggle()
                     }, label: {
@@ -94,8 +92,7 @@ struct FlashingReadView: View {
                     Spacer()
                     
                     Button(action: {
-                        let hapticFeedback = UIImpactFeedbackGenerator(style: .medium)
-                        hapticFeedback.impactOccurred()
+                        hapticsManager.createMediumHaptic()
                         flashingMethod.currentIndex -= 1
                         currentText = flashingMethod.tokenisedTextArray[flashingMethod.currentIndex]
                     }, label: {
@@ -108,8 +105,7 @@ struct FlashingReadView: View {
                         }
                     
                     Button(action: {
-                        let hapticFeedback = UIImpactFeedbackGenerator(style: .medium)
-                        hapticFeedback.impactOccurred()
+                        hapticsManager.createMediumHaptic()
                         if hasCompletedSettings == true {
                             updateTimer()
                             hasCompletedSettings = false
@@ -121,8 +117,7 @@ struct FlashingReadView: View {
                     })
                     
                     Button(action: {
-                        let hapticFeedback = UIImpactFeedbackGenerator(style: .medium)
-                        hapticFeedback.impactOccurred()
+                        hapticsManager.createMediumHaptic()
                         flashingMethod.currentIndex += 1
                         currentText = flashingMethod.tokenisedTextArray[flashingMethod.currentIndex]
                     }, label: {
@@ -133,8 +128,6 @@ struct FlashingReadView: View {
                     Spacer()
                     
                     Button(action: {
-                        let hapticFeedback = UIImpactFeedbackGenerator(style: .medium)
-                        hapticFeedback.impactOccurred()
                         flashingMethod.currentIndex = 0
                         currentText = flashingMethod.tokenisedTextArray[flashingMethod.currentIndex]
                         self.hasReachedEnd = false
@@ -150,7 +143,8 @@ struct FlashingReadView: View {
             
         }
         .sheet(isPresented: $isShowingSettingsSheet, content: {
-            FlashingSettingsView(flashingMethod: $flashingMethod, settingsCompletion: $hasCompletedSettings, fontSize: $fontSize)
+            FlashingSettingsView(settingsCompletion: $hasCompletedSettings)
+                .environmentObject(flashingMethod)
         })
     }
     

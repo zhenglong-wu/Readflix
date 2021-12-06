@@ -16,6 +16,7 @@ struct ImportDocsView: View {
     @State var showInputPdfView: Bool = false
     @State var isShowingEmptyPdfErrorAlert: Bool = false
     
+    let hapticsManager = HapticsManager()
     
     var body: some View {
         VStack {
@@ -119,12 +120,10 @@ struct ImportDocsView: View {
          
         let newImportedPdf: ImportedText = ImportedText(texts: textFromPDF.1, textName: textName, dateCreated: Date(), textType: "PDF")
         self.state.addNewText(newText: newImportedPdf, appendToPosition: 3)
-        self.state.addNewTextToUniversalIndex(newText: newImportedPdf)
     }
     
     func deleteText(at offsets: IndexSet) {
-        let hapticFeedback = UIImpactFeedbackGenerator(style: .medium)
-        hapticFeedback.impactOccurred()
+        hapticsManager.createHeavyHaptic()
         self.state.texts[3].remove(atOffsets: offsets)
     }
 }

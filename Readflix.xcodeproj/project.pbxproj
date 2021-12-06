@@ -40,6 +40,7 @@
 		667C29CF27597F0500AFA031 /* FlashingSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667C29CE27597F0500AFA031 /* FlashingSettingsView.swift */; };
 		6695917927404189008B9947 /* PdfParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6695917827404189008B9947 /* PdfParserTests.swift */; };
 		66A2528C275D73B90002416A /* BrowseImportedTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A2528B275D73B90002416A /* BrowseImportedTextView.swift */; };
+		66A2528E275E139B0002416A /* HapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A2528D275E139B0002416A /* HapticsManager.swift */; };
 		66A43F60274279A2000F6C75 /* FlashingMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A43F5F274279A2000F6C75 /* FlashingMethod.swift */; };
 		66B390E627059E8B00FF7E66 /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B390E527059E8B00FF7E66 /* FileManager.swift */; };
 		66B390E827059FF100FF7E66 /* ImportedTextFileStateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B390E727059FF100FF7E66 /* ImportedTextFileStateController.swift */; };
@@ -118,6 +119,7 @@
 		667C29CE27597F0500AFA031 /* FlashingSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashingSettingsView.swift; sourceTree = "<group>"; };
 		6695917827404189008B9947 /* PdfParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PdfParserTests.swift; sourceTree = "<group>"; };
 		66A2528B275D73B90002416A /* BrowseImportedTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseImportedTextView.swift; sourceTree = "<group>"; };
+		66A2528D275E139B0002416A /* HapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticsManager.swift; sourceTree = "<group>"; };
 		66A43F5F274279A2000F6C75 /* FlashingMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashingMethod.swift; sourceTree = "<group>"; };
 		66B390E527059E8B00FF7E66 /* FileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManager.swift; sourceTree = "<group>"; };
 		66B390E727059FF100FF7E66 /* ImportedTextFileStateController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportedTextFileStateController.swift; sourceTree = "<group>"; };
@@ -377,6 +379,7 @@
 				66B390E527059E8B00FF7E66 /* FileManager.swift */,
 				66FF384E275BF6580025A4DE /* ThumbnailGenerator.swift */,
 				66FF3854275C0D180025A4DE /* CoreDataManager.swift */,
+				66A2528D275E139B0002416A /* HapticsManager.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -711,6 +714,7 @@
 				664DA736273496C100FF9A1E /* PasteUrlView.swift in Sources */,
 				667042A827039D47000F5E95 /* ReadflixApp.swift in Sources */,
 				6676A502273D189B00A324F2 /* PasteDocsView.swift in Sources */,
+				66A2528E275E139B0002416A /* HapticsManager.swift in Sources */,
 				66606401273EC14F0083BEF2 /* ePubParser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

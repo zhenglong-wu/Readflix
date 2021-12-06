@@ -18,7 +18,9 @@ struct PasteDocsView: View {
     @State var showInputPdfView: Bool = true
     @State var isShowingEmptyPdfErrorAlert: Bool = false
     @State var output: (title: String, text: String) = ("", "")
-    var save: ((String, String)) -> Void 
+    var save: ((String, String)) -> Void
+    
+    let hapticsManager = HapticsManager()
     
     var body: some View {
         NavigationView {
@@ -72,6 +74,7 @@ struct PasteDocsView: View {
                             isShowingEmptyPdfErrorAlert = true
                         }
                         else {
+                            hapticsManager.createSuccessHaptic()
                             saveText()
                         }
                         

@@ -16,6 +16,8 @@ struct PasteTextView: View {
     @State var isShowingEmptyTextFieldErrorAlert = false
     var save: ((String, String)) -> Void
     
+    let hapticsManager = HapticsManager()
+    
     var body: some View {
         NavigationView {
             VStack {
@@ -25,6 +27,7 @@ struct PasteTextView: View {
                 
                 ZStack {
                     TextEditor(text: $textFieldText)
+                        .padding()
                 }
                 .overlay(
                          RoundedRectangle(cornerRadius: 10)
@@ -45,9 +48,11 @@ struct PasteTextView: View {
                 ToolbarItemGroup(placement: ToolbarItemPlacement.navigationBarTrailing, content: {
                     Button {
                         if self.textFieldText == "" || self.textName ==  "" {
+                            hapticsManager.creatErrorHaptic()
                             isShowingEmptyTextFieldErrorAlert = true
                         }
                         else {
+                            hapticsManager.createSuccessHaptic()
                             saveText()
                         }
                     } label: {
@@ -62,8 +67,8 @@ struct PasteTextView: View {
                                 
                             }),
                             secondaryButton: .destructive(Text("Yes"), action: {
+                                hapticsManager.createWarningHaptic()
                                 saveText()
-
                             })
                         )
                     }

@@ -15,8 +15,12 @@ struct PasteUrlView: View {
     @State var output: (title: String, text: String) = ("", "")
     @State var isShowingEmptyUrlTextFieldErrorAlert = false
     @State var isShowingInvalidUrlErrorAlert = false
+    
+    
     var save: ((String, String)) -> Void
     let webParser: WebParser = WebParser()
+    
+    let hapticsManager = HapticsManager()
     
     var body: some View {
         
@@ -39,11 +43,14 @@ struct PasteUrlView: View {
                     Button {
                         if self.textFieldText == "" || self.textName == "" {
                             isShowingEmptyUrlTextFieldErrorAlert = true
+                            hapticsManager.creatErrorHaptic()
                         }
                         else if webParser.verifyUrl(url: self.textFieldText) == false {
                             isShowingInvalidUrlErrorAlert = true
+                            hapticsManager.creatErrorHaptic()
                         }
                         else {
+                            hapticsManager.createSuccessHaptic()
                             saveText()
                         }
                     } label: {
@@ -55,7 +62,7 @@ struct PasteUrlView: View {
                             title: Text("Error!"),
                             message: Text("The textfield and/or the text name is empty, please enter values."),
                             dismissButton: .default(Text("OK"), action: {
-
+                                
                             })
                         )
                     }

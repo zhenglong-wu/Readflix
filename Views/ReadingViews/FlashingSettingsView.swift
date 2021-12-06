@@ -9,11 +9,12 @@ import SwiftUI
 
 struct FlashingSettingsView: View {
     
-    @Binding var flashingMethod: FlashingMethod
+    @EnvironmentObject var flashingMethod: FlashingMethod
     @Environment(\.presentationMode) var presentationMode
     
     @Binding var settingsCompletion: Bool
-    @Binding var fontSize: CGFloat
+    
+    let hapticsManager = HapticsManager()
         
     var body: some View {
         
@@ -23,9 +24,13 @@ struct FlashingSettingsView: View {
                 Toggle("Pause at punctuation", isOn: $flashingMethod.isPausingAtPunctuation)
                     .padding()
                     .onTapGesture {
-                        let hapticFeedback = UIImpactFeedbackGenerator(style: .medium)
-                        hapticFeedback.impactOccurred()
+                        hapticsManager.createLightHaptic()
                     }
+                
+                HStack {
+                    ColorPicker("Text colour", selection: $flashingMethod.textColour)
+                        .padding()
+                }
                 
                 VStack {
                     HStack {
@@ -76,7 +81,7 @@ struct FlashingSettingsView: View {
                         Spacer()
                     }
                     Slider(
-                        value: $fontSize,
+                        value: $flashingMethod.fontSize,
                         in: 15...25,
                         step: 1
                     ) {
@@ -92,8 +97,7 @@ struct FlashingSettingsView: View {
                 .padding()
                 
                 Button(action: {
-                    let hapticFeedback = UIImpactFeedbackGenerator(style: .medium)
-                    hapticFeedback.impactOccurred()
+                    hapticsManager.createSuccessHaptic()
                     self.settingsCompletion = true
                     presentationMode.wrappedValue.dismiss()
                 }, label: {

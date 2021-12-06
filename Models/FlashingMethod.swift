@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 class FlashingMethod: ObservableObject {
     
@@ -18,6 +19,7 @@ class FlashingMethod: ObservableObject {
         self.importedText = importedText
     }
     
+    // Cache to store post-initialised value of tokenisedTextArray
     var tokenisedTextArrayCache: [String]?
     
     var tokenisedTextArray: [String] {
@@ -26,6 +28,7 @@ class FlashingMethod: ObservableObject {
         }
     }
     
+    // Unwraps optional value of cache and assigns to tokenisedTextArray
     func getComputedTokenisedTextArray() -> [String] {
         if let unwrappedTokenisedTextArray = tokenisedTextArrayCache {
             return unwrappedTokenisedTextArray
@@ -36,12 +39,14 @@ class FlashingMethod: ObservableObject {
         }
     }
     
+    // Reading speed on FlashingSettingsView
     @Published var readingSpeedPerMinute: Double = 200  {
         didSet {
             readingSpeedPerSecond = Double(String(format: "%.2f", 1/(Double(readingSpeedPerMinute)/Double(60))))!
         }
     }
     
+    // Internal calculated value for timer
     var readingSpeedPerSecond: Double = 1/(Double(200)/Double(60))
     
     @Published var chunkLength: Double = 1
@@ -55,6 +60,10 @@ class FlashingMethod: ObservableObject {
             }
         }
     }
+    
+    @Published var fontSize: CGFloat = 15.0
+    
+    @Published var textColour: Color = .black
     
     func incrementIndex() {
         self.currentIndex += 1
