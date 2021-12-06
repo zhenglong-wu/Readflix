@@ -93,9 +93,7 @@ func testTokeniseByLengthVersionTwo(input: String, chunkLength: Int) -> [String]
     return outputArray
 }
 
-var testData = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
 
-var decimal: Double = 1.2323
 
-print(Int(decimal))
+
  
