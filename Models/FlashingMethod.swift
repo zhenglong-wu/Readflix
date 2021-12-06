@@ -53,6 +53,7 @@ class FlashingMethod: ObservableObject {
     
     var isPausingAtPunctuation: Bool = true
     
+    // 
     @Published var currentIndex: Int = 0 {
         didSet {
             if currentIndex > tokenisedTextArray.count {
