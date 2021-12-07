@@ -41,14 +41,14 @@ struct FlashingSettingsView: View {
                     }
                     Slider(
                         value: $flashingMethod.readingSpeedPerMinute,
-                        in: 50...400,
+                        in: 10...1000,
                         step: 5
                     ) {
                         Text("WPM")
                     } minimumValueLabel: {
-                        Text("50")
+                        Text("10")
                     }   maximumValueLabel: {
-                        Text("400")
+                        Text("1000")
                     }
                 }
                 .padding()

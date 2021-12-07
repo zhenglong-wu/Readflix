@@ -15,7 +15,9 @@ struct FlashingReadView: View {
     @State var hasReachedEnd = false
     @State var currentText: String = ""
     @State var isShowingSettingsSheet = false
+    @State var isShowingEmptyTextAlert = false
     
+    // Used to bind to settings view and update the settings when saving
     @State var hasCompletedSettings: Bool = false
     
     @State var timer = Timer.publish(every: 1/(Double(200)/Double(60)), on: .main, in: .common).autoconnect()
@@ -34,6 +36,7 @@ struct FlashingReadView: View {
             
             Spacer()
             
+            // Centred text being read
             Text(currentText)
                 .foregroundColor(flashingMethod.textColour)
                 .font(.system(size: CGFloat(flashingMethod.fontSize)))
@@ -46,9 +49,12 @@ struct FlashingReadView: View {
                     
                     else {
                         if self.timerHasStarted == true {
+                            // Increments index
                             flashingMethod.incrementIndex()
+                            // Updates current text on screen
                             currentText = flashingMethod.tokenisedTextArray[flashingMethod.currentIndex]
                             if flashingMethod.isPausingAtPunctuation == true {
+                                // Pausing for punctuation
                                 if currentText.contains(".") == true {
                                     self.timerHasStarted = false
                                     DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
@@ -81,6 +87,7 @@ struct FlashingReadView: View {
   
                 HStack() {
                     
+                    // Settings button -> FlashingSettingsView
                     Button(action: {
                         self.timerHasStarted = false
                         self.isShowingSettingsSheet.toggle()
@@ -91,6 +98,7 @@ struct FlashingReadView: View {
                     
                     Spacer()
                     
+                    // Go backward button - decrements current index by 1
                     Button(action: {
                         hapticsManager.createMediumHaptic()
                         flashingMethod.currentIndex -= 1
@@ -104,6 +112,7 @@ struct FlashingReadView: View {
                             hapticFeedback.impactOccurred()
                         }
                     
+                    // Play/pause button - starts or pauses timer
                     Button(action: {
                         hapticsManager.createMediumHaptic()
                         if hasCompletedSettings == true {
@@ -116,6 +125,7 @@ struct FlashingReadView: View {
                             .font(.largeTitle)
                     })
                     
+                    // Go forward button - increments current index by 1
                     Button(action: {
                         hapticsManager.createMediumHaptic()
                         flashingMethod.currentIndex += 1
@@ -127,6 +137,7 @@ struct FlashingReadView: View {
                     
                     Spacer()
                     
+                    // Restart button - sets current index to 0
                     Button(action: {
                         flashingMethod.currentIndex = 0
                         currentText = flashingMethod.tokenisedTextArray[flashingMethod.currentIndex]
@@ -146,8 +157,23 @@ struct FlashingReadView: View {
             FlashingSettingsView(settingsCompletion: $hasCompletedSettings)
                 .environmentObject(flashingMethod)
         })
+        .onAppear(perform: {
+            if flashingMethod.importedText.texts == "" {
+                self.isShowingEmptyTextAlert = true
+            }
+        })
+        .alert(isPresented: $isShowingEmptyTextAlert) {
+            Alert(
+                title: Text("Oh no!"),
+                message: Text("The text you imported seems to be empty, please try another."),
+                dismissButton: .default(Text("OK"), action: {
+                    
+                })
+            )
+        }
     }
     
+    // Updates timer to value every second calculated using readingSpeedPerSecond
     func updateTimer() {
         timer = Timer.publish(every: flashingMethod.readingSpeedPerSecond, on: .main, in: .common).autoconnect()
     }

@@ -42,6 +42,7 @@
 		66A2528C275D73B90002416A /* BrowseImportedTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A2528B275D73B90002416A /* BrowseImportedTextView.swift */; };
 		66A2528E275E139B0002416A /* HapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A2528D275E139B0002416A /* HapticsManager.swift */; };
 		66A43F60274279A2000F6C75 /* FlashingMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A43F5F274279A2000F6C75 /* FlashingMethod.swift */; };
+		66A858A6275FDDD800A69D29 /* Statistics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A858A5275FDDD800A69D29 /* Statistics.swift */; };
 		66B390E627059E8B00FF7E66 /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B390E527059E8B00FF7E66 /* FileManager.swift */; };
 		66B390E827059FF100FF7E66 /* ImportedTextFileStateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B390E727059FF100FF7E66 /* ImportedTextFileStateController.swift */; };
 		66C48ECD2754E6930029C8B3 /* FlashingReadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C48ECC2754E6930029C8B3 /* FlashingReadView.swift */; };
@@ -121,6 +122,7 @@
 		66A2528B275D73B90002416A /* BrowseImportedTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseImportedTextView.swift; sourceTree = "<group>"; };
 		66A2528D275E139B0002416A /* HapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticsManager.swift; sourceTree = "<group>"; };
 		66A43F5F274279A2000F6C75 /* FlashingMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashingMethod.swift; sourceTree = "<group>"; };
+		66A858A5275FDDD800A69D29 /* Statistics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Statistics.swift; sourceTree = "<group>"; };
 		66B390E527059E8B00FF7E66 /* FileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManager.swift; sourceTree = "<group>"; };
 		66B390E727059FF100FF7E66 /* ImportedTextFileStateController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportedTextFileStateController.swift; sourceTree = "<group>"; };
 		66C48ECC2754E6930029C8B3 /* FlashingReadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashingReadView.swift; sourceTree = "<group>"; };
@@ -273,6 +275,7 @@
 			children = (
 				667042B027039D49000F5E95 /* Persistence.swift */,
 				6658A603270B09B7006F85DB /* ImportedText.swift */,
+				66A858A5275FDDD800A69D29 /* Statistics.swift */,
 				667042EB27039FDF000F5E95 /* TextRecogniser.swift */,
 				664DA72F27348C4D00FF9A1E /* WebParser.swift */,
 				666063FE273EC1260083BEF2 /* PdfParser.swift */,
@@ -709,6 +712,7 @@
 				667042E427039F6A000F5E95 /* StatisticsView.swift in Sources */,
 				6678D27B27078BD400D712EE /* ImportButtonItemView.swift in Sources */,
 				66C9B4F42708F41F006E70FB /* ImportNewsView.swift in Sources */,
+				66A858A6275FDDD800A69D29 /* Statistics.swift in Sources */,
 				66A43F60274279A2000F6C75 /* FlashingMethod.swift in Sources */,
 				667042DE27039EB1000F5E95 /* BookshelfView.swift in Sources */,
 				664DA736273496C100FF9A1E /* PasteUrlView.swift in Sources */,

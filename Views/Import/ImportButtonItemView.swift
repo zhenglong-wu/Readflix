@@ -22,6 +22,7 @@ struct ImportButtonItemView: View {
                     .padding(3)
             }
             .frame(maxWidth: 40)
+            .frame(maxHeight: 40)
             .foregroundColor(.blue)
             .padding(15)
             .background(.ultraThickMaterial)
