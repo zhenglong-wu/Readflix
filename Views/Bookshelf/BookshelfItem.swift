@@ -39,8 +39,6 @@ struct BookshelfItem: View {
             .padding(4)
             .padding(.horizontal)
         }
-//        .overlay(Rectangle().frame(width: 350, height: 1, alignment: .top).foregroundColor(Color.blue), alignment: .top)
-//        .overlay(Rectangle().frame(width: 350, height: 1, alignment: .bottom).foregroundColor(Color.blue), alignment: .bottom)
 
     }
 }

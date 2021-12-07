@@ -37,7 +37,7 @@ struct FlashingSettingsView: View {
                         Text("Speed")
                             .bold()
                         Spacer()
-                        Text("\(String(format: "%.0f", flashingMethod.readingSpeedPerMinute)) words per minute")
+                        Text("\(flashingMethod.roundToWholeNumberString(input: flashingMethod.readingSpeedPerMinute)) words per minute")
                     }
                     Slider(
                         value: $flashingMethod.readingSpeedPerMinute,
@@ -58,7 +58,7 @@ struct FlashingSettingsView: View {
                         Text("Chunk length")
                             .bold()
                         Spacer()
-                        Text("\(String(format: "%.0f", flashingMethod.chunkLength)) word(s)")
+                        Text("\(flashingMethod.roundToWholeNumberString(input: flashingMethod.chunkLength)) word(s)")
                     }
                     Slider(
                         value: $flashingMethod.chunkLength,

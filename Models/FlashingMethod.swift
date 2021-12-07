@@ -42,8 +42,16 @@ class FlashingMethod: ObservableObject {
     // Reading speed on FlashingSettingsView
     @Published var readingSpeedPerMinute: Double = 200  {
         didSet {
-            readingSpeedPerSecond = Double(String(format: "%.2f", 1/(Double(readingSpeedPerMinute)/Double(60))))!
+            readingSpeedPerSecond = roundToTwoDecimalPlacesDouble(input: 1/(Double(readingSpeedPerMinute)/Double(60)))
         }
+    }
+    
+    func roundToTwoDecimalPlacesDouble(input: Double) -> Double {
+        return Double(String(format: "%.2f", input))!
+    }
+    
+    func roundToWholeNumberString(input: Double) -> String {
+        return String(format: "%.0f", input)
     }
     
     // Internal calculated value for timer
