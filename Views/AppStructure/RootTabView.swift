@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct RootTabView: View {
+    
+    @EnvironmentObject var statisticsStateController: StatisticsStateController
 
     var body: some View {
     
@@ -17,12 +19,14 @@ struct RootTabView: View {
                     Image(systemName: "books.vertical.fill")
                     Text("Bookshelf")
                 }
+                .environmentObject(statisticsStateController)
 
             StatisticsView()
                 .tabItem {
                     Image(systemName: "number")
                     Text("Statistics")
                 }
+                .environmentObject(statisticsStateController)
 
             DiscoverView()
                 .tabItem {

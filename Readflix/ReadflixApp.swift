@@ -10,10 +10,14 @@ import SwiftUI
 @main
 struct ReadflixApp: App {
     
+    @State var importedTextFileStateController = ImportedTextFileStateController()
+    @State var statisticsStateController = StatisticsStateController()
+    
     var body: some Scene {
         WindowGroup {
             RootTabView()
-                .environmentObject(ImportedTextFileStateController())
+                .environmentObject(importedTextFileStateController)
+                .environmentObject(statisticsStateController)
         }
     }
 }

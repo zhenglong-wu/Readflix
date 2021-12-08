@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-public struct PieChartView: View {
+public struct ImportStatisticsView: View {
     public let values: [Double]
     public let names: [String]
     public let formatter: (Double) -> String
@@ -27,13 +27,13 @@ public struct PieChartView: View {
         
         for (i, value) in values.enumerated() {
             let degrees: Double = value * 360 / sum
-            tempSlices.append(PieSliceData(startAngle: Angle(degrees: endDeg), endAngle: Angle(degrees: endDeg + degrees), text: String(format: ".0f%", value * 100 / sum), colour: self.colors[i]))
+            tempSlices.append(PieSliceData(startAngle: Angle(degrees: endDeg), endAngle: Angle(degrees: endDeg + degrees), text: "\(String(format: "%.0f", (value * 100 / sum)))%", colour: self.colors[i]))
             endDeg += degrees
         }
         return tempSlices
     }
     
-    public init(values:[Double], names: [String], formatter: @escaping (Double) -> String, colors: [Color] = [Color.blue, Color.green, Color.orange], backgroundColor: Color = Color(red: 21 / 255, green: 24 / 255, blue: 30 / 255, opacity: 1.0), widthFraction: CGFloat = 0.75, innerRadiusFraction: CGFloat = 0.60){
+    public init(values:[Double], names: [String], formatter: @escaping (Double) -> String, colors: [Color] = [Color.blue, Color.green, Color.orange, Color.red], backgroundColor: Color = Color(red: 21 / 255, green: 24 / 255, blue: 30 / 255, opacity: 1.0), widthFraction: CGFloat = 0.75, innerRadiusFraction: CGFloat = 0.60){
         self.values = values
         self.names = names
         self.formatter = formatter
@@ -45,6 +45,7 @@ public struct PieChartView: View {
     }
     
     public var body: some View {
+        
         GeometryReader { geometry in
             VStack{
                 ZStack{
@@ -86,13 +87,13 @@ public struct PieChartView: View {
                     
                     VStack {
                         Text(self.activeIndex == -1 ? "Total" : names[self.activeIndex])
-                            .font(.title)
+                            .font(.title2)
                         Text(self.formatter(self.activeIndex == -1 ? values.reduce(0, +) : values[self.activeIndex]))
-                            .font(.title)
+                            .font(.title3)
                     }
                     
                 }
-                PieChartRows(colours: self.colors, names: self.names, values: self.values.map { self.formatter($0) }, percents: self.values.map { String(format: ".0f%", $0 * 100 / self.values.reduce(0, +)) })
+                PieChartRows(colours: self.colors, names: self.names, values: self.values.map { self.formatter($0) }, percents: self.values.map { "\(String(format: "%.0f", $0 * 100 / self.values.reduce(0, +)))%" })
                     .padding()
             }
         }
@@ -101,6 +102,6 @@ public struct PieChartView: View {
 
 struct PieChartView_Previews: PreviewProvider {
     static var previews: some View {
-        PieChartView(values: [1300, 500, 300], names: ["Rent", "Transport", "Education"], formatter: {value in String(format: "$%.2f", value)})
+        ImportStatisticsView(values: [1300, 500, 300], names: ["Rent", "Transport", "Education"], formatter: {value in String(format: "$%.2f", value)})
     }
 }

@@ -27,7 +27,6 @@ struct ImportDocsView: View {
                             destination: BrowseImportedTextView(importedText: text),
                             label: {
                                 Text(text.textName)
-                                    .padding()
                             }
                         )
                     }

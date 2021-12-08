@@ -42,7 +42,7 @@ class FlashingMethod: ObservableObject {
     }
     
     // Reading speed on FlashingSettingsView
-    var readingSpeedPerMinute: Double = 200  {
+    @Published var readingSpeedPerMinute: Double = 200  {
         didSet {
             readingSpeedPerSecond = roundToTwoDecimalPlacesDouble(input: 1/(Double(readingSpeedPerMinute)/Double(60)))
         }
@@ -59,9 +59,9 @@ class FlashingMethod: ObservableObject {
     // Internal calculated value for timer
     var readingSpeedPerSecond: Double = 1/(Double(200)/Double(60))
     
-    var chunkLength: Double = 1
+    @Published var chunkLength: Double = 1
     
-    var isPausingAtPunctuation: Bool = true
+    @Published var isPausingAtPunctuation: Bool = true
     
     // 
     var currentIndex: Int = 0 {
@@ -72,9 +72,9 @@ class FlashingMethod: ObservableObject {
         }
     }
     
-    var fontSize: CGFloat = 15.0
+    @Published var fontSize: CGFloat = 15.0
     
-    var textColour: Color = .black
+    @Published var textColour: Color = .black
     
     func incrementIndex() {
         self.currentIndex += 1

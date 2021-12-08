@@ -22,14 +22,14 @@ struct PieChartRows: View {
                         .fill(self.colours[i])
                         .frame(width: 20, height: 20)
                     Text(self.names[i])
+                        .bold()
                     Spacer()
-                    VStack(alignment: .trailing) {
-                        Text(self.values[i])
-                        Text(self.percents[i])
-                    }
+                    Text(self.values[i])
                 }
+                .padding(5)
             }
         }
+        .font(.system(size: CGFloat(14)))
     }
 }
 

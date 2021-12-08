@@ -40,8 +40,10 @@
 		667B58942760D60C009325E8 /* StatisticsStateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667B58932760D60C009325E8 /* StatisticsStateController.swift */; };
 		667B589D2760E013009325E8 /* PieSliceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667B589C2760E013009325E8 /* PieSliceView.swift */; };
 		667B589F2760E078009325E8 /* PieSliceData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667B589E2760E078009325E8 /* PieSliceData.swift */; };
-		667B58A12760E2F0009325E8 /* PieChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667B58A02760E2F0009325E8 /* PieChartView.swift */; };
+		667B58A12760E2F0009325E8 /* ImportStatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667B58A02760E2F0009325E8 /* ImportStatisticsView.swift */; };
 		667B58A32760E6D2009325E8 /* PieChartRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667B58A22760E6D2009325E8 /* PieChartRowView.swift */; };
+		667B58A527615DFD009325E8 /* NumberAnimationOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667B58A427615DFD009325E8 /* NumberAnimationOverlay.swift */; };
+		667B58A727615EC8009325E8 /* ReadingStatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667B58A627615EC8009325E8 /* ReadingStatisticsView.swift */; };
 		667C29CF27597F0500AFA031 /* FlashingSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667C29CE27597F0500AFA031 /* FlashingSettingsView.swift */; };
 		6695917927404189008B9947 /* PdfParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6695917827404189008B9947 /* PdfParserTests.swift */; };
 		66A2528C275D73B90002416A /* BrowseImportedTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A2528B275D73B90002416A /* BrowseImportedTextView.swift */; };
@@ -125,8 +127,10 @@
 		667B58932760D60C009325E8 /* StatisticsStateController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsStateController.swift; sourceTree = "<group>"; };
 		667B589C2760E013009325E8 /* PieSliceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieSliceView.swift; sourceTree = "<group>"; };
 		667B589E2760E078009325E8 /* PieSliceData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieSliceData.swift; sourceTree = "<group>"; };
-		667B58A02760E2F0009325E8 /* PieChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChartView.swift; sourceTree = "<group>"; };
+		667B58A02760E2F0009325E8 /* ImportStatisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportStatisticsView.swift; sourceTree = "<group>"; };
 		667B58A22760E6D2009325E8 /* PieChartRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChartRowView.swift; sourceTree = "<group>"; };
+		667B58A427615DFD009325E8 /* NumberAnimationOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberAnimationOverlay.swift; sourceTree = "<group>"; };
+		667B58A627615EC8009325E8 /* ReadingStatisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingStatisticsView.swift; sourceTree = "<group>"; };
 		667C29CE27597F0500AFA031 /* FlashingSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashingSettingsView.swift; sourceTree = "<group>"; };
 		6695917827404189008B9947 /* PdfParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PdfParserTests.swift; sourceTree = "<group>"; };
 		66A2528B275D73B90002416A /* BrowseImportedTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseImportedTextView.swift; sourceTree = "<group>"; };
@@ -321,7 +325,9 @@
 				667042E327039F6A000F5E95 /* StatisticsView.swift */,
 				667B589C2760E013009325E8 /* PieSliceView.swift */,
 				667B58A22760E6D2009325E8 /* PieChartRowView.swift */,
-				667B58A02760E2F0009325E8 /* PieChartView.swift */,
+				667B58A02760E2F0009325E8 /* ImportStatisticsView.swift */,
+				667B58A427615DFD009325E8 /* NumberAnimationOverlay.swift */,
+				667B58A627615EC8009325E8 /* ReadingStatisticsView.swift */,
 			);
 			path = Statistics;
 			sourceTree = "<group>";
@@ -718,7 +724,7 @@
 				66C9B4F22708F3E3006E70FB /* ImportUrlView.swift in Sources */,
 				667042E627039F85000F5E95 /* ProfileView.swift in Sources */,
 				66A2528C275D73B90002416A /* BrowseImportedTextView.swift in Sources */,
-				667B58A12760E2F0009325E8 /* PieChartView.swift in Sources */,
+				667B58A12760E2F0009325E8 /* ImportStatisticsView.swift in Sources */,
 				663C1EA2270E1DF90039A8A0 /* AlertTestView.swift in Sources */,
 				667B58A32760E6D2009325E8 /* PieChartRowView.swift in Sources */,
 				667042E027039EC6000F5E95 /* RootTabView.swift in Sources */,
@@ -742,6 +748,8 @@
 				66A43F60274279A2000F6C75 /* FlashingMethod.swift in Sources */,
 				667042DE27039EB1000F5E95 /* BookshelfView.swift in Sources */,
 				667B58942760D60C009325E8 /* StatisticsStateController.swift in Sources */,
+				667B58A727615EC8009325E8 /* ReadingStatisticsView.swift in Sources */,
+				667B58A527615DFD009325E8 /* NumberAnimationOverlay.swift in Sources */,
 				664DA736273496C100FF9A1E /* PasteUrlView.swift in Sources */,
 				667B589F2760E078009325E8 /* PieSliceData.swift in Sources */,
 				667042A827039D47000F5E95 /* ReadflixApp.swift in Sources */,

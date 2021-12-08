@@ -10,11 +10,31 @@ import SwiftUI
 struct StatisticsView: View {
     
     @EnvironmentObject var statisticsStateController: StatisticsStateController
+    @EnvironmentObject private var state: ImportedTextFileStateController
+    
+    var options = ["Reading", "Importing"]
+    @State private var viewOption = "Reading"
     
     var body: some View {
         NavigationView {
-            Text("Coming soon...")
-                .navigationTitle("My Statistics")
+            VStack {
+                Picker("", selection: $viewOption, content: {
+                    ForEach(options, id: \.self) {
+                        Text($0)
+                    }
+                })
+                    .padding()
+                    .pickerStyle(SegmentedPickerStyle())
+                if viewOption == "Reading" {
+                    ReadingStatisticsView()
+                }
+                else {
+                    ImportStatisticsView(values: [Double(state.texts[0].count), Double(state.texts[1].count), Double(state.texts[2].count), Double(state.texts[3].count)], names: ["Scans", "Raw texts", "Webpages", "PDFs"], formatter: {value in String(format: "%.0f", value)})
+                        .padding()
+                }
+                Spacer()
+            }
+            .navigationTitle("Statistics")
             
         }
     }
@@ -23,5 +43,7 @@ struct StatisticsView: View {
 struct StatisticsView_Previews: PreviewProvider {
     static var previews: some View {
         StatisticsView()
+            .environmentObject(ImportedTextFileStateController())
+            .environmentObject(StatisticsStateController())
     }
 }

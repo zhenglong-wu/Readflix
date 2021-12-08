@@ -12,6 +12,7 @@ import Foundation
 struct BookshelfView: View {
     
     @EnvironmentObject private var state: ImportedTextFileStateController
+    @EnvironmentObject var statisticsStateController: StatisticsStateController
     
     @State private var showingSheet = false
     
@@ -31,6 +32,7 @@ struct BookshelfView: View {
                             NavigationLink(destination: {
                                 FlashingReadView()
                                     .environmentObject(flashingMethod)
+                                    .environmentObject(statisticsStateController)
                             }, label: {
                                 BookshelfItem(importedText: text)
                             })
@@ -55,8 +57,7 @@ struct BookshelfView: View {
     
     func createFlashingReadView(flashingMethod: FlashingMethod) -> FlashingReadView {
         let flashingReadView = FlashingReadView()
-            .environmentObject(flashingMethod)
-        return flashingReadView as! FlashingReadView
+        return flashingReadView
     }
     
     func deleteText(at offsets: IndexSet) {
