@@ -37,6 +37,11 @@
 		6670B09D27108A6300CFEEA2 /* PasteTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6670B09C27108A6300CFEEA2 /* PasteTextView.swift */; };
 		6676A502273D189B00A324F2 /* PasteDocsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6676A501273D189B00A324F2 /* PasteDocsView.swift */; };
 		6678D27B27078BD400D712EE /* ImportButtonItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6678D27A27078BD400D712EE /* ImportButtonItemView.swift */; };
+		667B58942760D60C009325E8 /* StatisticsStateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667B58932760D60C009325E8 /* StatisticsStateController.swift */; };
+		667B589D2760E013009325E8 /* PieSliceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667B589C2760E013009325E8 /* PieSliceView.swift */; };
+		667B589F2760E078009325E8 /* PieSliceData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667B589E2760E078009325E8 /* PieSliceData.swift */; };
+		667B58A12760E2F0009325E8 /* PieChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667B58A02760E2F0009325E8 /* PieChartView.swift */; };
+		667B58A32760E6D2009325E8 /* PieChartRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667B58A22760E6D2009325E8 /* PieChartRowView.swift */; };
 		667C29CF27597F0500AFA031 /* FlashingSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667C29CE27597F0500AFA031 /* FlashingSettingsView.swift */; };
 		6695917927404189008B9947 /* PdfParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6695917827404189008B9947 /* PdfParserTests.swift */; };
 		66A2528C275D73B90002416A /* BrowseImportedTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A2528B275D73B90002416A /* BrowseImportedTextView.swift */; };
@@ -117,6 +122,11 @@
 		6670B09C27108A6300CFEEA2 /* PasteTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasteTextView.swift; sourceTree = "<group>"; };
 		6676A501273D189B00A324F2 /* PasteDocsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasteDocsView.swift; sourceTree = "<group>"; };
 		6678D27A27078BD400D712EE /* ImportButtonItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportButtonItemView.swift; sourceTree = "<group>"; };
+		667B58932760D60C009325E8 /* StatisticsStateController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsStateController.swift; sourceTree = "<group>"; };
+		667B589C2760E013009325E8 /* PieSliceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieSliceView.swift; sourceTree = "<group>"; };
+		667B589E2760E078009325E8 /* PieSliceData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieSliceData.swift; sourceTree = "<group>"; };
+		667B58A02760E2F0009325E8 /* PieChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChartView.swift; sourceTree = "<group>"; };
+		667B58A22760E6D2009325E8 /* PieChartRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChartRowView.swift; sourceTree = "<group>"; };
 		667C29CE27597F0500AFA031 /* FlashingSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashingSettingsView.swift; sourceTree = "<group>"; };
 		6695917827404189008B9947 /* PdfParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PdfParserTests.swift; sourceTree = "<group>"; };
 		66A2528B275D73B90002416A /* BrowseImportedTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseImportedTextView.swift; sourceTree = "<group>"; };
@@ -255,6 +265,7 @@
 		667042D627039DB1000F5E95 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				667B589B2760E001009325E8 /* Statistics */,
 				66FF384B275BF5A30025A4DE /* Bookshelf */,
 				6681DF932748159000A9383C /* ReadingViews */,
 				6694332B272817AE0060EF48 /* AppStructure */,
@@ -282,6 +293,7 @@
 				66606400273EC14F0083BEF2 /* ePubParser.swift */,
 				66A43F5F274279A2000F6C75 /* FlashingMethod.swift */,
 				66678BB2274DADB700AFF335 /* User.swift */,
+				667B589E2760E078009325E8 /* PieSliceData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -290,6 +302,7 @@
 			isa = PBXGroup;
 			children = (
 				66B390E727059FF100FF7E66 /* ImportedTextFileStateController.swift */,
+				667B58932760D60C009325E8 /* StatisticsStateController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -300,6 +313,17 @@
 				66C9B4F52708F42C006E70FB /* ImportBooksView.swift */,
 			);
 			path = ImportBooks;
+			sourceTree = "<group>";
+		};
+		667B589B2760E001009325E8 /* Statistics */ = {
+			isa = PBXGroup;
+			children = (
+				667042E327039F6A000F5E95 /* StatisticsView.swift */,
+				667B589C2760E013009325E8 /* PieSliceView.swift */,
+				667B58A22760E6D2009325E8 /* PieChartRowView.swift */,
+				667B58A02760E2F0009325E8 /* PieChartView.swift */,
+			);
+			path = Statistics;
 			sourceTree = "<group>";
 		};
 		6681DF932748159000A9383C /* ReadingViews */ = {
@@ -359,10 +383,8 @@
 			children = (
 				667042DF27039EC6000F5E95 /* RootTabView.swift */,
 				667042E127039EE3000F5E95 /* DiscoverView.swift */,
-				667042E327039F6A000F5E95 /* StatisticsView.swift */,
 				667042E527039F85000F5E95 /* ProfileView.swift */,
 				667042A927039D47000F5E95 /* ContentView.swift */,
-				66A2528B275D73B90002416A /* BrowseImportedTextView.swift */,
 			);
 			path = AppStructure;
 			sourceTree = "<group>";
@@ -372,6 +394,7 @@
 			children = (
 				667042D927039E3B000F5E95 /* ImportView.swift */,
 				6678D27A27078BD400D712EE /* ImportButtonItemView.swift */,
+				66A2528B275D73B90002416A /* BrowseImportedTextView.swift */,
 			);
 			path = Import;
 			sourceTree = "<group>";
@@ -695,10 +718,13 @@
 				66C9B4F22708F3E3006E70FB /* ImportUrlView.swift in Sources */,
 				667042E627039F85000F5E95 /* ProfileView.swift in Sources */,
 				66A2528C275D73B90002416A /* BrowseImportedTextView.swift in Sources */,
+				667B58A12760E2F0009325E8 /* PieChartView.swift in Sources */,
 				663C1EA2270E1DF90039A8A0 /* AlertTestView.swift in Sources */,
+				667B58A32760E6D2009325E8 /* PieChartRowView.swift in Sources */,
 				667042E027039EC6000F5E95 /* RootTabView.swift in Sources */,
 				664DA73027348C4D00FF9A1E /* WebParser.swift in Sources */,
 				6670B09D27108A6300CFEEA2 /* PasteTextView.swift in Sources */,
+				667B589D2760E013009325E8 /* PieSliceView.swift in Sources */,
 				667042EC27039FDF000F5E95 /* TextRecogniser.swift in Sources */,
 				666063FF273EC1260083BEF2 /* PdfParser.swift in Sources */,
 				66C48ECD2754E6930029C8B3 /* FlashingReadView.swift in Sources */,
@@ -715,7 +741,9 @@
 				66A858A6275FDDD800A69D29 /* Statistics.swift in Sources */,
 				66A43F60274279A2000F6C75 /* FlashingMethod.swift in Sources */,
 				667042DE27039EB1000F5E95 /* BookshelfView.swift in Sources */,
+				667B58942760D60C009325E8 /* StatisticsStateController.swift in Sources */,
 				664DA736273496C100FF9A1E /* PasteUrlView.swift in Sources */,
+				667B589F2760E078009325E8 /* PieSliceData.swift in Sources */,
 				667042A827039D47000F5E95 /* ReadflixApp.swift in Sources */,
 				6676A502273D189B00A324F2 /* PasteDocsView.swift in Sources */,
 				66A2528E275E139B0002416A /* HapticsManager.swift in Sources */,

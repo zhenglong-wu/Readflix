@@ -10,6 +10,8 @@ import SwiftUI
 
 class FlashingMethod: ObservableObject {
     
+    var dateLastOpened: Date = Date()
+    
     // ID to identify specific instance of class for actions such as list deletion
     var id = UUID()
     
@@ -40,7 +42,7 @@ class FlashingMethod: ObservableObject {
     }
     
     // Reading speed on FlashingSettingsView
-    @Published var readingSpeedPerMinute: Double = 200  {
+    var readingSpeedPerMinute: Double = 200  {
         didSet {
             readingSpeedPerSecond = roundToTwoDecimalPlacesDouble(input: 1/(Double(readingSpeedPerMinute)/Double(60)))
         }
@@ -57,12 +59,12 @@ class FlashingMethod: ObservableObject {
     // Internal calculated value for timer
     var readingSpeedPerSecond: Double = 1/(Double(200)/Double(60))
     
-    @Published var chunkLength: Double = 1
+    var chunkLength: Double = 1
     
     var isPausingAtPunctuation: Bool = true
     
     // 
-    @Published var currentIndex: Int = 0 {
+    var currentIndex: Int = 0 {
         didSet {
             if currentIndex > tokenisedTextArray.count {
                 currentIndex = tokenisedTextArray.count-1
@@ -70,9 +72,9 @@ class FlashingMethod: ObservableObject {
         }
     }
     
-    @Published var fontSize: CGFloat = 15.0
+    var fontSize: CGFloat = 15.0
     
-    @Published var textColour: Color = .black
+    var textColour: Color = .black
     
     func incrementIndex() {
         self.currentIndex += 1

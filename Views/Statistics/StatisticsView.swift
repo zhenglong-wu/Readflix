@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct StatisticsView: View {
+    
+    @EnvironmentObject var statisticsStateController: StatisticsStateController
+    
     var body: some View {
         NavigationView {
             Text("Coming soon...")

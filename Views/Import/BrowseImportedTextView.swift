@@ -36,6 +36,7 @@ struct BrowseImportedTextView: View {
             
             
             Spacer()
+            
             Button(action: {
                 self.presentationMode.wrappedValue.dismiss()
                 let hapticFeedback = UIImpactFeedbackGenerator(style: .medium)
@@ -57,6 +58,7 @@ struct BrowseImportedTextView: View {
                 .edgesIgnoringSafeArea(.bottom)
                 .background(.blue)
             })
+            
         }
     }
 }

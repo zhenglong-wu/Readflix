@@ -10,6 +10,7 @@ import SwiftUI
 struct FlashingReadView: View {
     
     @EnvironmentObject var flashingMethod: FlashingMethod
+    @EnvironmentObject var statistics: Statistics
     
     @State var timerHasStarted = false
     @State var hasReachedEnd = false
@@ -53,6 +54,8 @@ struct FlashingReadView: View {
                             flashingMethod.incrementIndex()
                             // Updates current text on screen
                             currentText = flashingMethod.tokenisedTextArray[flashingMethod.currentIndex]
+                            // Add to statistic
+                            statistics.addToTotalWordsRead(number: 1, chunkLength: Int(flashingMethod.chunkLength))
                             if flashingMethod.isPausingAtPunctuation == true {
                                 // Pausing for punctuation
                                 if currentText.contains(".") == true {
@@ -171,6 +174,9 @@ struct FlashingReadView: View {
                 })
             )
         }
+        .onAppear(perform: {
+            flashingMethod.dateLastOpened = Date()
+        })
     }
     
     // Updates timer to value every second calculated using readingSpeedPerSecond
