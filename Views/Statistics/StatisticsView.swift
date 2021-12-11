@@ -12,8 +12,11 @@ struct StatisticsView: View {
     @EnvironmentObject var statisticsStateController: StatisticsStateController
     @EnvironmentObject private var state: ImportedTextFileStateController
     
-    var options = ["Reading", "Importing"]
     @State private var viewOption = "Reading"
+    
+    var options = ["Reading", "Importing"]
+    
+    let hapticsManager = HapticsManager()
     
     var body: some View {
         NavigationView {
@@ -25,6 +28,10 @@ struct StatisticsView: View {
                 })
                     .padding()
                     .pickerStyle(SegmentedPickerStyle())
+                    .onChange(of: viewOption) { _ in
+                        hapticsManager.createLightHaptic()
+                    }
+
                 if viewOption == "Reading" {
                     ReadingStatisticsView()
                 }

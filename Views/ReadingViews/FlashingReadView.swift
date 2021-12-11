@@ -39,8 +39,9 @@ struct FlashingReadView: View {
             
             // Centred text being read
             Text(currentText)
+                .font(Font.custom(flashingMethod.customFont, size: CGFloat(flashingMethod.fontSize)))
                 .foregroundColor(flashingMethod.textColour)
-                .font(.system(size: CGFloat(flashingMethod.fontSize)))
+                //.font(.system(size: CGFloat(flashingMethod.fontSize)))
                 .onReceive(self.timer, perform: { time in
                     
                     if flashingMethod.currentIndex == flashingMethod.tokenisedTextArray.count-1 {

@@ -9,6 +9,8 @@ import SwiftUI
 import VisionKit
 
 struct ScanningView: UIViewControllerRepresentable {
+    
+    @EnvironmentObject var statisticsStateController: StatisticsStateController
         
     func makeCoordinator() -> CameraCoordinator {
         return CameraCoordinator(completion: completionHandler)

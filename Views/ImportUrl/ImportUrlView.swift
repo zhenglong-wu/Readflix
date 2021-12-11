@@ -11,7 +11,9 @@ import SwiftSoup
 struct ImportUrlView: View {
     
     @State private var showPasteUrlView = false
+    
     @EnvironmentObject private var state: ImportedTextFileStateController
+    @EnvironmentObject private var statisticsStateController: StatisticsStateController
     
     let webScraper = WebParser()
     
@@ -32,7 +34,9 @@ struct ImportUrlView: View {
                         }
                         .onDelete(perform: deleteText)
                     }
-                    .onAppear(perform: { state.saveToFile()})
+                    .onAppear(perform: {
+                        state.saveToFile()
+                    })
                 }
                 else {
                     Text("No webscraped texts...")
@@ -77,7 +81,7 @@ struct ImportUrlView: View {
         let text = webScraper.getParsedTextFromUrl(inputUrl: urlFromPasteView.1)
         let newImportedUrl: ImportedText = ImportedText(texts: text, textName: textName, dateCreated: Date(), textType: "Webpage")
         self.state.addNewText(newText: newImportedUrl, appendToPosition: 2)
-  
+        self.statisticsStateController.statistics.contentLastAdded = "Webpage"
     }
     
     func deleteText(at offsets: IndexSet) {

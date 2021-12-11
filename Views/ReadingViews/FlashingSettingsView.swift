@@ -14,12 +14,28 @@ struct FlashingSettingsView: View {
     
     @Binding var settingsCompletion: Bool
     
+    @State var curentFontOption = "SF Pro"
+    
+    @State var fontOptions = ["SF Pro", "TimesNewRomanPSMT", "Baskerville", "Comic Sans MS"]
+    
     let hapticsManager = HapticsManager()
         
     var body: some View {
         
         NavigationView {
             VStack {
+                
+                Picker("", selection: $curentFontOption, content: {
+                    ForEach(fontOptions, id: \.self) {
+                        Text($0)
+                    }
+                })
+                    .padding()
+                    .pickerStyle(SegmentedPickerStyle())
+                    .onChange(of: curentFontOption) { _ in
+                        hapticsManager.createLightHaptic()
+                        self.flashingMethod.customFont = curentFontOption
+                    }
                 
                 Toggle("Pause at punctuation", isOn: $flashingMethod.isPausingAtPunctuation)
                     .padding()
@@ -82,7 +98,7 @@ struct FlashingSettingsView: View {
                     }
                     Slider(
                         value: $flashingMethod.fontSize,
-                        in: 15...25,
+                        in: 17...26,
                         step: 1
                     ) {
                         Text("Chunk Length")
@@ -116,6 +132,9 @@ struct FlashingSettingsView: View {
             .cornerRadius(20)
             .padding()
             .navigationTitle(Text("Reading Settings"))
+            .onAppear(perform: {
+                self.curentFontOption = flashingMethod.customFont
+            })
         }
     
     }

@@ -1,6 +1,7 @@
 
 import UIKit
 import SwiftSoup
+import Combine
 
 //Takes in url as parameter and parses html file, and returns all descriptive text in "<p>" tags as string
 func getParsedTextFromUrl(inputUrl: String) -> String {
@@ -93,6 +94,8 @@ func testTokeniseByLengthVersionTwo(input: String, chunkLength: Int) -> [String]
     return outputArray
 }
 
+
+let array = [["", ""], ["", "", ""], [""], ["", "", "", "", ""], []]
 
 
 

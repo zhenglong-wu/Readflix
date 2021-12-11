@@ -11,6 +11,7 @@ struct ImportTextView: View {
     
     @State private var showPasteTextView = false
     @EnvironmentObject private var state: ImportedTextFileStateController
+    @EnvironmentObject private var statisticsStateController: StatisticsStateController
     
     let hapticsManager = HapticsManager()
     
@@ -29,7 +30,11 @@ struct ImportTextView: View {
                         }
                         .onDelete(perform: deleteText)
                     }
-                    .onAppear(perform: { state.saveToFile()})
+                    .onAppear(perform: {
+                        print("code hit")
+                        state.saveToFile()
+                        //statisticsStateController.saveToFile()
+                    })
                 }
                 else {
                     Text("No imported texts...")
@@ -73,6 +78,7 @@ struct ImportTextView: View {
         let text = textFromPastedView.1
         let newImportedText: ImportedText = ImportedText(texts: text, textName: textName, dateCreated: Date(), textType: "Raw text")
         self.state.addNewText(newText: newImportedText, appendToPosition: 1)
+        self.statisticsStateController.statistics.contentLastAdded = "Raw text"
     }
     
     func deleteText(at offsets: IndexSet) {

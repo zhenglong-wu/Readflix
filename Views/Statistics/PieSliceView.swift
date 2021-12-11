@@ -15,9 +15,13 @@ struct PieSliceView: View {
     }
     
     var body: some View {
+        
         GeometryReader { geometry in
+            
             ZStack {
+                
                 Path { path in
+                    
                     let width: CGFloat = min(geometry.size.width, geometry.size.height)
                     let height = width
                     path.move(

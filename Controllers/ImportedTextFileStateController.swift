@@ -34,6 +34,41 @@ class ImportedTextFileStateController: ObservableObject {
     func addNewTextToUniversalIndex(newText: ImportedText) {
         self.texts[4].append(newText)
     }
+    
+    func getMostAddedContent() -> String {
+        
+        var indexArray: [Int] = []
+        var returnResult: String = ""
+        
+        for i in 0...texts.count-2 {
+            indexArray.append(texts[i].count)
+        }
+        
+        if let max = indexArray.max() {
+            if let index = indexArray.firstIndex(of: max) {
+                if index == 0 {
+                    returnResult = "Scans"
+                }
+                else if index == 1 {
+                    returnResult = "Raw texts"
+                }
+                else if index == 2 {
+                    returnResult = "Webpage"
+                }
+                else if index == 3 {
+                    returnResult = "PDF"
+                }
+            }
+            else {
+                returnResult = "Could not unwrap optional"
+            }
+        }
+        else {
+            returnResult = "Could not unwrap optional"
+        }
+        
+        return returnResult
+    }
 }
     
 

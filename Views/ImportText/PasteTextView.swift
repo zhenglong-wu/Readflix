@@ -10,6 +10,8 @@ import SwiftUI
 struct PasteTextView: View {
     
     @Environment(\.presentationMode) var presentationMode
+    @EnvironmentObject var statisticsStateController: StatisticsStateController
+    
     @State var textFieldText: String = ""
     @State var textName: String = ""
     @State var output: (title: String, text: String) = ("", "")
@@ -53,6 +55,7 @@ struct PasteTextView: View {
                         }
                         else {
                             hapticsManager.createSuccessHaptic()
+                            self.statisticsStateController.saveToFile()
                             saveText()
                         }
                     } label: {

@@ -13,6 +13,8 @@ struct PasteDocsView: View {
     
     
     @Environment(\.presentationMode) var presentationMode
+    @EnvironmentObject var statisticsStateController: StatisticsStateController
+    
     @State private var pdfScraper: PdfScraper = PdfScraper(input: "")
     @State var titleTextFieldText: String = ""
     @State var showInputPdfView: Bool = true
@@ -75,6 +77,7 @@ struct PasteDocsView: View {
                         }
                         else {
                             hapticsManager.createSuccessHaptic()
+                            self.statisticsStateController.saveToFile()
                             saveText()
                         }
                         

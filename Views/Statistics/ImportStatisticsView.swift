@@ -8,6 +8,7 @@
 import SwiftUI
 
 public struct ImportStatisticsView: View {
+    
     public let values: [Double]
     public let names: [String]
     public let formatter: (Double) -> String
@@ -34,6 +35,7 @@ public struct ImportStatisticsView: View {
     }
     
     public init(values:[Double], names: [String], formatter: @escaping (Double) -> String, colors: [Color] = [Color.blue, Color.green, Color.orange, Color.red], backgroundColor: Color = Color(red: 21 / 255, green: 24 / 255, blue: 30 / 255, opacity: 1.0), widthFraction: CGFloat = 0.75, innerRadiusFraction: CGFloat = 0.60){
+        
         self.values = values
         self.names = names
         self.formatter = formatter

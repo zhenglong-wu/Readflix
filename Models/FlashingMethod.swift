@@ -72,7 +72,9 @@ class FlashingMethod: ObservableObject {
         }
     }
     
-    @Published var fontSize: CGFloat = 15.0
+    @Published var fontSize: CGFloat = 16
+    
+    @Published var customFont: String = "SF Pro"
     
     @Published var textColour: Color = .black
     

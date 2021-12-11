@@ -14,6 +14,7 @@ struct ImportScanView: View {
     @State var isShowingScanningErrorAlert = false
     
     @EnvironmentObject var state: ImportedTextFileStateController
+    @EnvironmentObject private var statisticsStateController: StatisticsStateController
     
     let hapticsManager = HapticsManager()
     
@@ -33,7 +34,10 @@ struct ImportScanView: View {
                         }
                         .onDelete(perform: deleteText)
                     }
-                    .onAppear(perform: { state.saveToFile()})
+                    .onAppear(perform: {
+                        state.saveToFile()
+                        //statisticsStateController.saveToFile()
+                    })
                 }
                 else {
                     Text("No scanned documents...")
@@ -77,6 +81,8 @@ struct ImportScanView: View {
                 else {
                     let newScanData = ImportedText(texts: outputText, textName: "Some Text", dateCreated: Date(), textType: "Scan")
                     self.state.addNewText(newText: newScanData, appendToPosition: 0)
+                    self.statisticsStateController.statistics.contentLastAdded = "Scan"
+                    self.statisticsStateController.saveToFile()
                 }
             }
             hapticsManager.createSuccessHaptic()

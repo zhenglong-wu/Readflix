@@ -10,6 +10,7 @@ import SwiftUI
 struct ImportView: View {
     
     @EnvironmentObject private var state: ImportedTextFileStateController
+    @EnvironmentObject private var statisticsStateController: StatisticsStateController
     @Environment (\.dismiss) var dismiss
     
     var body: some View {
