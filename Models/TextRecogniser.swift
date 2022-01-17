@@ -18,7 +18,6 @@ final class TextRecogniser {
     
     private let queue = DispatchQueue(label: "Scan", qos: .default, attributes: [], autoreleaseFrequency: .workItem)
     
-    //
     func recogniseText(withCompletitionHandler completionHandler: @escaping ([String]) -> Void) {
         queue.async {
             let images = (0..<self.cameraScan.pageCount).compactMap({

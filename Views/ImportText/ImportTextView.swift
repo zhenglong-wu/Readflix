@@ -33,7 +33,6 @@ struct ImportTextView: View {
                     .onAppear(perform: {
                         print("code hit")
                         state.saveToFile()
-                        //statisticsStateController.saveToFile()
                     })
                 }
                 else {
@@ -58,11 +57,16 @@ struct ImportTextView: View {
     }
     
     func createPasteTextView() -> PasteTextView {
+        
+        // Declare new tuple variable
         var newText: (String, String) = ("", "")
+        // Pass tuple into PasteTextView
         let newPasteTextView = PasteTextView(save: { (pastedText: (String, String)) in
             newText = pastedText
+            // Create new imported text and append to state array
             createNewTextAndAppendToViewTextArray(textFromPastedView: newText)
         })
+        // Dismiss sheet view
         self.showPasteTextView = false   
         return newPasteTextView
     }

@@ -25,12 +25,14 @@ struct ReadingStatisticsView: View {
                     Text("")
                         .padding(.top)
                 }
+                
                 .modifier(NumberAnimationOverlay(number: percent))
                 .onAppear(perform: {
                     withAnimation(.easeInOut(duration: 3)) {
                         percent = CGFloat(statisticsStateController.statistics.totalWordsRead)
                     }
                 })
+                
             }
             VStack {
                 Text("Content last added")

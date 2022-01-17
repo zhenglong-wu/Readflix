@@ -74,22 +74,30 @@ struct ImportScanView: View {
     private func createScanningView() -> ScanningView {
         ScanningView(completion: {
             textPerPage in
+            // Join optional lines of text separated by space
             if let outputText = textPerPage?.joined(separator: "\n").trimmingCharacters(in: .whitespacesAndNewlines) {
                 if outputText.count == 0 {
                     self.isShowingScanningErrorAlert = true
                 }
                 else {
+                    // Create new imported text
                     let newScanData = ImportedText(texts: outputText, textName: "Some Text", dateCreated: Date(), textType: "Scan")
+                    // Add new imported text to state controller
                     self.state.addNewText(newText: newScanData, appendToPosition: 0)
+                    // Change last added state
                     self.statisticsStateController.statistics.contentLastAdded = "Scan"
+                    // Save to local JSON location
                     self.statisticsStateController.saveToFile()
                 }
             }
+            // Create haptic to note end of task
             hapticsManager.createSuccessHaptic()
+            // Remove scanner sheet from view
             self.showScanner = false
         })
     }
     
+    // Deletes text from the stateController array at index position
     func deleteText(at offsets: IndexSet) {
         hapticsManager.createHeavyHaptic()
         self.state.texts[0].remove(atOffsets: offsets)

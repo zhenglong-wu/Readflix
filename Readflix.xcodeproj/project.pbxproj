@@ -12,6 +12,7 @@
 		66481546274658EB00422899 /* FlashingMethodTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66481545274658EA00422899 /* FlashingMethodTests.swift */; };
 		664DA73027348C4D00FF9A1E /* WebParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664DA72F27348C4D00FF9A1E /* WebParser.swift */; };
 		664DA736273496C100FF9A1E /* PasteUrlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664DA735273496C100FF9A1E /* PasteUrlView.swift */; };
+		665529F92764B36600413512 /* StatisticsItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665529F82764B36600413512 /* StatisticsItemView.swift */; };
 		6658A604270B09B7006F85DB /* ImportedText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6658A603270B09B7006F85DB /* ImportedText.swift */; };
 		666063FF273EC1260083BEF2 /* PdfParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666063FE273EC1260083BEF2 /* PdfParser.swift */; };
 		66606401273EC14F0083BEF2 /* ePubParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66606400273EC14F0083BEF2 /* ePubParser.swift */; };
@@ -96,6 +97,7 @@
 		66481545274658EA00422899 /* FlashingMethodTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashingMethodTests.swift; sourceTree = "<group>"; };
 		664DA72F27348C4D00FF9A1E /* WebParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebParser.swift; sourceTree = "<group>"; };
 		664DA735273496C100FF9A1E /* PasteUrlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasteUrlView.swift; sourceTree = "<group>"; };
+		665529F82764B36600413512 /* StatisticsItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsItemView.swift; sourceTree = "<group>"; };
 		6658A603270B09B7006F85DB /* ImportedText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportedText.swift; sourceTree = "<group>"; };
 		666063FE273EC1260083BEF2 /* PdfParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PdfParser.swift; sourceTree = "<group>"; };
 		66606400273EC14F0083BEF2 /* ePubParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ePubParser.swift; sourceTree = "<group>"; };
@@ -328,6 +330,7 @@
 				667B58A02760E2F0009325E8 /* ImportStatisticsView.swift */,
 				667B58A427615DFD009325E8 /* NumberAnimationOverlay.swift */,
 				667B58A627615EC8009325E8 /* ReadingStatisticsView.swift */,
+				665529F82764B36600413512 /* StatisticsItemView.swift */,
 			);
 			path = Statistics;
 			sourceTree = "<group>";
@@ -756,6 +759,7 @@
 				6676A502273D189B00A324F2 /* PasteDocsView.swift in Sources */,
 				66A2528E275E139B0002416A /* HapticsManager.swift in Sources */,
 				66606401273EC14F0083BEF2 /* ePubParser.swift in Sources */,
+				665529F92764B36600413512 /* StatisticsItemView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

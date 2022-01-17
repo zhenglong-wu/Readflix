@@ -110,11 +110,14 @@ class FlashingMethod: ObservableObject {
         
         var tempArray: [String] = [String]()
         var outputArray: [String] = [String]()
+        // Converting string into single components in array
         tempArray.append(contentsOf: importedText.texts.components(separatedBy: " "))
+        // Declaring string temporary for storing iteration results
         var tempString: String = ""
         var counter = chunkLength
         
         for i in 0...tempArray.count-1 {
+            // Looping to concatenate elements in array to chunk length
             if counter == 1 {
                 tempString.append(tempArray[i])
                 counter -= 1
@@ -128,23 +131,22 @@ class FlashingMethod: ObservableObject {
             }
         }
         
+        // Clearing temporary value
         tempString = ""
         
+        // Appending the remainder of the array if the array length is not a multiple of the chunk length
         if tempArray.count % Int(chunkLength) != 0 {
             for j in (tempArray.count-(tempArray.count % Int(chunkLength)))...tempArray.count-1 {
                 if j == tempArray.count-1 {
                     tempString.append(tempArray[j])
-                    //print("tempString \(tempString)")
                     outputArray.append(tempString)
-                    //print("tempArray \(outputArray)")
                 }
                 else {
                     tempString.append(tempArray[j] + " ")
-                    //print("\(tempString)")
                 }
             }
         }
-        
+    
         return outputArray
     }
     

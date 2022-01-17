@@ -71,16 +71,22 @@ struct ImportUrlView: View {
     
     // Creates new object of type ImportedText, and converts HTML from PasteUrlView to string values
     func createNewTextFromUrlAndAppendToViewTextArray(urlFromPasteView: (String, String)) {
+       // Declare object properties
         let textName: String
+        // Getting text name from passed tuple
         if urlFromPasteView.0 == "" {
             textName = "Some Text"
         }
         else {
             textName = urlFromPasteView.0
         }
+        // Get webscraped text
         let text = webScraper.getParsedTextFromUrl(inputUrl: urlFromPasteView.1)
+        // Initialise new imported text object
         let newImportedUrl: ImportedText = ImportedText(texts: text, textName: textName, dateCreated: Date(), textType: "Webpage")
+        // Add new object to state array
         self.state.addNewText(newText: newImportedUrl, appendToPosition: 2)
+        // Set content last added
         self.statisticsStateController.statistics.contentLastAdded = "Webpage"
     }
     

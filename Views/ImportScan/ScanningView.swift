@@ -18,18 +18,25 @@ struct ScanningView: UIViewControllerRepresentable {
     
     // This delegate class returns the scanned results from the VNDocumentCamera
     class CameraCoordinator: NSObject, VNDocumentCameraViewControllerDelegate {
+        
+        // Declaring completion handler
         private let completionHandler: ([String]?) -> Void
         
+        // Initialise completion handler
         init(completion: @escaping ([String]?) -> Void) {
             self.completionHandler = completion
         }
+        
+        // Camera view controller that takes in a view controller and a completion handler
         func documentCameraViewController(_ controller: VNDocumentCameraViewController, didFinishWith scan: VNDocumentCameraScan) {
             let recogniser = TextRecogniser(cameraScan: scan)
             recogniser.recogniseText(withCompletitionHandler: completionHandler)
         }
+        // Camera view controller cancelling button
         func documentCameraViewControllerDidCancel(_ controller: VNDocumentCameraViewController) {
             completionHandler(nil)
         }
+        // Camera view controller failure
         func documentCameraViewController(_ controller: VNDocumentCameraViewController, didFailWithError error: Error) {
             completionHandler(nil)
         }

@@ -33,11 +33,11 @@ struct RootTabView: View {
                     Image(systemName: "network")
                     Text("Discover")
                 }
-            ProfileView()
-                .tabItem {
-                    Image(systemName: "person.crop.circle.fill")
-                    Text("Profile")
-                }
+//            ProfileView()
+//                .tabItem {
+//                    Image(systemName: "person.crop.circle.fill")
+//                    Text("Profile")
+//                }
 
         }
     }

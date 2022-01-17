@@ -43,6 +43,7 @@ class WebParser {
     
     // Verifies if URL is accessible and returns boolean
     func verifyUrl(url: String?) -> Bool {
+        // Unwrap url optional
         if let url = url {
             if let url = NSURL(string: url) {
                 return UIApplication.shared.canOpenURL(url as URL)
