@@ -11,7 +11,6 @@ import PDFKit
 
 struct PasteDocsView: View {
     
-    
     @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject var statisticsStateController: StatisticsStateController
     

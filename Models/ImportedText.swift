@@ -27,5 +27,6 @@ class ImportedText: Identifiable, Codable {
         self.dateCreated = dateCreated
         self.textType = textType
     }
+    
 }
 

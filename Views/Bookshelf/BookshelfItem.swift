@@ -34,6 +34,9 @@ struct BookshelfItem: View {
                         .italic()
                         .font(.system(size: CGFloat(13)))
                     Spacer()
+                    Text(formateDate(date: importedText.dateCreated))
+                        .italic()
+                        .font(.system(size: CGFloat(13)))
                 }
             }
             .padding(4)
@@ -41,6 +44,14 @@ struct BookshelfItem: View {
         }
 
     }
+    
+    func formateDate(date: Date) -> String {
+        
+        let formatter = DateFormatter()
+        formatter.dateStyle = .short
+        return formatter.string(from: date)
+    }
+    
 }
 
 struct BookshelfItem_Previews: PreviewProvider {

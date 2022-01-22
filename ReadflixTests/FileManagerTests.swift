@@ -20,7 +20,7 @@ class FileManagerTests: XCTestCase {
 
         let testData = ImportedText(texts: "Lorem ipsum", textName: "Lorem Ipsum", dateCreated: dateCreated!, textType: "Raw text")
         
-        let expected: String = "{\"id\":\"\(testData.id)\",\"texts\":\"Lorem ipsum\",\"dateCreated\":657747060.31999993,\"textName\":\"Lorem Ipsum\"}"
+        let expected: String = "{\"textType\":\"Raw text\",\"id\":\"\(testData.id)\",\"texts\":\"Lorem ipsum\",\"dateCreated\":657747060.31999993,\"textName\":\"Lorem Ipsum\"}"
         
         let result = fileManager.encodeToJson(object: testData)
         
@@ -29,6 +29,5 @@ class FileManagerTests: XCTestCase {
     }
 
 }
-
 
 

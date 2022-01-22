@@ -11,6 +11,8 @@ import SwiftUI
 
 class HapticsManager {
     
+    private let generator = UINotificationFeedbackGenerator()
+    
     func createHeavyHaptic() {
         let hapticFeedback = UIImpactFeedbackGenerator(style: .heavy)
         hapticFeedback.impactOccurred()
@@ -27,17 +29,14 @@ class HapticsManager {
     }
     
     func createSuccessHaptic() {
-        let generator = UINotificationFeedbackGenerator()
         generator.notificationOccurred(.success)
     }
     
     func createWarningHaptic() {
-        let generator = UINotificationFeedbackGenerator()
         generator.notificationOccurred(.warning)
     }
     
     func creatErrorHaptic() {
-        let generator = UINotificationFeedbackGenerator()
         generator.notificationOccurred(.error)
     }
     
