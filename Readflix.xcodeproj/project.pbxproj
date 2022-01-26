@@ -61,6 +61,7 @@
 		66C9B4F22708F3E3006E70FB /* ImportUrlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C9B4F12708F3E3006E70FB /* ImportUrlView.swift */; };
 		66C9B4F42708F41F006E70FB /* ImportNewsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C9B4F32708F41F006E70FB /* ImportNewsView.swift */; };
 		66C9B4F62708F42C006E70FB /* ImportBooksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C9B4F52708F42C006E70FB /* ImportBooksView.swift */; };
+		66ECEB2A279C119D00F2FF03 /* ImportedTextFileStateControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66ECEB29279C119D00F2FF03 /* ImportedTextFileStateControllerTests.swift */; };
 		66FC69EC273446C300671A2E /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B390E527059E8B00FF7E66 /* FileManager.swift */; };
 		66FC69EE27344CBE00671A2E /* FileManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66FC69ED27344CBE00671A2E /* FileManagerTests.swift */; };
 		66FF384D275BF5BF0025A4DE /* BookshelfItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66FF384C275BF5BF0025A4DE /* BookshelfItem.swift */; };
@@ -149,6 +150,7 @@
 		66C9B4F32708F41F006E70FB /* ImportNewsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportNewsView.swift; sourceTree = "<group>"; };
 		66C9B4F52708F42C006E70FB /* ImportBooksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportBooksView.swift; sourceTree = "<group>"; };
 		66E86F9D27404A8900D93242 /* TestPlaygrounds.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = TestPlaygrounds.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		66ECEB29279C119D00F2FF03 /* ImportedTextFileStateControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportedTextFileStateControllerTests.swift; sourceTree = "<group>"; };
 		66FC69ED27344CBE00671A2E /* FileManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerTests.swift; sourceTree = "<group>"; };
 		66FF384C275BF5BF0025A4DE /* BookshelfItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookshelfItem.swift; sourceTree = "<group>"; };
 		66FF384E275BF6580025A4DE /* ThumbnailGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbnailGenerator.swift; sourceTree = "<group>"; };
@@ -255,6 +257,7 @@
 				66C56C372735915400A02355 /* WebParserTests.swift */,
 				6695917827404189008B9947 /* PdfParserTests.swift */,
 				66481545274658EA00422899 /* FlashingMethodTests.swift */,
+				66ECEB29279C119D00F2FF03 /* ImportedTextFileStateControllerTests.swift */,
 			);
 			path = ReadflixTests;
 			sourceTree = "<group>";
@@ -768,6 +771,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6695917927404189008B9947 /* PdfParserTests.swift in Sources */,
+				66ECEB2A279C119D00F2FF03 /* ImportedTextFileStateControllerTests.swift in Sources */,
 				667042BE27039D49000F5E95 /* ReadflixTests.swift in Sources */,
 				66481546274658EB00422899 /* FlashingMethodTests.swift in Sources */,
 				66C56C382735915400A02355 /* WebParserTests.swift in Sources */,

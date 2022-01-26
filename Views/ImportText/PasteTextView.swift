@@ -36,6 +36,19 @@ struct PasteTextView: View {
                            .stroke(Color.gray, lineWidth: 1)
                          )
                 .padding(10)
+                Button(action: {
+                    let pasteBoard = UIPasteboard.general
+                    self.textFieldText = pasteBoard.string ?? ""
+                }, label: {
+                    ZStack {
+                        Text("Paste")
+                            .bold()
+                            .foregroundColor(.white)
+                            .padding(12)
+                    }
+                    .background(.blue)
+                    .cornerRadius(22)
+                })
                 
             }
             .toolbar {

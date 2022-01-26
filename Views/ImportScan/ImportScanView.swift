@@ -61,8 +61,9 @@ struct ImportScanView: View {
             .navigationBarItems(trailing: Button(action: {
                self.showScanner = true
             }, label: {
-                Image(systemName: "doc.text.viewfinder")
+                Text(Image(systemName: "doc.text.viewfinder"))
                     .font(.title2)
+                    .bold()
             })
             .sheet(isPresented: $showScanner, content: {
                 createScanningView()

@@ -23,7 +23,13 @@ struct BookshelfView: View {
         NavigationView {
             VStack {
                 if state.texts[4].count == 0 {
-                    Text("No texts to show here...")
+                    VStack(spacing: 20) {
+                        Text("Uh oh").foregroundColor(.red).bold() + Text(", there aren't any reads here!").bold()
+                            .bold()
+                        Text("Import some by taping the ").bold() + Text(Image(systemName: "plus")).foregroundColor(.blue).bold() + Text(" button up top!").bold()
+                            .bold()
+                    }
+                    .padding()
                 }
                 else {
                     List {

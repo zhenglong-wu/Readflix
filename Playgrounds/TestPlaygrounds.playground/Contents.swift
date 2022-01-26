@@ -1,12 +1,6 @@
 
 import Foundation
 
+let webParser = WebParser()
 
-let fileManager = FileManager()
-
-print(fileManager.getDocumentDirectory())
-
-
-
-
- 
+print(webParser.getParsedTextFromUrl(inputUrl: "https://www.apple.com/uk/macbook-pro-14-and-16/"))

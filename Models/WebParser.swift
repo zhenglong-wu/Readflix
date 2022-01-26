@@ -37,7 +37,7 @@ class WebParser {
         else {
             print("Error")
         }
-        print(parsedString)
+        
         return parsedString
     }
     
@@ -51,8 +51,5 @@ class WebParser {
         }
         return false
     }
-    
-    
-
-    
+        
 }

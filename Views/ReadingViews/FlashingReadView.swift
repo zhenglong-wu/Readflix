@@ -35,6 +35,7 @@ struct FlashingReadView: View {
 
         VStack {
             
+            
             Spacer()
             
             // Centred text being read
@@ -179,6 +180,14 @@ struct FlashingReadView: View {
         }
         .onAppear(perform: {
             flashingMethod.dateLastOpened = Date()
+        })
+        .toolbar(content: {
+            ToolbarItem(placement: .principal) {
+                Text(flashingMethod.importedText.textName)
+                    .bold()
+                    .italic()
+                    .accessibilityAddTraits(.isHeader)
+            }
         })
     }
     
