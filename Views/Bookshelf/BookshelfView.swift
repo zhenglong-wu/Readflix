@@ -26,8 +26,7 @@ struct BookshelfView: View {
                     VStack(spacing: 20) {
                         Text("Uh oh").foregroundColor(.red).bold() + Text(", there aren't any reads here!").bold()
                             .bold()
-                        Text("Import some by taping the ").bold() + Text(Image(systemName: "plus")).foregroundColor(.blue).bold() + Text(" button up top!").bold()
-                            .bold()
+                        Text("Import some by taping the ") + Text(Image(systemName: "plus")).foregroundColor(.blue).bold() + Text(" button up top!")
                     }
                     .padding()
                 }

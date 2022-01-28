@@ -39,19 +39,19 @@ struct ImportDocsView: View {
                 })
             }
             else {
-                Text("No imported PDFs...")
-                Text("\n")
-                Text("You can import PDF by tapping the top right button!")
-                    .font(.subheadline)
-                    .foregroundColor(.gray)
+                VStack(spacing: 20) {
+                    Text("We couldn't find any scanned documents..").bold()
+                    Text("Scan some by tapping the ") + Text(Image(systemName: "doc")).bold().foregroundColor(.blue) + Text(" button up top!")
+                }
             }
         }
         .navigationTitle("Import Documents")
         .navigationBarItems(trailing: Button(action: {
            self.showInputPdfView = true
         }, label: {
-            Image(systemName: "doc")
+            Text(Image(systemName: "doc"))
                 .font(.title2)
+                .bold()
         }))
         .sheet(isPresented: $showInputPdfView, content: {
             createPasteDocsView()

@@ -39,19 +39,20 @@ struct ImportUrlView: View {
                     })
                 }
                 else {
-                    Text("No webscraped texts...")
-                    Text("\n")
-                    Text("You can get online text by tapping the top right button!")
-                        .font(.subheadline)
-                        .foregroundColor(.gray)
+                    VStack(spacing: 20) {
+                        Text("We couldn't find any scanned documents..").bold()
+                        Text("Scan some by tapping the ") + Text(Image(systemName: "link.icloud")).bold().foregroundColor(.blue) + Text(" button up top!")
+                    }
+
                 }
             }
             .navigationTitle("Import URL")
             .navigationBarItems(trailing: Button(action: {
                self.showPasteUrlView = true
             }, label: {
-                Image(systemName: "network")
+                Text(Image(systemName: "link.icloud"))
                     .font(.title2)
+                    .bold()
             })
             .sheet(isPresented: $showPasteUrlView, content: {
                 createPasteUrlView()

@@ -36,19 +36,20 @@ struct ImportTextView: View {
                     })
                 }
                 else {
-                    Text("No imported texts...")
-                    Text("\n")
-                    Text("You can paste your own text by tapping the top right button!")
-                        .font(.subheadline)
-                        .foregroundColor(.gray)
+                    VStack(spacing: 20) {
+                        Text("We couldn't find any scanned documents..").bold()
+                        Text("Scan some by tapping the ") + Text(Image(systemName: "character.textbox")).bold().foregroundColor(.blue) + Text(" button up top!")
+                    }
+
                 }
             }
             .navigationTitle("Import Text")
             .navigationBarItems(trailing: Button(action: {
                self.showPasteTextView = true
             }, label: {
-                Image(systemName: "abc")
+                Text(Image(systemName: "character.textbox"))
                     .font(.title2)
+                    .bold()
             })
             .sheet(isPresented: $showPasteTextView, content: {
                 createPasteTextView()

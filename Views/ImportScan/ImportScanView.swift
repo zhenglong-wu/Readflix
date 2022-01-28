@@ -40,11 +40,10 @@ struct ImportScanView: View {
                     })
                 }
                 else {
-                    Text("No scanned documents...")
-                    Text("\n")
-                    Text("You can import your own text by tapping the top right button!")
-                        .font(.subheadline)
-                        .foregroundColor(.gray)
+                    VStack(spacing: 20) {
+                        Text("We couldn't find any scanned documents..").bold()
+                        Text("Scan some by tapping the ") + Text(Image(systemName: "doc.text.viewfinder")).bold().foregroundColor(.blue) + Text(" button up top!")
+                    }
                 }
                 
             }
