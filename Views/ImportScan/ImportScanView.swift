@@ -77,6 +77,7 @@ struct ImportScanView: View {
             // Join optional lines of text separated by space
             if let outputText = textPerPage?.joined(separator: "\n").trimmingCharacters(in: .whitespacesAndNewlines) {
                 if outputText.count == 0 {
+                    self.showScanner = false
                     self.isShowingScanningErrorAlert = true
                 }
                 else {
